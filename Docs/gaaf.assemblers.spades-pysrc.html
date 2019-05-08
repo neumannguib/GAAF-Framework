@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>gaaf.assemblers.spades</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Framework</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="gaaf-module.html">Package&nbsp;gaaf</a> ::
+        <a href="gaaf.assemblers-module.html">Package&nbsp;assemblers</a> ::
+        Module&nbsp;spades
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="gaaf.assemblers.spades-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="gaaf.assemblers.spades-module.html">Module gaaf.assemblers.spades</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">Created on Sun May  5 19:29:00 2019</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">@author: Guilherme Neumann</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt>  </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="Spades"></a><div id="Spades-def"><a name="L12"></a><tt class="py-lineno">12</tt> <a class="py-toggle" href="#" id="Spades-toggle" onclick="return toggle('Spades');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="gaaf.assemblers.spades.Spades-class.html">Spades</a><tt class="py-op">:</tt> </tt>
+</div><div id="Spades-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Spades-expanded"><a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">    <tt class="py-docstring">""" </tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">    SPAdes assembler</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">    Attributes</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    ----------</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    require_fastq : bool</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">        if the assembler only work with fastq files, please set as True </tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">        (default False)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">    python_threads : bool</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">        in case the assembler do not use multithread, you can at least </tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">        activate it to run with python threads. Those threads are used </tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">        by Assembly Module (default False).</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    Methods</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">    -------</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    run()</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">        Run the assembly    </tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">     </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">     </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt id="link-0" class="py-name" targets="Variable gaaf.assemblers.abyss.Abyss.require_fastq=gaaf.assemblers.abyss.Abyss-class.html#require_fastq,Variable gaaf.assemblers.edena.Edena.require_fastq=gaaf.assemblers.edena.Edena-class.html#require_fastq,Variable gaaf.assemblers.masurca.Masurca.require_fastq=gaaf.assemblers.masurca.Masurca-class.html#require_fastq,Variable gaaf.assemblers.minia.Minia.require_fastq=gaaf.assemblers.minia.Minia-class.html#require_fastq,Variable gaaf.assemblers.mira.Mira.require_fastq=gaaf.assemblers.mira.Mira-class.html#require_fastq,Variable gaaf.assemblers.spades.Spades.require_fastq=gaaf.assemblers.spades.Spades-class.html#require_fastq,Variable gaaf.assemblers.ssake.Ssake.require_fastq=gaaf.assemblers.ssake.Ssake-class.html#require_fastq,Variable gaaf.assemblers.velvet.Velvet.require_fastq=gaaf.assemblers.velvet.Velvet-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.abyss.Abyss.require_fastq=gaaf.unit_tests.assemblers.abyss.Abyss-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.edena.Edena.require_fastq=gaaf.unit_tests.assemblers.edena.Edena-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.masurca.Masurca.require_fastq=gaaf.unit_tests.assemblers.masurca.Masurca-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.minia.Minia.require_fastq=gaaf.unit_tests.assemblers.minia.Minia-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.mira.Mira.require_fastq=gaaf.unit_tests.assemblers.mira.Mira-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.spades.Spades.require_fastq=gaaf.unit_tests.assemblers.spades.Spades-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.ssake.Ssake.require_fastq=gaaf.unit_tests.assemblers.ssake.Ssake-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.velvet.Velvet.require_fastq=gaaf.unit_tests.assemblers.velvet.Velvet-class.html#require_fastq"><a title="gaaf.assemblers.abyss.Abyss.require_fastq
+gaaf.assemblers.edena.Edena.require_fastq
+gaaf.assemblers.masurca.Masurca.require_fastq
+gaaf.assemblers.minia.Minia.require_fastq
+gaaf.assemblers.mira.Mira.require_fastq
+gaaf.assemblers.spades.Spades.require_fastq
+gaaf.assemblers.ssake.Ssake.require_fastq
+gaaf.assemblers.velvet.Velvet.require_fastq
+gaaf.unit_tests.assemblers.abyss.Abyss.require_fastq
+gaaf.unit_tests.assemblers.edena.Edena.require_fastq
+gaaf.unit_tests.assemblers.masurca.Masurca.require_fastq
+gaaf.unit_tests.assemblers.minia.Minia.require_fastq
+gaaf.unit_tests.assemblers.mira.Mira.require_fastq
+gaaf.unit_tests.assemblers.spades.Spades.require_fastq
+gaaf.unit_tests.assemblers.ssake.Ssake.require_fastq
+gaaf.unit_tests.assemblers.velvet.Velvet.require_fastq" class="py-name" href="#" onclick="return doclink('link-0', 'require_fastq', 'link-0');">require_fastq</a></tt><tt class="py-op">=</tt><tt class="py-name">False</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Variable gaaf.assemblers.abyss.Abyss.python_threads=gaaf.assemblers.abyss.Abyss-class.html#python_threads,Variable gaaf.assemblers.edena.Edena.python_threads=gaaf.assemblers.edena.Edena-class.html#python_threads,Variable gaaf.assemblers.masurca.Masurca.python_threads=gaaf.assemblers.masurca.Masurca-class.html#python_threads,Variable gaaf.assemblers.minia.Minia.python_threads=gaaf.assemblers.minia.Minia-class.html#python_threads,Variable gaaf.assemblers.mira.Mira.python_threads=gaaf.assemblers.mira.Mira-class.html#python_threads,Variable gaaf.assemblers.spades.Spades.python_threads=gaaf.assemblers.spades.Spades-class.html#python_threads,Variable gaaf.assemblers.ssake.Ssake.python_threads=gaaf.assemblers.ssake.Ssake-class.html#python_threads,Variable gaaf.assemblers.velvet.Velvet.python_threads=gaaf.assemblers.velvet.Velvet-class.html#python_threads,Variable gaaf.read_generators.grinder.Grinder.python_threads=gaaf.read_generators.grinder.Grinder-class.html#python_threads,Variable gaaf.unit_tests.assemblers.abyss.Abyss.python_threads=gaaf.unit_tests.assemblers.abyss.Abyss-class.html#python_threads,Variable gaaf.unit_tests.assemblers.edena.Edena.python_threads=gaaf.unit_tests.assemblers.edena.Edena-class.html#python_threads,Variable gaaf.unit_tests.assemblers.masurca.Masurca.python_threads=gaaf.unit_tests.assemblers.masurca.Masurca-class.html#python_threads,Variable gaaf.unit_tests.assemblers.minia.Minia.python_threads=gaaf.unit_tests.assemblers.minia.Minia-class.html#python_threads,Variable gaaf.unit_tests.assemblers.mira.Mira.python_threads=gaaf.unit_tests.assemblers.mira.Mira-class.html#python_threads,Variable gaaf.unit_tests.assemblers.spades.Spades.python_threads=gaaf.unit_tests.assemblers.spades.Spades-class.html#python_threads,Variable gaaf.unit_tests.assemblers.ssake.Ssake.python_threads=gaaf.unit_tests.assemblers.ssake.Ssake-class.html#python_threads,Variable gaaf.unit_tests.assemblers.velvet.Velvet.python_threads=gaaf.unit_tests.assemblers.velvet.Velvet-class.html#python_threads,Variable gaaf.unit_tests.read_generators.grinder.Grinder.python_threads=gaaf.unit_tests.read_generators.grinder.Grinder-class.html#python_threads"><a title="gaaf.assemblers.abyss.Abyss.python_threads
+gaaf.assemblers.edena.Edena.python_threads
+gaaf.assemblers.masurca.Masurca.python_threads
+gaaf.assemblers.minia.Minia.python_threads
+gaaf.assemblers.mira.Mira.python_threads
+gaaf.assemblers.spades.Spades.python_threads
+gaaf.assemblers.ssake.Ssake.python_threads
+gaaf.assemblers.velvet.Velvet.python_threads
+gaaf.read_generators.grinder.Grinder.python_threads
+gaaf.unit_tests.assemblers.abyss.Abyss.python_threads
+gaaf.unit_tests.assemblers.edena.Edena.python_threads
+gaaf.unit_tests.assemblers.masurca.Masurca.python_threads
+gaaf.unit_tests.assemblers.minia.Minia.python_threads
+gaaf.unit_tests.assemblers.mira.Mira.python_threads
+gaaf.unit_tests.assemblers.spades.Spades.python_threads
+gaaf.unit_tests.assemblers.ssake.Ssake.python_threads
+gaaf.unit_tests.assemblers.velvet.Velvet.python_threads
+gaaf.unit_tests.read_generators.grinder.Grinder.python_threads" class="py-name" href="#" onclick="return doclink('link-1', 'python_threads', 'link-1');">python_threads</a></tt><tt class="py-op">=</tt><tt class="py-name">False</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">     </tt>
+<a name="Spades.__init__"></a><div id="Spades.__init__-def"><a name="L36"></a><tt class="py-lineno">36</tt> <a class="py-toggle" href="#" id="Spades.__init__-toggle" onclick="return toggle('Spades.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.assemblers.spades.Spades-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">technology</tt><tt class="py-op">,</tt> <tt class="py-param">exp</tt><tt class="py-op">,</tt> <tt class="py-param">out</tt><tt class="py-op">,</tt> <tt class="py-param">sample</tt><tt class="py-op">,</tt><tt class="py-param">read_len</tt><tt class="py-op">,</tt><tt class="py-param">file_format</tt><tt class="py-op">,</tt><tt class="py-param">k</tt><tt class="py-op">,</tt><tt class="py-param">t</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Spades.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Spades.__init__-expanded"><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-docstring">        technology : str</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-docstring">            the sequencing technology, e.g. Illumina</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt class="py-docstring">        exp : str</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-docstring">            The Experiment Name</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt class="py-docstring">        out : str</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt class="py-docstring">            The output directory to store the results and where the reads </tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">            are stored</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">        sample : str</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">            Sample Name (assembly name)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">        read_len : int</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-docstring">            The average reads length </tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">        file_format : str</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">            the format of the reads, generally fa or fq </tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">        k : int</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">            the k-mer number used in k-based assemblers</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-docstring">        t : int</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-docstring">           Number of threads</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">         </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">         </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tech</tt><tt class="py-op">=</tt><tt id="link-2" class="py-name" targets="Variable gaaf.assembly.Assembly.technology=gaaf.assembly.Assembly-class.html#technology"><a title="gaaf.assembly.Assembly.technology" class="py-name" href="#" onclick="return doclink('link-2', 'technology', 'link-2');">technology</a></tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">=</tt><tt class="py-name">exp</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">=</tt><tt class="py-name">out</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">=</tt><tt class="py-name">sample</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Variable gaaf.read_generators.grinder.Grinder.read_len=gaaf.read_generators.grinder.Grinder-class.html#read_len,Variable gaaf.unit_tests.read_generators.grinder.Grinder.read_len=gaaf.unit_tests.read_generators.grinder.Grinder-class.html#read_len"><a title="gaaf.read_generators.grinder.Grinder.read_len
+gaaf.unit_tests.read_generators.grinder.Grinder.read_len" class="py-name" href="#" onclick="return doclink('link-3', 'read_len', 'link-3');">read_len</a></tt><tt class="py-op">=</tt><tt id="link-4" class="py-name"><a title="gaaf.read_generators.grinder.Grinder.read_len
+gaaf.unit_tests.read_generators.grinder.Grinder.read_len" class="py-name" href="#" onclick="return doclink('link-4', 'read_len', 'link-3');">read_len</a></tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Variable gaaf.assembly.Assembly.file_format=gaaf.assembly.Assembly-class.html#file_format,Variable gaaf.evaluation.Evaluation.file_format=gaaf.evaluation.Evaluation-class.html#file_format,Variable gaaf.features.quast.Quast.file_format=gaaf.features.quast.Quast-class.html#file_format,Variable gaaf.unit_tests.evaluation.Evaluation.file_format=gaaf.unit_tests.evaluation.Evaluation-class.html#file_format,Variable gaaf.unit_tests.features.quast.Quast.file_format=gaaf.unit_tests.features.quast.Quast-class.html#file_format"><a title="gaaf.assembly.Assembly.file_format
+gaaf.evaluation.Evaluation.file_format
+gaaf.features.quast.Quast.file_format
+gaaf.unit_tests.evaluation.Evaluation.file_format
+gaaf.unit_tests.features.quast.Quast.file_format" class="py-name" href="#" onclick="return doclink('link-5', 'file_format', 'link-5');">file_format</a></tt><tt class="py-op">=</tt><tt id="link-6" class="py-name"><a title="gaaf.assembly.Assembly.file_format
+gaaf.evaluation.Evaluation.file_format
+gaaf.features.quast.Quast.file_format
+gaaf.unit_tests.evaluation.Evaluation.file_format
+gaaf.unit_tests.features.quast.Quast.file_format" class="py-name" href="#" onclick="return doclink('link-6', 'file_format', 'link-5');">file_format</a></tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Variable gaaf.assembly.Assembly.k=gaaf.assembly.Assembly-class.html#k"><a title="gaaf.assembly.Assembly.k" class="py-name" href="#" onclick="return doclink('link-7', 'k', 'link-7');">k</a></tt><tt class="py-op">=</tt><tt id="link-8" class="py-name"><a title="gaaf.assembly.Assembly.k" class="py-name" href="#" onclick="return doclink('link-8', 'k', 'link-7');">k</a></tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Variable gaaf.assembly.Assembly.t=gaaf.assembly.Assembly-class.html#t,Variable gaaf.read_generators.pirs.Pirs.t=gaaf.read_generators.pirs.Pirs-class.html#t"><a title="gaaf.assembly.Assembly.t
+gaaf.read_generators.pirs.Pirs.t" class="py-name" href="#" onclick="return doclink('link-9', 't', 'link-9');">t</a></tt><tt class="py-op">=</tt><tt id="link-10" class="py-name"><a title="gaaf.assembly.Assembly.t
+gaaf.read_generators.pirs.Pirs.t" class="py-name" href="#" onclick="return doclink('link-10', 't', 'link-9');">t</a></tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">            <tt class="py-comment">#Using the shared logging system</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">basicConfig</tt><tt class="py-op">(</tt><tt class="py-name">format</tt><tt class="py-op">=</tt><tt class="py-string">'%(asctime)s %(message)s'</tt><tt class="py-op">,</tt><tt class="py-name">filename</tt><tt class="py-op">=</tt> <tt class="py-name">out</tt><tt class="py-op">+</tt> <tt class="py-name">exp</tt> <tt class="py-op">+</tt> <tt class="py-string">'.log'</tt><tt class="py-op">,</tt><tt class="py-name">level</tt><tt class="py-op">=</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">DEBUG</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-11" class="py-name"><a title="gaaf.assembly.Assembly.file_format
+gaaf.evaluation.Evaluation.file_format
+gaaf.features.quast.Quast.file_format
+gaaf.unit_tests.evaluation.Evaluation.file_format
+gaaf.unit_tests.features.quast.Quast.file_format" class="py-name" href="#" onclick="return doclink('link-11', 'file_format', 'link-5');">file_format</a></tt><tt class="py-op">==</tt><tt class="py-string">"fa"</tt> <tt class="py-keyword">or</tt> <tt id="link-12" class="py-name"><a title="gaaf.assembly.Assembly.file_format
+gaaf.evaluation.Evaluation.file_format
+gaaf.features.quast.Quast.file_format
+gaaf.unit_tests.evaluation.Evaluation.file_format
+gaaf.unit_tests.features.quast.Quast.file_format" class="py-name" href="#" onclick="return doclink('link-12', 'file_format', 'link-5');">file_format</a></tt><tt class="py-op">==</tt><tt class="py-string">"fasta"</tt> <tt class="py-keyword">or</tt> <tt id="link-13" class="py-name"><a title="gaaf.assembly.Assembly.file_format
+gaaf.evaluation.Evaluation.file_format
+gaaf.features.quast.Quast.file_format
+gaaf.unit_tests.evaluation.Evaluation.file_format
+gaaf.unit_tests.features.quast.Quast.file_format" class="py-name" href="#" onclick="return doclink('link-13', 'file_format', 'link-5');">file_format</a></tt><tt class="py-op">==</tt><tt class="py-string">"fna"</tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tipo</tt><tt class="py-op">=</tt><tt class="py-string">"fasta"</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tipo</tt><tt class="py-op">=</tt><tt class="py-string">"fastq"</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/spades/"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-string">"mkdir "</tt><tt class="py-op">+</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/spades/"</tt><tt class="py-op">)</tt>   </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-string">"mkdir "</tt><tt class="py-op">+</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/spades/"</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-name">IOError</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">            <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">             </tt>
+<a name="Spades.run"></a><div id="Spades.run-def"><a name="L82"></a><tt class="py-lineno">82</tt> <a class="py-toggle" href="#" id="Spades.run-toggle" onclick="return toggle('Spades.run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.assemblers.spades.Spades-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Spades.run-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Spades.run-expanded"><a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line"><tt class="py-docstring">        Run the assembly. By the moment, it only works with Illumina.</tt> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">                 </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line">            <tt id="link-14" class="py-name" targets="Method gaaf.features.quast.Quast.command()=gaaf.features.quast.Quast-class.html#command,Method gaaf.read_generators.grinder.Grinder.command()=gaaf.read_generators.grinder.Grinder-class.html#command,Method gaaf.read_generators.pirs.Pirs.command()=gaaf.read_generators.pirs.Pirs-class.html#command,Method gaaf.unit_tests.features.quast.Quast.command()=gaaf.unit_tests.features.quast.Quast-class.html#command,Method gaaf.unit_tests.read_generators.grinder.Grinder.command()=gaaf.unit_tests.read_generators.grinder.Grinder-class.html#command"><a title="gaaf.features.quast.Quast.command
+gaaf.read_generators.grinder.Grinder.command
+gaaf.read_generators.pirs.Pirs.command
+gaaf.unit_tests.features.quast.Quast.command
+gaaf.unit_tests.read_generators.grinder.Grinder.command" class="py-name" href="#" onclick="return doclink('link-14', 'command', 'link-14');">command</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"python3 assemblers/spades/bin/spades.py -k "</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="gaaf.assembly.Assembly.k" class="py-name" href="#" onclick="return doclink('link-15', 'k', 'link-7');">k</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">" -1 "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"_1."</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="gaaf.assembly.Assembly.file_format
+gaaf.evaluation.Evaluation.file_format
+gaaf.features.quast.Quast.file_format
+gaaf.unit_tests.evaluation.Evaluation.file_format
+gaaf.unit_tests.features.quast.Quast.file_format" class="py-name" href="#" onclick="return doclink('link-16', 'file_format', 'link-5');">file_format</a></tt><tt class="py-op">+</tt><tt class="py-string">" -2 "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"_2."</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="gaaf.assembly.Assembly.file_format
+gaaf.evaluation.Evaluation.file_format
+gaaf.features.quast.Quast.file_format
+gaaf.unit_tests.evaluation.Evaluation.file_format
+gaaf.unit_tests.features.quast.Quast.file_format" class="py-name" href="#" onclick="return doclink('link-17', 'file_format', 'link-5');">file_format</a></tt><tt class="py-op">+</tt><tt class="py-string">" --only-assembler -o "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/spades/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">" | tee -a "</tt> <tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">+</tt> <tt class="py-string">".log"</tt> </tt>
+<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="gaaf.features.quast.Quast.command
+gaaf.read_generators.grinder.Grinder.command
+gaaf.read_generators.pirs.Pirs.command
+gaaf.unit_tests.features.quast.Quast.command
+gaaf.unit_tests.read_generators.grinder.Grinder.command" class="py-name" href="#" onclick="return doclink('link-18', 'command', 'link-14');">command</a></tt><tt class="py-op">)</tt>             </tt>
+<a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-name">IOError</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno">92</tt>  <tt class="py-line">            <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L93"></a><tt class="py-lineno">93</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Framework</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed May  8 11:50:22 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

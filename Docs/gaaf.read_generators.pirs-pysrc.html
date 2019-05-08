@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>gaaf.read_generators.pirs</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Framework</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="gaaf-module.html">Package&nbsp;gaaf</a> ::
+        <a href="gaaf.read_generators-module.html">Package&nbsp;read_generators</a> ::
+        Module&nbsp;pirs
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="gaaf.read_generators.pirs-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="gaaf.read_generators.pirs-module.html">Module gaaf.read_generators.pirs</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">Created on Tue Feb  5 09:17:54 2019</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">@author: Guilherme Neumann</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">threading</tt> <tt class="py-keyword">as</tt> <tt class="py-name">thr</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Bio</tt> <tt class="py-keyword">import</tt> <tt class="py-name">SeqIO</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">multiprocessing</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="Pirs"></a><div id="Pirs-def"><a name="L14"></a><tt class="py-lineno"> 14</tt> <a class="py-toggle" href="#" id="Pirs-toggle" onclick="return toggle('Pirs');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="gaaf.read_generators.pirs.Pirs-class.html">Pirs</a><tt class="py-op">:</tt> </tt>
+</div><div id="Pirs-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Pirs-expanded"><a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">    <tt class="py-docstring">"""Class responsable for calling pIRS and generating its reads</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">    Attributes</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">    ----------</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">    parameters : dict</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">        A dictionary containing all the generation parameters</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">    file : list</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">        The list of the samples generated</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    Methods</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">    -------</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    fasta2fastq(file,ql,name='')</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">        Converts a fasta file to a fastq file</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    command(sample)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">        Run the Pirs command to the sample</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">     </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt id="link-0" class="py-name" targets="Variable gaaf.assembly.Assembly.t=gaaf.assembly.Assembly-class.html#t,Variable gaaf.read_generators.pirs.Pirs.t=gaaf.read_generators.pirs.Pirs-class.html#t"><a title="gaaf.assembly.Assembly.t
+gaaf.read_generators.pirs.Pirs.t" class="py-name" href="#" onclick="return doclink('link-0', 't', 'link-0');">t</a></tt><tt class="py-op">=</tt><tt class="py-name">multiprocessing</tt><tt class="py-op">.</tt><tt class="py-name">cpu_count</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">2</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Variable gaaf.read_generators.pirs.Pirs.parameters=gaaf.read_generators.pirs.Pirs-class.html#parameters"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-1', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">=</tt><tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt id="link-2" class="py-name" targets="Variable gaaf.read_generators.grinder.Grinder.files=gaaf.read_generators.grinder.Grinder-class.html#files,Variable gaaf.read_generators.pirs.Pirs.files=gaaf.read_generators.pirs.Pirs-class.html#files,Variable gaaf.unit_tests.read_generators.grinder.Grinder.files=gaaf.unit_tests.read_generators.grinder.Grinder-class.html#files"><a title="gaaf.read_generators.grinder.Grinder.files
+gaaf.read_generators.pirs.Pirs.files
+gaaf.unit_tests.read_generators.grinder.Grinder.files" class="py-name" href="#" onclick="return doclink('link-2', 'files', 'link-2');">files</a></tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">     </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">     </tt>
+<a name="Pirs.__init__"></a><div id="Pirs.__init__-def"><a name="L37"></a><tt class="py-lineno"> 37</tt> <a class="py-toggle" href="#" id="Pirs.__init__-toggle" onclick="return toggle('Pirs.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.read_generators.pirs.Pirs-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">exp</tt><tt class="py-op">,</tt><tt class="py-param">out</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pirs.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Pirs.__init__-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">        exp : str</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">            The Experiment Name</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">        out : str</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">            The output directory to store the results and where the reads </tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">            are stored</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">         </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">=</tt><tt class="py-name">exp</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">=</tt><tt class="py-name">out</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">basicConfig</tt><tt class="py-op">(</tt><tt class="py-name">format</tt><tt class="py-op">=</tt><tt class="py-string">'%(asctime)s %(message)s'</tt><tt class="py-op">,</tt><tt class="py-name">filename</tt><tt class="py-op">=</tt> <tt class="py-name">out</tt><tt class="py-op">+</tt> <tt class="py-name">exp</tt> <tt class="py-op">+</tt> <tt class="py-string">'.log'</tt><tt class="py-op">,</tt><tt class="py-name">level</tt><tt class="py-op">=</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">DEBUG</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">" Calling pirs tool"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">         </tt>
+<a name="Pirs.fasta2fastq"></a><div id="Pirs.fasta2fastq-def"><a name="L53"></a><tt class="py-lineno"> 53</tt> <a class="py-toggle" href="#" id="Pirs.fasta2fastq-toggle" onclick="return toggle('Pirs.fasta2fastq');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.read_generators.pirs.Pirs-class.html#fasta2fastq">fasta2fastq</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">file</tt><tt class="py-op">,</tt><tt class="py-param">ql</tt><tt class="py-op">,</tt><tt class="py-param">name</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">        It converts a fasta file to a fastq file.</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        file : str</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">            file name, including format, e.g. 'reads_1.fa'</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">        ql : int</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">            phred number</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">         </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">         </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">name</tt><tt class="py-op">!=</tt><tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">                <tt class="py-name">fq</tt><tt class="py-op">=</tt><tt class="py-name">name</tt><tt class="py-op">+</tt><tt class="py-string">".fastq"</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                <tt class="py-name">fq</tt><tt class="py-op">=</tt><tt class="py-name">file</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">"."</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                <tt class="py-name">fq</tt><tt class="py-op">=</tt><tt class="py-name">fq</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">".fastq"</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt class="py-keyword">with</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">file</tt><tt class="py-op">,</tt> <tt class="py-string">"r"</tt><tt class="py-op">)</tt> <tt class="py-keyword">as</tt> <tt class="py-name">fasta</tt><tt class="py-op">,</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">fq</tt><tt class="py-op">,</tt> <tt class="py-string">"w"</tt><tt class="py-op">)</tt> <tt class="py-keyword">as</tt> <tt class="py-name">fastq</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">record</tt> <tt class="py-keyword">in</tt> <tt class="py-name">SeqIO</tt><tt class="py-op">.</tt><tt class="py-name">parse</tt><tt class="py-op">(</tt><tt class="py-name">fasta</tt><tt class="py-op">,</tt> <tt class="py-string">"fasta"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                    <tt class="py-name">record</tt><tt class="py-op">.</tt><tt class="py-name">letter_annotations</tt><tt class="py-op">[</tt><tt class="py-string">"phred_quality"</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-3" class="py-name" targets="Variable gaaf.read_generators.grinder.Grinder.ql=gaaf.read_generators.grinder.Grinder-class.html#ql,Variable gaaf.unit_tests.read_generators.grinder.Grinder.ql=gaaf.unit_tests.read_generators.grinder.Grinder-class.html#ql"><a title="gaaf.read_generators.grinder.Grinder.ql
+gaaf.unit_tests.read_generators.grinder.Grinder.ql" class="py-name" href="#" onclick="return doclink('link-3', 'ql', 'link-3');">ql</a></tt><tt class="py-op">]</tt> <tt class="py-op">*</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">record</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                    <tt class="py-name">SeqIO</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">record</tt><tt class="py-op">,</tt> <tt class="py-name">fastq</tt><tt class="py-op">,</tt> <tt class="py-string">"fastq"</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-name">fasta</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">            <tt class="py-name">fastq</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">         </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                    <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-name">IOError</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                    <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                     </tt>
+<a name="Pirs.command"></a><div id="Pirs.command-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="Pirs.command-toggle" onclick="return toggle('Pirs.command');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.read_generators.pirs.Pirs-class.html#command">command</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">sample</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pirs.command-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Pirs.command-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        Run the pIRS command.</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">        sample : str</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">            The sample name. It names the read files.</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">         </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">"."</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sample</tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">            <tt class="py-name">p</tt><tt class="py-op">=</tt><tt class="py-name">sample</tt><tt class="py-op">.</tt><tt class="py-name">find</tt><tt class="py-op">(</tt><tt class="py-string">"."</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">            <tt class="py-name">sample</tt><tt class="py-op">=</tt><tt class="py-name">sample</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-name">p</tt><tt class="py-op">]</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">         </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-4', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'ref'</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-string">'There`s no reference file attached'</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-string">"mkdir "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads"</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-name">exists1</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/phred_base_1.fa"</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-name">exists2</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/phred_base_2.fa"</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">            <tt class="py-comment">#In pIRS one can not specify a unique phred value. For that reason,</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">            <tt class="py-comment">#here we convert it.</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-string">"phred"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sample</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">exists1</tt> <tt class="py-keyword">or</tt> <tt class="py-keyword">not</tt> <tt class="py-name">exists2</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                    <tt id="link-5" class="py-name" targets="Method gaaf.features.quast.Quast.command()=gaaf.features.quast.Quast-class.html#command,Method gaaf.read_generators.grinder.Grinder.command()=gaaf.read_generators.grinder.Grinder-class.html#command,Method gaaf.read_generators.pirs.Pirs.command()=gaaf.read_generators.pirs.Pirs-class.html#command,Method gaaf.unit_tests.features.quast.Quast.command()=gaaf.unit_tests.features.quast.Quast-class.html#command,Method gaaf.unit_tests.read_generators.grinder.Grinder.command()=gaaf.unit_tests.read_generators.grinder.Grinder-class.html#command"><a title="gaaf.features.quast.Quast.command
+gaaf.read_generators.grinder.Grinder.command
+gaaf.read_generators.pirs.Pirs.command
+gaaf.unit_tests.features.quast.Quast.command
+gaaf.unit_tests.read_generators.grinder.Grinder.command" class="py-name" href="#" onclick="return doclink('link-5', 'command', 'link-5');">command</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"pirs simulate -x "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-6', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'coverage'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" -l "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-7', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'read_len'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" -v "</tt> <tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-8', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'var'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">" -m "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-9', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'read_len'</tt><tt class="py-op">]</tt><tt class="py-op">*</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads -t "</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="gaaf.assembly.Assembly.t
+gaaf.read_generators.pirs.Pirs.t" class="py-name" href="#" onclick="return doclink('link-10', 't', 'link-0');">t</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">" -s phred_base "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-11', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'ref'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">" | tee -a "</tt> <tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">+</tt> <tt class="py-string">".log"</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="gaaf.features.quast.Quast.command
+gaaf.read_generators.grinder.Grinder.command
+gaaf.read_generators.pirs.Pirs.command
+gaaf.unit_tests.features.quast.Quast.command
+gaaf.unit_tests.read_generators.grinder.Grinder.command" class="py-name" href="#" onclick="return doclink('link-12', 'command', 'link-5');">command</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                <tt class="py-name">thr1</tt><tt class="py-op">=</tt><tt class="py-name">thr</tt><tt class="py-op">.</tt><tt class="py-name">Thread</tt><tt class="py-op">(</tt><tt class="py-name">target</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method gaaf.read_generators.pirs.Pirs.fasta2fastq()=gaaf.read_generators.pirs.Pirs-class.html#fasta2fastq,Method gaaf.unit_tests.unit_tests.fasta2fastq()=gaaf.unit_tests.unit_tests-class.html#fasta2fastq"><a title="gaaf.read_generators.pirs.Pirs.fasta2fastq
+gaaf.unit_tests.unit_tests.fasta2fastq" class="py-name" href="#" onclick="return doclink('link-13', 'fasta2fastq', 'link-13');">fasta2fastq</a></tt><tt class="py-op">,</tt><tt class="py-name">args</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/phred_base_1.fa"</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-14', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'phred'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/"</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"_1"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-name">thr2</tt><tt class="py-op">=</tt><tt class="py-name">thr</tt><tt class="py-op">.</tt><tt class="py-name">Thread</tt><tt class="py-op">(</tt><tt class="py-name">target</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.fasta2fastq
+gaaf.unit_tests.unit_tests.fasta2fastq" class="py-name" href="#" onclick="return doclink('link-15', 'fasta2fastq', 'link-13');">fasta2fastq</a></tt><tt class="py-op">,</tt><tt class="py-name">args</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/phred_base_2.fa"</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-16', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'phred'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads/"</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"_2"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                <tt class="py-name">thr1</tt><tt class="py-op">.</tt><tt class="py-name">daemon</tt><tt class="py-op">=</tt><tt class="py-name">True</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                <tt class="py-name">thr1</tt><tt class="py-op">.</tt><tt class="py-name">start</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                <tt class="py-name">thr2</tt><tt class="py-op">.</tt><tt class="py-name">daemon</tt><tt class="py-op">=</tt><tt class="py-name">True</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                <tt class="py-name">thr2</tt><tt class="py-op">.</tt><tt class="py-name">start</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-keyword">while</tt><tt class="py-op">(</tt><tt class="py-name">thr1</tt><tt class="py-op">.</tt><tt class="py-name">is_alive</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">thr2</tt><tt class="py-op">.</tt><tt class="py-name">is_alive</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                    <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">sleep</tt><tt class="py-op">(</tt><tt class="py-number">.10</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                         </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                <tt id="link-17" class="py-name"><a title="gaaf.features.quast.Quast.command
+gaaf.read_generators.grinder.Grinder.command
+gaaf.read_generators.pirs.Pirs.command
+gaaf.unit_tests.features.quast.Quast.command
+gaaf.unit_tests.read_generators.grinder.Grinder.command" class="py-name" href="#" onclick="return doclink('link-17', 'command', 'link-5');">command</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"pirs simulate -x "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-18', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'coverage'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" -l "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-19', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'read_len'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" -v "</tt> <tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-20', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'var'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">" -m "</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-21', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'read_len'</tt><tt class="py-op">]</tt><tt class="py-op">*</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">" --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-string">"reads -t "</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="gaaf.assembly.Assembly.t
+gaaf.read_generators.pirs.Pirs.t" class="py-name" href="#" onclick="return doclink('link-22', 't', 'link-0');">t</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">" -s "</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt> <tt class="py-op">+</tt> <tt class="py-string">" "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="gaaf.read_generators.pirs.Pirs.parameters" class="py-name" href="#" onclick="return doclink('link-23', 'parameters', 'link-1');">parameters</a></tt><tt class="py-op">[</tt><tt class="py-string">'ref'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">" | tee -a "</tt> <tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">out</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">+</tt> <tt class="py-string">".log"</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt id="link-24" class="py-name"><a title="gaaf.features.quast.Quast.command
+gaaf.read_generators.grinder.Grinder.command
+gaaf.read_generators.pirs.Pirs.command
+gaaf.unit_tests.features.quast.Quast.command
+gaaf.unit_tests.read_generators.grinder.Grinder.command" class="py-name" href="#" onclick="return doclink('link-24', 'command', 'link-5');">command</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="gaaf.read_generators.grinder.Grinder.files
+gaaf.read_generators.pirs.Pirs.files
+gaaf.unit_tests.read_generators.grinder.Grinder.files" class="py-name" href="#" onclick="return doclink('link-25', 'files', 'link-2');">files</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">sample</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-name">IOError</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >Framework</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed May  8 11:50:22 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
