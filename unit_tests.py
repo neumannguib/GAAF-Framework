@@ -7,9 +7,8 @@ Created on Thu Feb 14 14:22:39 2019
 import os
 import logging
 from Bio import SeqIO
-import grinder
-import pirs
-import evaluation
+from read_generators import grinder
+from read_generators import pirs
 from features import quast
 import kmergenie as kmer
 from assemblers import spades as sp
@@ -24,7 +23,6 @@ from assemblers import bcalm as bi
 import reads_generator as gen
 import pandas as pd
 import stats
-import alf_sim
 
 class unit_tests:
     def __init__(self):
@@ -51,7 +49,7 @@ class unit_tests:
     def abyss(self,exp,read_len,k):
         try:
             logging.info(" Abyss:")
-            genome=ab.Abyss("Illumina",exp,"tests/","test1",read_len,'fa',k,16)
+            genome=ab.Abyss("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/","test1",read_len,'fa',k,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -59,7 +57,7 @@ class unit_tests:
     def spades(self,exp, read_len,k):
         try:
             logging.info(" Spades:")
-            genome=sp.Spades("Illumina",exp,"tests/","test1",read_len,'fa',k,16)
+            genome=sp.Spades("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/","test1",read_len,'fa',k,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -67,7 +65,7 @@ class unit_tests:
     def velvet(self,exp, read_len,k):
         try:
             logging.info(" Velvet:")
-            genome=vb.Velvet("Illumina",exp,"tests/","test1",read_len,'fa',k,16)
+            genome=vb.Velvet("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/","test1",read_len,'fa',k,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -75,7 +73,7 @@ class unit_tests:
     def edena(self,exp,read_len,k):
         try:
             logging.info(" Edena:")
-            genome=ed.Edena("Illumina",exp,"tests/","test1",read_len,'fa',k,16)
+            genome=ed.Edena("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/","test1",read_len,'fa',k,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -83,7 +81,7 @@ class unit_tests:
     def ssake(self,exp, read_len):
         try:
             logging.info(" Ssake:")
-            genome=ss.Ssake("Illumina",exp,"tests/",'test1',read_len,'fa',None,16)
+            genome=ss.Ssake("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/",'test1',read_len,'fa',None,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -92,7 +90,7 @@ class unit_tests:
         try:
             os.system("mkdir tests/assemblies/masurca")
             logging.info(" Masurca:")
-            genome=ma.Masurca("Illumina",exp,"tests/","test1",read_len,"fastq",k,16)
+            genome=ma.Masurca("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/","phred_test",read_len,"fastq",k,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -101,7 +99,7 @@ class unit_tests:
         try:
             os.system("mkdir tests/assemblies/mira")
             logging.info(" Mira:")
-            genome=mi.Mira("Illumina",exp,"tests/","test1",read_len,"fastq",k,16)
+            genome=mi.Mira("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/","phred_test",read_len,"fastq",k,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -110,7 +108,7 @@ class unit_tests:
         try:
             os.system("mkdir tests/assemblies/minia")
             logging.info(" Minia:")
-            genome=minia.Minia("Illumina",exp,"tests/","test1",read_len,"fastq",k,16)
+            genome=minia.Minia("Illumina",exp,"/home/gneumann/gaaf/unit_tests/tests/","test1",read_len,"fa",k,16)
             genome.run()
         except TypeError:
             logging.error(TypeError)
@@ -126,7 +124,7 @@ class unit_tests:
     def Grinder(path, reference, exp):
         try:
             logging.info(" Grinder:")
-            reads = grinder.Grinder(path,reference, exp,"tests/")
+            reads = grinder.Grinder(path,reference, exp,"/home/gneumann/gaaf/unit_tests/tests/")
             reads.coverage = '200'
             reads.ql = '40'
             reads.var='0'
@@ -150,8 +148,8 @@ class unit_tests:
     def Reads_Generator(self, exp, out):
         try:
             logging.info(" Reads_Generator:")
-            reads=gen.Reads_generator(exp,out)
-            reads.generator("pIRS",{"coverage":30,"read_len":[100,150],"ref":"teste.fasta",
+            reads=gen.Reads_generation_Control(exp,out)
+            reads.generate("pIRS",{"coverage":30,"read_len":[100,150],"ref":"teste.fasta",
                                     "phred":40,"mutation_rate":0,"var":0})
             logging.info("Reads generated")
         except TypeError:
@@ -160,8 +158,8 @@ class unit_tests:
     def Quast(self,path, reference, exp,):
         try:
             logging.info(" Quast:")
-            q=quast.Quast(path, reference, exp,"/home/gneumann/gaef/unit_tests/tests/")
-            q.command('test1',15,'spades')
+            q=quast.Quast(path, reference, exp,"/home/gneumann/gaaf/unit_tests/tests/")
+            q.run('test1',15,'spades')
             logging.info(" Metrics generated")
         except TypeError:
             logging.error(TypeError)
@@ -171,7 +169,7 @@ class unit_tests:
             df={'spades': [1,2,5,6,7,6,9,8,7,5], 'abyss': [3,3,6,4,6,7,7,4,3,9],'edena': [0,32,9,6,4,4,9,8,8,7], 'ssake': [5,5,6,8,6,8,7,4,3,9]}
             df = pd.DataFrame(data=df)
             logging.info(" Stats:")
-            ob=stats.Statistics(df, exp,"Reads len","N50","tests/",[50,100,150,200,250,300,350,400,450,500])
+            ob=stats.Statistics(df, exp,"Reads len","N50","/home/gneumann/gaaf/unit_tests/tests/",[50,100,150,200,250,300,350,400,450,500])
             ob.normality()
             ob.oneway()
             ob.kruskal()
@@ -216,13 +214,13 @@ class unit_tests:
         print(metrics)
         return metrics
     
-    def Alf(self, out, reference, exp):
+    '''def Alf(self, out, reference, exp):
         try:
             logging.info(" Alf:")
             reads = alf_sim.ALF(exp,reference,out,"test")
             reads.duplication(0.01)
             logging.info("Duplication tested")
         except TypeError:
-            logging.error(TypeError)
+            logging.error(TypeError)'''
     
     

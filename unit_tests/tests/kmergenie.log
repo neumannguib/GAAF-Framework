@@ -1,0 +1,17 @@
+running histogram estimation
+Setting maximum kmer length to: 100 bp
+computing histograms (from k=21 to k=91): 21 61 31 81 71 51 41 91 estimation of the best k so far: 71
+
+ntCard wall-clock time over all k values: 5 seconds 
+fitting model to histograms to estimate best k
+refining estimation around [65; 77], with a step of 2
+running histogram estimation
+Setting maximum kmer length to: 100 bp
+computing histograms (from k=67 to k=77): 71 67 77 75 69 73 table of predicted num. of genomic k-mers: tests/assemblies/kmer/test1.dat
+recommended coverage cut-off for best k: 1
+best k: 71
+
+ntCard wall-clock time over all k values: 5 seconds 
+fitting model to histograms to estimate best k
+Testing kmergenie
+71

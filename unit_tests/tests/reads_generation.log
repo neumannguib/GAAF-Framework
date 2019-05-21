@@ -1,0 +1,130 @@
+[pIRS] Program:        pirs (Profile-based Illumina pair-end Reads Simulator)
+[pIRS] Version:        2.0.0
+[pIRS] Author:         Jianying Yuan (BGI-Shenzhen)
+[pIRS] Contact:        yuanjianying@genomics.org.cn
+[pIRS] Compile Date:   Feb 22 2019 time: 12:45:56
+[pIRS] Current time:   Tue May 21 07:50:52 2019
+[pIRS] Command line:   pirs simulate -x 30 -l 150 -v 0 -m 300 --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o /home/gneumann/gaaf/unit_tests/tests/reads -t 7 -s read_len_100 teste.fasta
+[pIRS] 
+[pIRS] 
+[pIRS] Beginning simulation with the following parameters:
+[pIRS] 
+[pIRS] Read length:                      150
+[pIRS] Insert length mean:               300
+[pIRS] Insert length standard deviation: 0
+[pIRS] Coverage:                         30
+[pIRS] Diploid:                          no
+[pIRS] Cyclized (jumping library):       no
+[pIRS] Simulate substitution errors:     no
+[pIRS] Substitution error rate:          0
+[pIRS] Base-calling profile:             (None)
+[pIRS] Substitution error algorithm:     (None)
+[pIRS] Simulate InDel errors:            no
+[pIRS] InDel error profile:              (None)
+[pIRS] Simulate GC content bias:         no
+[pIRS] GC bias profile:                  (None)
+[pIRS] Output type:                      text
+[pIRS] Output directory:                 /home/gneumann/gaaf/unit_tests/tests/reads
+[pIRS] Indiv name:                       read_len_100
+[pIRS] Simulate quality values:          no
+[pIRS] Mode of mask quality:             None
+[pIRS] Random seed:                      29934435845216
+[pIRS] Number of simulator threads:      7
+[pIRS] 
+[pIRS] Reading scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" into memory
+[pIRS] Simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] Program:        pirs (Profile-based Illumina pair-end Reads Simulator)
+[pIRS] Version:        2.0.0
+[pIRS] Author:         Jianying Yuan (BGI-Shenzhen)
+[pIRS] Contact:        yuanjianying@genomics.org.cn
+[pIRS] Compile Date:   Feb 22 2019 time: 12:45:56
+[pIRS] Current time:   Tue May 21 07:50:52 2019
+[pIRS] Command line:   pirs simulate -x 30 -l 150 -v 0 -m 300 --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o /home/gneumann/gaaf/unit_tests/tests/reads -t 7 -s read_len_150 teste.fasta
+[pIRS] 
+[pIRS] 
+[pIRS] Beginning simulation with the following parameters:
+[pIRS] 
+[pIRS] Read length:                      150
+[pIRS] Insert length mean:               300
+[pIRS] Insert length standard deviation: 0
+[pIRS] Coverage:                         30
+[pIRS] Diploid:                          no
+[pIRS] Cyclized (jumping library):       no
+[pIRS] Simulate substitution errors:     no
+[pIRS] Substitution error rate:          0
+[pIRS] Base-calling profile:             (None)
+[pIRS] Substitution error algorithm:     (None)
+[pIRS] Simulate InDel errors:            no
+[pIRS] InDel error profile:              (None)
+[pIRS] Simulate GC content bias:         no
+[pIRS] GC bias profile:                  (None)
+[pIRS] Output type:                      text
+[pIRS] Output directory:                 /home/gneumann/gaaf/unit_tests/tests/reads
+[pIRS] Indiv name:                       read_len_150
+[pIRS] Simulate quality values:          no
+[pIRS] Mode of mask quality:             None
+[pIRS] Random seed:                      29937552716920
+[pIRS] Number of simulator threads:      7
+[pIRS] 
+[pIRS] Reading scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" into memory
+[pIRS] Simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] Simulated 299 of 299 read pairs
+[pIRS] Done simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] 
+[pIRS] Simulation complete (0 seconds elapsed)
+[pIRS] 
+[pIRS] Bases in reference sequences:    2997
+[pIRS] Read pairs simulated:            299
+[pIRS] Bases in reads:                  89700
+[pIRS] Coverage:                        29.93
+[pIRS] Substitution error count:        0
+[pIRS] Average substitution error rate: 0.000%
+[pIRS] Insertion count:                 0
+[pIRS] Deletion count:                  0
+[pIRS] Average insertion rate:          0.00000%
+[pIRS] Average deletion rate:           0.00000%
+[pIRS] Average insertion length:        0.00
+[pIRS] Average deletion length:         0.00
+[pIRS] Fragments affected by GC bias:   0.00%
+[pIRS] Bases masked by EAMSS algorithm: 0
+[pIRS] 
+[pIRS] The simulated reads are in the files:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100_1.fa
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100_2.fa
+[pIRS] 
+[pIRS] Information about each simulated read has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100.read.info
+[pIRS] 
+[pIRS] The insert length distribution has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100.insert_len.distr
+[pIRS] Simulated 299 of 299 read pairs
+[pIRS] Done simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] 
+[pIRS] Simulation complete (0 seconds elapsed)
+[pIRS] 
+[pIRS] Bases in reference sequences:    2997
+[pIRS] Read pairs simulated:            299
+[pIRS] Bases in reads:                  89700
+[pIRS] Coverage:                        29.93
+[pIRS] Substitution error count:        0
+[pIRS] Average substitution error rate: 0.000%
+[pIRS] Insertion count:                 0
+[pIRS] Deletion count:                  0
+[pIRS] Average insertion rate:          0.00000%
+[pIRS] Average deletion rate:           0.00000%
+[pIRS] Average insertion length:        0.00
+[pIRS] Average deletion length:         0.00
+[pIRS] Fragments affected by GC bias:   0.00%
+[pIRS] Bases masked by EAMSS algorithm: 0
+[pIRS] 
+[pIRS] The simulated reads are in the files:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150_1.fa
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150_2.fa
+[pIRS] 
+[pIRS] Information about each simulated read has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150.read.info
+[pIRS] 
+[pIRS] The insert length distribution has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150.insert_len.distr
+Testing Reads Generator
+ Reads generated

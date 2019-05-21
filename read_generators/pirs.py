@@ -7,78 +7,25 @@ Created on Tue Feb  5 09:17:54 2019
 import os
 import logging
 import threading as thr
-from Bio import SeqIO
 import time
-import multiprocessing
+from reads_generator import Generator
 
-class Pirs:
+class Pirs(Generator):
     """Class responsable for calling pIRS and generating its reads
     
     Attributes
     ----------
-    parameters : dict
-        A dictionary containing all the generation parameters
-    file : list
-        The list of the samples generated
-        
+    __tool_name : str
+        the algorithm name
+    
     Methods
     -------
-    fasta2fastq(file,ql,name='')
-        Converts a fasta file to a fastq file
     command(sample)
         Run the Pirs command to the sample
     """
     
-    t=multiprocessing.cpu_count()-2
-    parameters=dict()
-    files=[]
-    
-    
-    def __init__(self, exp,out):
-        """
-        Parameters
-        ----------
-        exp : str
-            The Experiment Name
-        out : str
-            The output directory to store the results and where the reads 
-            are stored
-        """
-        
-        self.exp=exp
-        self.out=out
-        logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
-        logging.info(" Calling pirs tool")
-        
-    def fasta2fastq(self,file,ql,name=''): 
-        """
-        It converts a fasta file to a fastq file.
-        
-        Parameters
-        ----------
-        file : str
-            file name, including format, e.g. 'reads_1.fa'
-        ql : int
-            phred number
-        """
-        
-        
-        try:
-            if name!='':
-                fq=name+".fastq"
-            else:
-                fq=file.split(".")
-                fq=fq[0] + ".fastq"
-            with open(file, "r") as fasta, open(fq, "w") as fastq:
-                for record in SeqIO.parse(fasta, "fasta"):
-                    record.letter_annotations["phred_quality"] = [ql] * len(record)
-                    SeqIO.write(record, fastq, "fastq")
-            fasta.close()
-            fastq.close()
-        
-        except IOError:
-                    logging.error(IOError)
-                    exit()
+    tool_name='pirs'
+
                     
     def command(self,sample):
         """

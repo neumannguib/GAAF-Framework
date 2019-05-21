@@ -12,8 +12,9 @@ import importlib
 from Bio import SeqIO
 import kmergenie as kmer
 import threading as thr
+from abc import ABC, abstractmethod
 
-class Assembly():
+class Assembling_Control():
     """
     This Class represents the Assembly Component of the Framework. It receives
     reads and outputs assemblies.
@@ -124,7 +125,7 @@ class Assembly():
                 software=[]
                 tools=os.listdir("assemblers/")
                 for each in tools:
-                    if ".py" in each:
+                    if ".py" in each and "__init__" not in each and not ".pyc" in each:
                         software.append(each[:-3])
             
             for i,sample in enumerate(self.reads):
@@ -193,8 +194,8 @@ class Assembly():
                             else:
                                 genome.run()
                             run_log.write(assembler+","+sample+"\n")    
-                        while(thread.is_alive()):
-                            time.sleep(.10)
+                    while(thread.is_alive()):
+                        time.sleep(.10)
                     run_log.close()
                 except IOError:
                     logging.error(IOError)
@@ -202,3 +203,87 @@ class Assembly():
         except TypeError:
             logging.error(TypeError)
             exit()
+            
+class Assembler(ABC):
+    """ 
+    Abstract assembler class
+   
+    Attributes
+    ----------
+    assembler_name : str
+        The name of the assembler tool
+    require_fastq : bool
+        if the assembler only work with fastq files, please set as True 
+        (default False)
+    python_threads : bool
+        in case the assembler do not use multithread, you can at least 
+        activate it to run with python threads. Those threads are used 
+        by Assembly Module (default False).
+        
+    Methods
+    -------
+    run()
+        Run the assembly 
+    """
+        
+    __assembler_name=''
+    require_fastq=False
+    python_threads=False
+    
+    #please, keep all the arguments in __init__ even you do not need it
+    
+    def __init__(self, technology, exp, out, sample,read_len,file_format,k,t):
+        """
+        Parameters
+        ----------
+        technology : str
+            the sequencing technology, e.g. Illumina
+        exp : str
+            The Experiment Name
+        out : str
+            The output directory to store the results and where the reads 
+            are stored
+        sample : str
+            Sample Name (assembly name)
+        read_len : int
+            The average reads length 
+        file_format : str
+            the format of the reads, generally fa or fq 
+        k : int
+            the k-mer number used in k-based assemblers
+        t : int
+           Number of threads
+        """
+        
+        self.tech=technology
+        self.exp=exp
+        self.out=out
+        self.sample=sample
+        self.read_len=read_len
+        self.file_format=file_format
+        self.k=k
+        self.t=t
+        super(Assembler,self).__init__()
+        
+        try:
+            #Using the shared logging system
+            logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
+            if file_format=="fa" or file_format=="fasta" or file_format=="fna":
+                self.tipo="fasta"
+            else:
+                self.tipo="fastq"
+        except IOError:
+            logging.error(IOError)
+            exit()
+    
+    @abstractmethod    
+    def run(self):
+        """
+        Run the assembly.
+        """
+        if not(os.path.exists(self.out+"assemblies/"+self.__assembler_name)):
+            os.system("mkdir "+self.out+"assemblies/"+self.__assembler_name)  
+        os.system("mkdir "+self.out+"assemblies/"+self.assembler_name+"/"+self.sample)
+        pass
+        #command="call the command here"
+        #os.system(command)

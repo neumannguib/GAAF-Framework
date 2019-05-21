@@ -1,0 +1,400 @@
+Minia 3, git commit 099e154
+setting storage type to hdf5
+bcalm_algo params, prefix:minia.unitigs.fa k:77 a:2 minsize:10 threads:16 mintype:1
+DSK used 1 passes and 16 partitions
+prior to queues allocation                      07:58:16     memory [current, maxRSS]: [ 628,  628] MB 
+Starting BCALM2                                 07:58:16     memory [current, maxRSS]: [ 628,  628] MB 
+
+Iterated 205 kmers, among them 7 were doubled
+
+In this superbucket (containing 3 active minimizers),
+                  sum of time spent in lambda's: 3.0 msecs
+                                 longest lambda: 1.1 msecs
+         tot time of best scheduling of lambdas: 3.0 msecs
+                       best theoretical speedup: 2.7x
+Done with partition 0                           07:58:16     memory [current, maxRSS]: [ 683,  683] MB 
+
+Iterated 155 kmers, among them 7 were doubled
+Loaded 4 doubled kmers for partition 2
+
+In this superbucket (containing 5 active minimizers),
+                  sum of time spent in lambda's: 2.8 msecs
+                                 longest lambda: 1.1 msecs
+         tot time of best scheduling of lambdas: 2.8 msecs
+                       best theoretical speedup: 2.6x
+Done with partition 2                           07:58:16     memory [current, maxRSS]: [ 683,  684] MB 
+
+Iterated 172 kmers, among them 9 were doubled
+Loaded 8 doubled kmers for partition 4
+
+In this superbucket (containing 8 active minimizers),
+                  sum of time spent in lambda's: 3.1 msecs
+                                 longest lambda: 0.9 msecs
+         tot time of best scheduling of lambdas: 3.1 msecs
+                       best theoretical speedup: 3.3x
+Done with partition 4                           07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 224 kmers, among them 14 were doubled
+Loaded 11 doubled kmers for partition 6
+
+In this superbucket (containing 13 active minimizers),
+                  sum of time spent in lambda's: 5.4 msecs
+                                 longest lambda: 1.2 msecs
+         tot time of best scheduling of lambdas: 5.4 msecs
+                       best theoretical speedup: 4.6x
+Done with partition 6                           07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 204 kmers, among them 7 were doubled
+Loaded 6 doubled kmers for partition 8
+
+In this superbucket (containing 7 active minimizers),
+                  sum of time spent in lambda's: 3.9 msecs
+                                 longest lambda: 0.9 msecs
+         tot time of best scheduling of lambdas: 3.9 msecs
+                       best theoretical speedup: 4.1x
+Done with partition 8                           07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 200 kmers, among them 41 were doubled
+Loaded 21 doubled kmers for partition 10
+
+In this superbucket (containing 41 active minimizers),
+                  sum of time spent in lambda's: 4.7 msecs
+                                 longest lambda: 1.0 msecs
+         tot time of best scheduling of lambdas: 4.7 msecs
+                       best theoretical speedup: 4.8x
+Done with partition 10                          07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 165 kmers, among them 15 were doubled
+Loaded 13 doubled kmers for partition 12
+
+In this superbucket (containing 17 active minimizers),
+                  sum of time spent in lambda's: 3.6 msecs
+                                 longest lambda: 0.7 msecs
+         tot time of best scheduling of lambdas: 3.6 msecs
+                       best theoretical speedup: 5.1x
+Done with partition 12                          07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 0 kmers, among them 0 were doubled
+Number of sequences in glue: 206
+Number of pre-tips removed : 0
+Buckets compaction and gluing           : 0.7 secs
+Within that, 
+                                 creating buckets from superbuckets: 0.6 secs
+                      bucket compaction (wall-clock during threads): 0.0 secs
+
+                within all bucket compaction threads,
+                       adding nodes to subgraphs: 0.0 secs
+         subgraphs constructions and compactions: 0.0 secs
+                  compacted nodes redistribution: 0.0 secs
+Sum of CPU times for bucket compactions: 0.7 secs
+BCALM total wallclock (excl kmer counting): 1.1 secs
+Maximum number of kmers in a subgraph: 109
+Performance of compaction step:
+
+                 Wallclock time spent in parallel section : 0.0 secs
+             Best theoretical speedup in parallel section : 3.9x
+Best theor. speedup in parallel section using 1 threads : 1.0x
+             Sum of longest bucket compaction for each sb : 0.0 secs
+                       Sum of best scheduling for each sb : 0.1 secs
+Done with all compactions                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+bglue_algo params, prefix:minia.unitigs.fa k:77 threads:16
+Starting bglue with 16 threads                  07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+number of sequences to be glued: 206            07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+140 marked kmers, 2 unmarked kmers              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+created vector of hashes, size approx 0 MB)        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+pass 1/3, 70 unique hashes written to disk, size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+142 marked kmers, 2 unmarked kmers              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+created vector of hashes, size approx 0 MB)        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+pass 2/3, 71 unique hashes written to disk, size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+128 marked kmers, 2 unmarked kmers              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+created vector of hashes, size approx 0 MB)        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+pass 3/3, 64 unique hashes written to disk, size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+loaded all unique UF elements (205) into a single vector of size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Bitarray            7168  bits (100.00 %)   (array + ranks )
+final hash             0  bits (0.00 %) (nb in final hash 0)
+UF MPHF constructed (0 MB)                      07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+UF constructed                                  07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+freed original UF (0 MB)                        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+loaded 32-bit UF (0 MB)                         07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Allowed 24 MB memory for buffers                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Disk partitioning of glue                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Done disk partitioning of glue                  07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Top 10 glue partitions by size:
+Glue partition 4 has 206 sequences 
+Glue partition 1 has 0 sequences 
+Glue partition 8 has 0 sequences 
+Glue partition 9 has 0 sequences 
+Glue partition 7 has 0 sequences 
+Glue partition 3 has 0 sequences 
+Glue partition 5 has 0 sequences 
+Glue partition 0 has 0 sequences 
+Glue partition 2 has 0 sequences 
+Glue partition 6 has 0 sequences 
+Glueing partitions                              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 0 (size: 0 MB)                 07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 20 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 40 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 60 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 80 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 100 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 120 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 140 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 160 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 180 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 200 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 220 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 240 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 260 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 280 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 300 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 320 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 340 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 360 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 380 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 400 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 420 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 440 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 460 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 480 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 500 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+end                                             07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+debug: not deleting glue files
+Finding links between unitigs                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 0                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 1                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 2                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 3                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 4                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 5                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 6                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 7                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+gathering links from disk                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Done finding links between unitigs              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+iterating on 2 nodes on disk
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+Finding links between unitigs                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 0                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 1                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 2                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 3                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 4                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 5                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 6                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 7                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+gathering links from disk                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Done finding links between unitigs              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+    -in                                      : /home/gneumann/gaaf/unit_tests/tests/assemblies/minia/test1/minia.txt
+    -kmer-size                               : 77
+    -nb-cores                                : 16
+    -traversal                               : contig
+    -fasta-line                              : 0
+    -tip-len-topo-kmult                      : 2.500000
+    -tip-len-rctc-kmult                      : 10.000000
+    -tip-rctc-cutoff                         : 2.000000
+    -bulge-len-kmult                         : 3.000000
+    -bulge-len-kadd                          : 100
+    -bulge-altpath-kadd                      : 50
+    -bulge-altpath-covmult                   : 1
+    -ec-len-kmult                            : 9.000000
+    -ec-rctc-cutoff                          : 4.000000
+    -abundance-min                           : 2
+    -abundance-max                           : 2147483647
+    -abundance-min-threshold                 : 2
+    -histo-max                               : 10000
+    -solidity-kind                           : sum
+    -max-memory                              : 5000
+    -max-disk                                : 0
+    -out-dir                                 : .
+    -out-tmp                                 : .
+    -out-compress                            : 0
+    -storage-type                            : hdf5
+    -histo2D                                 : 0
+    -histo                                   : 0
+    -minimizer-type                          : 1
+    -minimizer-size                          : 10
+    -repartition-type                        : 1
+    -bloom                                   : neighbor
+    -debloom                                 : cascading
+    -debloom-impl                            : minimizer
+    -branching-nodes                         : stored
+    -topology-stats                          : 0
+    -verbose                                 : 1
+    -integer-precision                       : 0
+    -nb-glue-partitions                      : 0
+    -storage-type                            : 1
+    -verbose                                 : 1
+    -verbose                                 : 1
+    -verbose                                 : 1
+    stats                                   
+        traversal                                : contig
+        nb_contigs                               : 1
+        nb_small_contigs_discarded               : 0
+        nt_assembled                             : 2977
+        max_length                               : 2977
+        graph simpification stats               
+            tips removed                             : 0 + 0 + 0 + 0
+            bulges removed                           : 0 + 0 + 0 + 0
+            EC removed                               : 0 + 0 + 0 + 0
+        assembly traversal stats                
+    time                                     : 4.485
+        assembly                                 : 0.109
+        graph construction                       : 4.376
+Testing minia

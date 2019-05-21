@@ -1,0 +1,4853 @@
+2019-05-21 07:49:45,215  Pirs:
+[pIRS] Program:        pirs (Profile-based Illumina pair-end Reads Simulator)
+[pIRS] Version:        2.0.0
+[pIRS] Author:         Jianying Yuan (BGI-Shenzhen)
+[pIRS] Contact:        yuanjianying@genomics.org.cn
+[pIRS] Compile Date:   Feb 22 2019 time: 12:45:56
+[pIRS] Current time:   Tue May 21 07:49:45 2019
+[pIRS] Command line:   pirs simulate -x 30 -l 100 -v 0 -m 200 --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o /home/gneumann/gaaf/unit_tests/tests/reads -t 14 -s test1 teste.fasta
+[pIRS] 
+[pIRS] 
+[pIRS] Beginning simulation with the following parameters:
+[pIRS] 
+[pIRS] Read length:                      100
+[pIRS] Insert length mean:               200
+[pIRS] Insert length standard deviation: 0
+[pIRS] Coverage:                         30
+[pIRS] Diploid:                          no
+[pIRS] Cyclized (jumping library):       no
+[pIRS] Simulate substitution errors:     no
+[pIRS] Substitution error rate:          0
+[pIRS] Base-calling profile:             (None)
+[pIRS] Substitution error algorithm:     (None)
+[pIRS] Simulate InDel errors:            no
+[pIRS] InDel error profile:              (None)
+[pIRS] Simulate GC content bias:         no
+[pIRS] GC bias profile:                  (None)
+[pIRS] Output type:                      text
+[pIRS] Output directory:                 /home/gneumann/gaaf/unit_tests/tests/reads
+[pIRS] Indiv name:                       test1
+[pIRS] Simulate quality values:          no
+[pIRS] Mode of mask quality:             None
+[pIRS] Random seed:                      29806642823910
+[pIRS] Number of simulator threads:      14
+[pIRS] 
+[pIRS] Reading scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" into memory
+[pIRS] Simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] Simulated 449 of 449 read pairs
+[pIRS] Done simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] 
+[pIRS] Simulation complete (0 seconds elapsed)
+[pIRS] 
+[pIRS] Bases in reference sequences:    2997
+[pIRS] Read pairs simulated:            449
+[pIRS] Bases in reads:                  89800
+[pIRS] Coverage:                        29.96
+[pIRS] Substitution error count:        0
+[pIRS] Average substitution error rate: 0.000%
+[pIRS] Insertion count:                 0
+[pIRS] Deletion count:                  0
+[pIRS] Average insertion rate:          0.00000%
+[pIRS] Average deletion rate:           0.00000%
+[pIRS] Average insertion length:        0.00
+[pIRS] Average deletion length:         0.00
+[pIRS] Fragments affected by GC bias:   0.00%
+[pIRS] Bases masked by EAMSS algorithm: 0
+[pIRS] 
+[pIRS] The simulated reads are in the files:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa
+[pIRS] 
+[pIRS] Information about each simulated read has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/test1.read.info
+[pIRS] 
+[pIRS] The insert length distribution has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/test1.insert_len.distr
+[pIRS] Program:        pirs (Profile-based Illumina pair-end Reads Simulator)
+[pIRS] Version:        2.0.0
+[pIRS] Author:         Jianying Yuan (BGI-Shenzhen)
+[pIRS] Contact:        yuanjianying@genomics.org.cn
+[pIRS] Compile Date:   Feb 22 2019 time: 12:45:56
+[pIRS] Current time:   Tue May 21 07:49:45 2019
+[pIRS] Command line:   pirs simulate -x 30 -l 100 -v 0 -m 200 --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o /home/gneumann/gaaf/unit_tests/tests/reads -t 14 -s phred_base teste.fasta
+[pIRS] 
+[pIRS] 
+[pIRS] Beginning simulation with the following parameters:
+[pIRS] 
+[pIRS] Read length:                      100
+[pIRS] Insert length mean:               200
+[pIRS] Insert length standard deviation: 0
+[pIRS] Coverage:                         30
+[pIRS] Diploid:                          no
+[pIRS] Cyclized (jumping library):       no
+[pIRS] Simulate substitution errors:     no
+[pIRS] Substitution error rate:          0
+[pIRS] Base-calling profile:             (None)
+[pIRS] Substitution error algorithm:     (None)
+[pIRS] Simulate InDel errors:            no
+[pIRS] InDel error profile:              (None)
+[pIRS] Simulate GC content bias:         no
+[pIRS] GC bias profile:                  (None)
+[pIRS] Output type:                      text
+[pIRS] Output directory:                 /home/gneumann/gaaf/unit_tests/tests/reads
+[pIRS] Indiv name:                       phred_base
+[pIRS] Simulate quality values:          no
+[pIRS] Mode of mask quality:             None
+[pIRS] Random seed:                      29836253103825
+[pIRS] Number of simulator threads:      14
+[pIRS] 
+[pIRS] Reading scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" into memory
+[pIRS] Simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] Simulated 449 of 449 read pairs
+[pIRS] Done simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] 
+[pIRS] Simulation complete (0 seconds elapsed)
+[pIRS] 
+[pIRS] Bases in reference sequences:    2997
+[pIRS] Read pairs simulated:            449
+[pIRS] Bases in reads:                  89800
+[pIRS] Coverage:                        29.96
+[pIRS] Substitution error count:        0
+[pIRS] Average substitution error rate: 0.000%
+[pIRS] Insertion count:                 0
+[pIRS] Deletion count:                  0
+[pIRS] Average insertion rate:          0.00000%
+[pIRS] Average deletion rate:           0.00000%
+[pIRS] Average insertion length:        0.00
+[pIRS] Average deletion length:         0.00
+[pIRS] Fragments affected by GC bias:   0.00%
+[pIRS] Bases masked by EAMSS algorithm: 0
+[pIRS] 
+[pIRS] The simulated reads are in the files:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/phred_base_1.fa
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/phred_base_2.fa
+[pIRS] 
+[pIRS] Information about each simulated read has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/phred_base.read.info
+[pIRS] 
+[pIRS] The insert length distribution has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/phred_base.insert_len.distr
+2019-05-21 07:49:45,376 Reads generated
+2019-05-21 07:50:52,907  Reads_Generator:
+[pIRS] Program:        pirs (Profile-based Illumina pair-end Reads Simulator)
+[pIRS] Version:        2.0.0
+[pIRS] Author:         Jianying Yuan (BGI-Shenzhen)
+[pIRS] Contact:        yuanjianying@genomics.org.cn
+[pIRS] Compile Date:   Feb 22 2019 time: 12:45:56
+[pIRS] Current time:   Tue May 21 07:50:52 2019
+[pIRS] Command line:   pirs simulate -x 30 -l 150 -v 0 -m 300 --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o /home/gneumann/gaaf/unit_tests/tests/reads -t 7 -s read_len_100 teste.fasta
+[pIRS] 
+[pIRS] 
+[pIRS] Beginning simulation with the following parameters:
+[pIRS] 
+[pIRS] Read length:                      150
+[pIRS] Insert length mean:               300
+[pIRS] Insert length standard deviation: 0
+[pIRS] Coverage:                         30
+[pIRS] Diploid:                          no
+[pIRS] Cyclized (jumping library):       no
+[pIRS] Simulate substitution errors:     no
+[pIRS] Substitution error rate:          0
+[pIRS] Base-calling profile:             (None)
+[pIRS] Substitution error algorithm:     (None)
+[pIRS] Simulate InDel errors:            no
+[pIRS] InDel error profile:              (None)
+[pIRS] Simulate GC content bias:         no
+[pIRS] GC bias profile:                  (None)
+[pIRS] Output type:                      text
+[pIRS] Output directory:                 /home/gneumann/gaaf/unit_tests/tests/reads
+[pIRS] Indiv name:                       read_len_100
+[pIRS] Simulate quality values:          no
+[pIRS] Mode of mask quality:             None
+[pIRS] Random seed:                      29934435845216
+[pIRS] Number of simulator threads:      7
+[pIRS] 
+[pIRS] Reading scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" into memory
+[pIRS] Simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] Program:        pirs (Profile-based Illumina pair-end Reads Simulator)
+[pIRS] Version:        2.0.0
+[pIRS] Author:         Jianying Yuan (BGI-Shenzhen)
+[pIRS] Contact:        yuanjianying@genomics.org.cn
+[pIRS] Compile Date:   Feb 22 2019 time: 12:45:56
+[pIRS] Current time:   Tue May 21 07:50:52 2019
+[pIRS] Command line:   pirs simulate -x 30 -l 150 -v 0 -m 300 --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o /home/gneumann/gaaf/unit_tests/tests/reads -t 7 -s read_len_150 teste.fasta
+[pIRS] 
+[pIRS] 
+[pIRS] Beginning simulation with the following parameters:
+[pIRS] 
+[pIRS] Read length:                      150
+[pIRS] Insert length mean:               300
+[pIRS] Insert length standard deviation: 0
+[pIRS] Coverage:                         30
+[pIRS] Diploid:                          no
+[pIRS] Cyclized (jumping library):       no
+[pIRS] Simulate substitution errors:     no
+[pIRS] Substitution error rate:          0
+[pIRS] Base-calling profile:             (None)
+[pIRS] Substitution error algorithm:     (None)
+[pIRS] Simulate InDel errors:            no
+[pIRS] InDel error profile:              (None)
+[pIRS] Simulate GC content bias:         no
+[pIRS] GC bias profile:                  (None)
+[pIRS] Output type:                      text
+[pIRS] Output directory:                 /home/gneumann/gaaf/unit_tests/tests/reads
+[pIRS] Indiv name:                       read_len_150
+[pIRS] Simulate quality values:          no
+[pIRS] Mode of mask quality:             None
+[pIRS] Random seed:                      29937552716920
+[pIRS] Number of simulator threads:      7
+[pIRS] 
+[pIRS] Reading scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" into memory
+[pIRS] Simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] Simulated 299 of 299 read pairs
+[pIRS] Done simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] 
+[pIRS] Simulation complete (0 seconds elapsed)
+[pIRS] 
+[pIRS] Bases in reference sequences:    2997
+[pIRS] Read pairs simulated:            299
+[pIRS] Bases in reads:                  89700
+[pIRS] Coverage:                        29.93
+[pIRS] Substitution error count:        0
+[pIRS] Average substitution error rate: 0.000%
+[pIRS] Insertion count:                 0
+[pIRS] Deletion count:                  0
+[pIRS] Average insertion rate:          0.00000%
+[pIRS] Average deletion rate:           0.00000%
+[pIRS] Average insertion length:        0.00
+[pIRS] Average deletion length:         0.00
+[pIRS] Fragments affected by GC bias:   0.00%
+[pIRS] Bases masked by EAMSS algorithm: 0
+[pIRS] 
+[pIRS] The simulated reads are in the files:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100_1.fa
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100_2.fa
+[pIRS] 
+[pIRS] Information about each simulated read has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100.read.info
+[pIRS] 
+[pIRS] The insert length distribution has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_100.insert_len.distr
+[pIRS] Simulated 299 of 299 read pairs
+[pIRS] Done simulating reads from scaffold "NC_007365.1:c117132-114136 Escherichia coli EH41 plasmid pO113, complete sequence" (length = 2997)
+[pIRS] 
+[pIRS] Simulation complete (0 seconds elapsed)
+[pIRS] 
+[pIRS] Bases in reference sequences:    2997
+[pIRS] Read pairs simulated:            299
+[pIRS] Bases in reads:                  89700
+[pIRS] Coverage:                        29.93
+[pIRS] Substitution error count:        0
+[pIRS] Average substitution error rate: 0.000%
+[pIRS] Insertion count:                 0
+[pIRS] Deletion count:                  0
+[pIRS] Average insertion rate:          0.00000%
+[pIRS] Average deletion rate:           0.00000%
+[pIRS] Average insertion length:        0.00
+[pIRS] Average deletion length:         0.00
+[pIRS] Fragments affected by GC bias:   0.00%
+[pIRS] Bases masked by EAMSS algorithm: 0
+[pIRS] 
+[pIRS] The simulated reads are in the files:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150_1.fa
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150_2.fa
+[pIRS] 
+[pIRS] Information about each simulated read has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150.read.info
+[pIRS] 
+[pIRS] The insert length distribution has been logged to the file:
+[pIRS]     /home/gneumann/gaaf/unit_tests/tests/reads/read_len_150.insert_len.distr
+2019-05-21 07:50:53,018 Reads generated
+2019-05-21 07:50:53,019 Reads generated
+2019-05-21 07:51:46,014  Abyss:
+make: Entering directory '/home/gneumann/gaaf/unit_tests/tests/assemblies/abyss/test1'
+ABYSS -k77 -q3    --coverage-hist=coverage.hist -s test1-bubbles.fa  -o test1-1.fa test1_1.fa test1_2.fa 
+ABySS 2.0.3
+ABYSS -k77 -q3 --coverage-hist=coverage.hist -s test1-bubbles.fa -o test1-1.fa test1_1.fa test1_2.fa
+Reading `test1_1.fa'...
+Reading `test1_2.fa'...
+Loaded 2911 k-mer
+Minimum k-mer coverage is 1
+Using a coverage threshold of 3...
+The median k-mer coverage is 7
+The reconstruction is 2851
+The k-mer coverage threshold is 2.64575
+Setting parameter e (erode) to 3
+Setting parameter E (erodeStrand) to 1
+Setting parameter c (coverage) to 2.64575
+Generating adjacency
+Added 5820 edges.
+Eroding tips
+Eroded 200 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruning tips shorter than 2 bp...
+Pruning tips shorter than 4 bp...
+Pruning tips shorter than 8 bp...
+Pruning tips shorter than 16 bp...
+Pruning tips shorter than 32 bp...
+Pruning tips shorter than 64 bp...
+Pruning tips shorter than 77 bp...
+Pruned 0 tips in 7 rounds.
+Marked 0 edges of 0 ambiguous vertices.
+Removing low-coverage contigs (mean k-mer coverage < 2.64575)
+Found 2711 k-mer in 1 contigs before removing low-coverage contigs.
+Removed 0 k-mer in 0 low-coverage contigs.
+Split 0 ambigiuous branches.
+Eroding tips
+Eroded 0 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruning tips shorter than 2 bp...
+Pruning tips shorter than 4 bp...
+Pruning tips shorter than 8 bp...
+Pruning tips shorter than 16 bp...
+Pruning tips shorter than 32 bp...
+Pruning tips shorter than 64 bp...
+Pruning tips shorter than 77 bp...
+Pruned 0 tips in 7 rounds.
+Popping bubbles
+Removed 0 bubbles
+Marked 0 edges of 0 ambiguous vertices.
+Assembled 2711 k-mer in 1 contigs.
+Removed 200 k-mer.
+The signal-to-noise ratio (SNR) is 11.321 dB.
+AdjList    -k77 -m50 --dot test1-1.fa >test1-1.dot
+abyss-filtergraph  --dot   -k77 -g test1-2.dot1 test1-1.dot test1-1.fa >test1-1.path
+MergeContigs --dot   -k77 -g test1-2.dot -o test1-2.fa test1-1.fa test1-2.dot1 test1-1.path
+PopBubbles  --dot -j16 -k77  -p0.9  -g test1-3.dot test1-2.fa test1-2.dot >test1-2.path
+MergeContigs   -k77 -o test1-3.fa test1-2.fa test1-2.dot test1-2.path
+awk '!/^>/ {x[">" $1]=1; next} {getline s} $1 in x {print $0 "\n" s}' \
+	test1-2.path test1-1.fa >test1-indel.fa
+ln -sf test1-3.fa test1-unitigs.fa
+abyss-map   -j16 -l40    test1_1.fa test1_2.fa test1-3.fa \
+	|abyss-fixmate   -l40  -h test1-3.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   -j16 -k77  -l40 -s1000 -n10  -o test1-3.dist test1-3.hist
+Overlap  --dot   -k77 -g test1-4.dot -o test1-4.fa test1-3.fa test1-3.dot test1-3.dist
+Overlap: 0
+Scaffold: 0
+No overlap: 0
+Insignificant (<5bp): 0
+Homopolymer: 0
+Motif: 0
+Ambiguous: 0
+SimpleGraph    -j16 -k77 -o test1-4.path1 test1-4.dot test1-3.dist
+Total paths attempted: 0
+Unique path: 0
+No possible paths: 0
+No valid paths: 0
+Repetitive: 0
+Multiple valid paths: 0
+Too many solutions: 0
+Too complex: 0
+
+The minimum number of pairs in a distance estimate is 4294967295.
+abyss-index  --fai test1-3.fa
+abyss-index  --fai test1-4.fa
+cat test1-3.fa.fai test1-4.fa.fai \
+	|MergePaths   -j16 -k77  -o test1-4.path2 - test1-4.path1
+PathOverlap --assemble   -k77  test1-4.dot test1-4.path2 >test1-4.path3
+cat test1-3.fa test1-4.fa \
+	|PathConsensus  --dot -k77  -p0.9  -o test1-5.path -s test1-5.fa -g test1-5.dot - test1-4.dot test1-4.path3
+cat test1-3.fa test1-4.fa test1-5.fa |MergeContigs   -k77 -o test1-6.fa - test1-5.dot test1-5.path
+ln -sf test1-6.fa test1-contigs.fa
+PathOverlap --overlap   -k77 --dot test1-5.dot test1-5.path >test1-6.dot
+ln -sf test1-6.dot test1-contigs.dot
+abyss-map   -j16 -l40    test1_1.fa test1_2.fa test1-6.fa \
+	|abyss-fixmate   -l40  -h test1-6.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   --dot --mean -j16 -k77  -l40 -s1000 -n10  -o test1-6.dist.dot test1-6.hist
+abyss-scaffold    -k77 -s1000-10000 -n10 -g test1-6.path.dot  test1-6.dot test1-6.dist.dot >test1-6.path
+PathConsensus  --dot -k77  -p0.9  -s test1-7.fa -g test1-7.dot -o test1-7.path test1-6.fa test1-6.dot test1-6.path
+cat test1-6.fa test1-7.fa \
+	|MergeContigs   -k77 -o test1-8.fa - test1-7.dot test1-7.path
+ln -sf test1-8.fa test1-scaffolds.fa
+PathOverlap --overlap   -k77 --dot test1-7.dot test1-7.path >test1-8.dot
+ln -sf test1-8.dot test1-scaffolds.dot
+abyss-fac   test1-unitigs.fa test1-contigs.fa test1-scaffolds.fa |tee test1-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+1	1	1	2787	2787	2787	2787	2787	2787	2787	test1-unitigs.fa
+1	1	1	2787	2787	2787	2787	2787	2787	2787	test1-contigs.fa
+1	1	1	2787	2787	2787	2787	2787	2787	2787	test1-scaffolds.fa
+ln -sf test1-stats.tab test1-stats
+tr '\t' , <test1-stats.tab >test1-stats.csv
+abyss-tabtomd test1-stats.tab >test1-stats.md
+make: Leaving directory '/home/gneumann/gaaf/unit_tests/tests/assemblies/abyss/test1'
+2019-05-21 07:52:39,788  Edena:
+Edena v3.131028
+Rapid file(s) examination... done
+Number of reads upper bound estimation: 900
+Reads layout initialization... done
+Opening paired files:
+   /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa
+   /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa
+   Loaded: 898, discarded: 0
+   Reads length: 100
+done
+   Number of reads: 898
+   Number of distinct sequences: 776
+   Average reads redundancy: 1.2
+Building pairing index... done
+Initializing prefix tables...done
+Minimum overlaps size: 50
+Computing overlaps >=50... Computing overlaps >=50 done        
+Flagging transitive edges...Flagging transitive edges... done    
+Removing flagged edges... done
+writing the overlaps graph to the file test1.ovl... done
+Edena v3.131028
+Loading file "test1.ovl"...  done
+   reads length:             100
+   number of reads:          898
+   number of nodes:          776
+   number of edges:          775
+   minimum overlap size:     50
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Removed orphan non-usable nodes: 0 (0.0% of the total number of reads)
+Removing dead-end paths... done
+   Removed dead-ends: 0 (0.0% of the total number of reads)
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Contextual cleaning: step1...Contextual cleaning: step1... done                    
+Contextual cleaning: step2...Contextual cleaning: step2... done                 
+   0 edges have been cleaned out
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Removing dead-end paths...done
+   Removed dead-ends: 0 (0.0% of the total number of reads)
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Removed orphan non-usable nodes: 0
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Nodes coverage sampling:
+   mean: 31.1
+   median: 31.1
+   1st percentile 0.0
+   1st decile 0.0
+   sd: 0.0
+   minimum required coverage automatically set to: 15.5
+   target size (roughly) estimated as 2888
+Resolving bubbles... done
+Resolved bubbles: 0
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Discarding suspicious nodes... done
+   Suspicious nodes removed: 0
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Short-range paired-end horizon: 1000
+Estimating pairing distance... done               
+   [allowed distance range] (mean,sd) (tot,valid,sampled,usable)
+   lib1 >< [200,200] (200.000,0.000) (449,449,449,449)
+Building contigs...
+Building contigs... done                               
+Number of contigs:  1
+   sum:  2.96 Kbp
+   N50:  2.96 Kbp
+   mean: 2.96 Kbp
+   max:  2.96 Kbp
+   min:  2.96 Kbp
+Assembly breaks occurred due to:
+   non-resolved ambiguity: 0
+   dead-end: 2
+2019-05-21 07:53:47,201  Kmergenie:
+running histogram estimation
+Setting maximum kmer length to: 100 bp
+computing histograms (from k=21 to k=91): 21 61 31 81 71 51 41 91 estimation of the best k so far: 71
+
+ntCard wall-clock time over all k values: 5 seconds 
+fitting model to histograms to estimate best k
+refining estimation around [65; 77], with a step of 2
+running histogram estimation
+Setting maximum kmer length to: 100 bp
+computing histograms (from k=67 to k=77): 71 67 77 75 69 73 table of predicted num. of genomic k-mers: tests/assemblies/kmer/test1.dat
+recommended coverage cut-off for best k: 1
+best k: 71
+
+ntCard wall-clock time over all k values: 5 seconds 
+fitting model to histograms to estimate best k
+2019-05-21 07:55:17,358  Masurca:
+Verifying PATHS...
+jellyfish OK
+runCA OK
+createSuperReadsForDirectory.perl OK
+creating script file for the actions...done.
+execute /home/gneumann/gaaf/unit_tests/tests/assemblies/masurca/phred_test/assemble.sh to run assembly
+[Tue May 21 07:55:17 -03 2019] Processing pe library reads
+[Tue May 21 07:55:17 -03 2019] Average PE read length 100
+[Tue May 21 07:55:17 -03 2019] MIN_Q_CHAR: 64
+[Tue May 21 07:55:17 -03 2019] Creating mer database for Quorum
+[Tue May 21 07:55:18 -03 2019] Error correct PE
+[Tue May 21 07:55:18 -03 2019] Estimating genome size
+[Tue May 21 07:55:18 -03 2019] Estimated genome size: 2907
+[Tue May 21 07:55:18 -03 2019] Creating k-unitigs with k=77
+[Tue May 21 07:55:18 -03 2019] Computing super reads from PE 
+[Tue May 21 07:55:18 -03 2019] Super reads failed, check super1.err and files in ./work1/
+2019-05-21 07:57:28,120  Mira:
+This is MIRA V5rc1.
+
+Please cite: Chevreux, B., Wetter, T. and Suhai, S. (1999), Genome Sequence
+Assembly Using Trace Signals and Additional Sequence Information.
+Computer Science and Biology: Proceedings of the German Conference on
+Bioinformatics (GCB) 99, pp. 45-56.
+
+To (un-)subscribe the MIRA mailing lists, see:
+	http://www.chevreux.org/mira_mailinglists.html
+
+After subscribing, mail general questions to the MIRA talk mailing list:
+	mira_talk@freelists.org
+
+
+To report issues or ask for features, please use the GitHub issue
+system at:
+	https://github.com/bachev/mira/issues
+This ensures that requests do not get lost.
+
+
+Compiled by: bach
+Fri Jan 25 15:41:59 UTC 2019
+On: Linux vuair 4.15.0-43-generic #46-Ubuntu SMP Thu Dec 6 14:45:28 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Compiled in boundtracking mode.
+Compiled in bugtracking mode.
+Compiled with ENABLE64 activated.
+Runtime settings (sorry, for debug):
+	Size of size_t  : 8
+	Size of uint32  : 4
+	Size of uint32_t: 4
+	Size of uint64  : 8
+	Size of uint64_t: 8
+Current system: Linux vm016.cloud.inf.puc-rio.br 4.15.0-45-generic #48-Ubuntu SMP Tue Jan 29 16:28:13 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+Looking for files named in data ...Manifest:
+projectname: tests
+job: genome,denovo,accurate
+parameters: 
+Manifest load entries: 1
+MLE 1:
+RGID: 1
+RGN: DataIlluminaPairedLib	SN: StrainX
+SP: ---> <---	SPio: 0	SPC: -1	IF: 200	IT: 200	TSio: 0
+ST: 6 (Solexa)	namschem: 4	SID: 0
+DQ: 30
+BB: 0	Rail: 0	CER: 0
+
+/home/gneumann/gaaf/unit_tests/tests/reads/phred_test_1.fastq /home/gneumann/gaaf/unit_tests/tests/reads/phred_test_2.fastq 
+********************************************************************************
+* Binary: /home/gneumann/gaaf/assemblers/mira/bin/mira                         *
+********************************************************************************
+Parameters parsed without error, perfect.
+Overriding number of threads via '-t' with 16
+
+-CL:pec and -CO:emeas1clpec are set, setting -CO:emea values to 1.
+------------------------------------------------------------------------------
+Parameter settings seen for:
+Sanger data
+
+Used parameter settings:
+  General (-GE):
+	Project name                                : tests
+	Number of threads (not)                     : 16
+	Automatic memory management (amm)           : yes
+	    Keep percent memory free (kpmf)         : 15
+	    Max. process size (mps)                 : 0
+	EST SNP pipeline step (esps)                : 0
+	Colour reads by kmer frequency (crkf)       : yes
+	Preprocess only (ppo)                       : no
+
+  Load reads options (-LR):
+	Wants quality file (wqf)                    :  [sxa]  yes
+
+	Filecheck only (fo)                         : no
+
+  Assembly options (-AS):
+	Use genomic pathfinder (ugpf)               : yes
+
+	Number of passes (nop)                      : 0
+	Kmer series (kms)                           : 
+	Maximum number of RMB break loops (rbl)     : 2
+	Maximum contigs per pass (mcpp)             : 0
+
+	Minimum read length (mrl)                   :  [sxa]  20
+	Minimum reads per contig (mrpc)             :  [sxa]  10
+	Enforce presence of qualities (epoq)        :  [sxa]  yes
+
+	Automatic repeat detection (ard)            : yes
+	    Coverage threshold (ardct)              :  [sxa]  2.5
+	    Minimum length (ardml)                  :  [sxa]  300
+	    Grace length (ardgl)                    :  [sxa]  20
+	    Use uniform read distribution (urd)     : no
+	      Start in pass (urdsip)                : 3
+	      Cutoff multiplier (urdcm)             :  [sxa]  1.5
+
+	Spoiler detection (sd)                      : yes
+	    Last pass only (sdlpo)                  : yes
+
+	Use emergency search stop (uess)            : yes
+	    ESS partner depth (esspd)               : 500
+	Use emergency blacklist (uebl)              : yes
+	Use max. contig build time (umcbt)          : no
+	    Build time in seconds (bts)             : 10000
+
+  Strain and backbone options (-SB):
+	Bootstrap new backbone (bnb)                :  [sxa]  yes
+	Start backbone usage in pass (sbuip)        : 0
+	Backbone rail from strain (brfs)            : 
+	Backbone rail length (brl)                  : 0
+	Backbone rail overlap (bro)                 : 0
+	Trim overhanging reads (tor)                : yes
+
+  Dataprocessing options (-DP):
+	Use read extensions (ure)                   :  [sxa]  no
+	    Read extension window length (rewl)     :  [sxa]  30
+	    Read extension w. maxerrors (rewme)     :  [sxa]  2
+	    First extension in pass (feip)          :  [sxa]  0
+	    Last extension in pass (leip)           :  [sxa]  0
+
+  Clipping options (-CL):
+	SSAHA2 or SMALT clipping:
+	    Gap size (msvsgs)                       :  [sxa]  1
+	    Max front gap (msvsmfg)                 :  [sxa]  2
+	    Max end gap (msvsmeg)                   :  [sxa]  2
+	    Strict front clip (msvssfc)             :  [sxa]  0
+	    Strict end clip (msvssec)               :  [sxa]  0
+	Possible vector leftover clip (pvlc)        :  [sxa]  no
+	    maximum len allowed (pvcmla)            :  [sxa]  18
+	Min qual. threshold for entire read (mqtfer):  [sxa]  5
+	    Number of bases (mqtfernob)             :  [sxa]  15
+	Quality clip (qc)                           :  [sxa]  no
+	    Minimum quality (qcmq)                  :  [sxa]  20
+	    Window length (qcwl)                    :  [sxa]  30
+	Bad stretch quality clip (bsqc)             :  [sxa]  no
+	    Minimum quality (bsqcmq)                :  [sxa]  5
+	    Window length (bsqcwl)                  :  [sxa]  20
+	Masked bases clip (mbc)                     :  [sxa]  no
+	    Gap size (mbcgs)                        :  [sxa]  5
+	    Max front gap (mbcmfg)                  :  [sxa]  12
+	    Max end gap (mbcmeg)                    :  [sxa]  12
+	Lower case clip front (lccf)                :  [sxa]  no
+	Lower case clip back (lccb)                 :  [sxa]  no
+	Clip poly A/T at ends (cpat)                :  [sxa]  no
+	    Keep poly-a signal (cpkps)              :  [sxa]  no
+	    Minimum signal length (cpmsl)           :  [sxa]  12
+	    Max errors allowed (cpmea)              :  [sxa]  1
+	    Max gap from ends (cpmgfe)              :  [sxa]  9
+	Clip 3 prime polybase (c3pp)                :  [sxa]  yes
+	    Minimum signal length (c3ppmsl)         :  [sxa]  15
+	    Max errors allowed (c3ppmea)            :  [sxa]  3
+	    Max gap from ends (c3ppmgfe)            :  [sxa]  9
+	Clip known adaptors right (ckar)            :  [sxa]  yes
+	Ensure minimum left clip (emlc)             :  [sxa]  no
+	    Minimum left clip req. (mlcr)           :  [sxa]  0
+	    Set minimum left clip to (smlc)         :  [sxa]  0
+	Ensure minimum right clip (emrc)            :  [sxa]  no
+	    Minimum right clip req. (mrcr)          :  [sxa]  10
+	    Set minimum right clip to (smrc)        :  [sxa]  20
+
+	GB chimera detection clip (gbcdc)           : yes
+	KMER junk detection (kjd)                   : yes
+	    KMER junk complete kill (kjck)          : no
+	DEPRECATED! Apply SKIM chimera detection clip (ascdc): yes
+	DEPRECATED! Apply SKIM junk detection clip (asjdc): no
+
+	Propose end clips (pec)                     :  [sxa]  yes
+	    Kmer size (peckms)                      : 31
+	    Minimum kmer for forward-rev (pmkfr)    : 1
+	    Minimum total kmer (pmtk)               : 3
+	    Handle Solexa GGCxG problem (pechsgp)   : yes
+	    Continuous (pecc)                       : yes
+
+	Rare kmer mask (rkm)                        :  [sxa]  no
+	    Front freq (pffreq)                     :  [sxa]  0
+	    Back freq (pbfreq)                      :  [sxa]  0
+	    Front forward-rev (pffore)              :  [sxa]  yes
+	    Back forward-rev (pbfore)               :  [sxa]  yes
+	    Front conf. multi-seq type (pfcmst)     :  [sxa]  yes
+	    Back conf. multi-seq type (pbcmst)      :  [sxa]  yes
+	    Front seen at low pos (pfsalp)          :  [sxa]  no
+	    Back seen at low pos (pbsalp)           :  [sxa]  no
+
+	Clip bad solexa ends (cbse)                 :  [sxa]  yes
+	Search PhiX174 (spx174)                     :  [sxa]  yes
+	    Filter PhiX174 (fpx174)                 :  [sxa]  no
+
+	Filter rRNA (frrna)                         : no
+	    Pairs (frrnap)                          : no
+	    Number of kmers (frrnank)               : 17
+
+  Parameters for SKIM algorithm (-SK):
+	Number of threads (not)                     : 16
+
+	Also compute reverse complements (acrc)     : yes
+	Kmer size (kms)                             : 17
+	    Automatic increase per pass (kmsaipp)   : 0
+	    Kmer size max(kmsmax)                   : 0
+	Kmer save stepping (kss)                    : 1
+	Percent required (pr)                       :  [sxa]  95
+
+	Max hits per read (mhpr)                    : 2000
+
+	Filter megahubs (fmh)                       : yes
+	    Megahub cap (mhc)                       : 150000
+	    Max megahub ratio (mmhr)                : 0
+
+	SW check on backbones (swcob)               : no
+
+	Max kmers in memory (mkim)                  : 15000000
+	MemCap: hit reduction (mchr)                : 4096
+
+  Parameters for Kmer Statistics (-KS):
+	Freq. cov. estim. min (fcem)                : 0
+	Freq. estim. min normal (fenn)              : 0.4
+	Freq. estim. max normal (fexn)              : 1.6
+	Freq. estim. repeat (fer)                   : 1.9
+	Freq. estim. heavy repeat (fehr)            : 8
+	Freq. estim. crazy (fecr)                   : 20
+	Mask nasty repeats (mnr)                    : yes
+	    Nasty repeat ratio (nrr)                : 100
+	    Nasty repeat coverage (nrc)             : 0
+	    Lossless digital normalisation (ldn)    : no
+
+	Repeat level in info file (rliif)           : 6
+
+	Memory to use (mtu)                         : 75
+	Rare kmer final kill (rkfk)                 : 0
+
+  Pathfinder options (-PF):
+	Use quick rule (uqr)                        :  [sxa]  yes
+	    Quick rule min len 1 (qrml1)            :  [sxa]  -95
+	    Quick rule min sim 1 (qrms1)            :  [sxa]  100
+	    Quick rule min len 2 (qrml2)            :  [sxa]  -85
+	    Quick rule min sim 2 (qrms2)            :  [sxa]  100
+	Backbone quick overlap min len (bqoml)      :  [sxa]  20
+	Max. start cache fill time (mscft)          : 5
+
+  Align parameters for Smith-Waterman align (-AL):
+	Bandwidth in percent (bip)             :  [sxa]  20
+	Bandwidth max (bmax)                   :  [sxa]  80
+	Bandwidth min (bmin)                   :  [sxa]  20
+	Minimum score (ms)                     :  [sxa]  15
+	Minimum overlap (mo)                   :  [sxa]  17
+	Minimum relative score in % (mrs)      :  [sxa]  90
+
+	Enforce clean ends (ece)               : no
+	    Clean end distance (ced)           : 0
+	    Clean end mismatch allowed (cema)  : 0
+	Extra gap penalty (egp)                : yes
+	    extra gap penalty levels (egpl)    : 0,0,100
+	    Max. egp in percent (megpp)        : 100
+
+  Final mapping parameters (-FM):
+	Active (act)                           : yes
+
+	Map perfect matches (mpm)              :  [sxa]  yes
+	Max total errors (mte)                 :  [sxa]  -1
+	Max mismatches (mmm)                   :  [sxa]  -1
+	Max total errors (mg)                  :  [sxa]  -1
+	Clean end distance (ced)               :  [sxa]  0
+
+  Contig parameters (-CO):
+	Name prefix (np)                                         : tests
+	Reject on drop in relative alignment score in % (rodirs) :  [sxa]  30
+	CMinimum relative score in % (cmrs)                      :  [sxa]  -1
+	Mark repeats (mr)                                        : yes
+	    Only in result (mroir)                               : no
+	    Assume SNP instead of repeats (asir)                 : no
+	    Minimum reads per group needed for tagging (mrpg)    :  [sxa]  4
+	    Minimum neighbour quality needed for tagging (mnq)   :  [sxa]  20
+	    Minimum Group Quality needed for RMB Tagging (mgqrt) :  [sxa]  30
+	    Minimum coverage percentage (mcp)                    : 10
+	    End-read Marking Exclusion Area in bases (emea)      :  [sxa]  1
+	        Set to 1 on clipping PEC (emeas1clpec)           : yes
+	    Also mark gap bases (amgb)                           :  [sxa]  yes
+	        Also mark gap bases - even multicolumn (amgbemc) :  [sxa]  yes
+	        Also mark gap bases - need both strands (amgbnbs):  [sxa]  yes
+	Force non-IUPAC consensus (fnic)                         :  [sxa]  no
+	Merge short reads (msr)                                  :  [sxa]  yes
+	    Max errors (msrme)                                   :  [sxa]  0
+	    Keep ends unmerged (msrkeu)                          :  [sxa]  -1
+	Gap override ratio (gor)                                 :  [sxa]  66
+
+  Edit options (-ED):
+	GB read editing (gbre)                      : yes
+	Mira automatic contig editing (mace)        : yes
+	    Edit kmer singlets (eks)                : yes
+	    Edit homopolymer overcalls (ehpo)       :  [sxa]  no
+
+  Misc (-MI):
+	Large contig size (lcs)                     : 500
+	Large contig size for stats (lcs4s)         : 5000
+
+	I know what I do (ikwid)                    : no
+
+	Extra flag 1 / sanity track check (ef1)     : no
+	Extra flag 2 / dnredreadsatpeaks (ef2)      : yes
+	Extra flag 3 / pelibdisassemble (ef3)       : no
+	Extended log (el)                           : no
+
+  Nag and Warn (-NW):
+	Check NFS (cnfs)                            : stop
+	Check multi pass mapping (cmpm)             : stop
+	Check template problems (ctp)               : stop
+	Check SRA read names (csrn)                 : stop
+	Check duplicate read names (cdrn)           : stop
+	Check Illumina junk in EST (cijie)          : stop
+	Check proposed end clipping (cpec)          : stop
+	Check max read name length (cmrnl)          : stop
+	    Max read name length (mrnl)             : 40
+	Check average coverage (cac)                : stop
+	    Average coverage value (acv)            : 80
+	(Phi)X174 contig prefix (x174cp)            : WarnILMNPhiX174_
+
+  Directories (-DI):
+	Top directory for writing files   : tests_assembly
+	For writing result files          : tests_assembly/tests_d_results
+	For writing result info files     : tests_assembly/tests_d_info
+	For writing tmp files             : tests_assembly/tests_d_tmp
+	Tmp redirected to (trt)           : 
+	For writing checkpoint files      : tests_assembly/tests_d_chkpt
+
+  Output files (-OUTPUT/-OUT):
+	Save simple singlets in project (sssip)      :  [sxa]  no
+	Save tagged singlets in project (stsip)      :  [sxa]  yes
+
+	Remove rollover tmps (rrot)                  : yes
+	Remove tmp directory (rtd)                   : no
+
+    Result files:
+	Saved as CAF                       (orc)     : yes
+	Saved as MAF                       (orm)     : yes
+	Saved as FASTA                     (orf)     : yes
+	Saved as GAP4 (directed assembly)  (org)     : no
+	Saved as phrap ACE                 (ora)     : no
+	Saved as GFF3                     (org3)     : no
+	Saved as HTML                      (orh)     : no
+	Saved as Transposed Contig Summary (ors)     : no
+	Saved as simple text format        (ort)     : no
+	Saved as wiggle                    (orw)     : yes
+
+    Temporary result files:
+	Saved as CAF                       (otc)     : no
+	Saved as MAF                       (otm)     : yes
+	Saved as FASTA                     (otf)     : yes
+	Saved as GAP4 (directed assembly)  (otg)     : no
+	Saved as phrap ACE                 (ota)     : no
+	Saved as HTML                      (oth)     : no
+	Saved as Transposed Contig Summary (ots)     : no
+	Saved as simple text format        (ott)     : no
+
+    Extended temporary result files:
+	Saved as CAF                      (oetc)     : no
+	Saved as FASTA                    (oetf)     : no
+	Saved as GAP4 (directed assembly) (oetg)     : no
+	Saved as phrap ACE                (oeta)     : no
+	Saved as HTML                     (oeth)     : no
+	Save also singlets               (oetas)     : no
+
+    Alignment output customisation:
+	TEXT characters per line (tcpl)              : 60
+	HTML characters per line (hcpl)              : 60
+	TEXT end gap fill character (tegfc)          :  
+	HTML end gap fill character (hegfc)          :  
+
+    File / directory output names:
+	CAF             : tests_out.caf
+	MAF             : tests_out.maf
+	FASTA           : tests_out.unpadded.fasta
+	FASTA quality   : tests_out.unpadded.fasta.qual
+	FASTA (padded)  : tests_out.padded.fasta
+	FASTA qual.(pad): tests_out.padded.fasta.qual
+	GAP4 (directory): tests_out.gap4da
+	ACE             : tests_out.ace
+	HTML            : tests_out.html
+	Simple text     : tests_out.txt
+	TCS overview    : tests_out.tcs
+	Wiggle          : tests_out.wig
+------------------------------------------------------------------------------
+Creating directory tests_assembly ... done.
+Creating directory tests_assembly/tests_d_results ... done.
+Creating directory tests_assembly/tests_d_info ... done.
+Creating directory tests_assembly/tests_d_chkpt ... done.
+Creating directory tests_assembly/tests_d_tmp ... done.
+
+Tmp directory is not on a NFS mount, good.
+
+Localtime: Tue May 21 07:57:28 2019
+
+Loading reads from /home/gneumann/gaaf/unit_tests/tests/reads/phred_test_1.fastq type fastq
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Looking at FASTQ type ... guessing FASTQ-33 (Sanger)
+Running quality values adaptation ... done.
+Loading reads from /home/gneumann/gaaf/unit_tests/tests/reads/phred_test_2.fastq type fastq
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Looking at FASTQ type ... guessing FASTQ-33 (Sanger)
+Running quality values adaptation ... done.
+Checking reads for trace data (loading qualities if needed):
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+No SCF data present in any read, EdIt automatic contig editing for Sanger data is now switched off.
+898 reads with valid data for assembly.
+Localtime: Tue May 21 07:57:28 2019
+
+Generated 449 unique DNA template ids for 898 valid reads.
+TODO: Like Readpool: strain x has y reads
+Have read pool with 898 reads.
+
+===========================================================================
+Backbones: 0	Backbone rails: 0
+Sequencing technology statistics:
+
+		Sanger	454	IonTor	PcBioHQ	PcBioLQ	Text	Solexa	Solid
+		------------------------------------------------------------
+Total reads	0	0	0	0	0	0	898	0
+Reads wo qual	0	0	0	0	0	0	0	0
+Used reads	0	0	0	0	0	0	898	0
+Avg. tot rlen	0	0	0	0	0	0	100	0
+Avg. used rlen	0	0	0	0	0	0	100	0
+W/o clips	0	0	0	0	0	0	898	0
+
+
+Readgroup statistics:
+RG 1	Solexa	avg total len: 100	avg clip len: 100	total bases: 89800	used bases: 89800
+===========================================================================
+
+
+Checking pairs of readgroup 1 (named: 'DataIlluminaPairedLib'):  found 898
+tests_assembly/tests_d_tmp/tests_int_clippings_t0.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t1.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t2.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t3.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t4.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t5.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t6.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t7.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t8.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t9.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t10.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t11.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t12.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t13.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t14.0.txt
+tests_assembly/tests_d_tmp/tests_int_clippings_t15.0.txt
+Post-load clips:
+Localtime: Tue May 21 07:57:28 2019
+hashstat_t: 16
+freemem: 30969896960
+mbfb1: 512
+mbfb2: 2048
+TNH: 5356
+XME 1: 0.000212828
+XME 2: 0.1
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:28 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 965
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 957
+after comp: 957
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 583
+after comp: 583
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 654
+after comp: 654
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 760
+after comp: 760
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 734
+after comp: 734
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 482
+after comp: 482
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 531
+after comp: 531
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 651
+after comp: 651
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 643
+after comp: 643
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 690
+after comp: 690
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 482
+after comp: 482
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 584
+after comp: 584
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 621
+after comp: 621
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 643
+after comp: 643
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 732
+after comp: 732
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 965
+after comp: 965
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:28 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:28 2019
+Localtime: Tue May 21 07:57:28 2019
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+
+===========================================================================
+Backbones: 0	Backbone rails: 0
+Sequencing technology statistics:
+
+		Sanger	454	IonTor	PcBioHQ	PcBioLQ	Text	Solexa	Solid
+		------------------------------------------------------------
+Total reads	0	0	0	0	0	0	898	0
+Reads wo qual	0	0	0	0	0	0	0	0
+Used reads	0	0	0	0	0	0	898	0
+Avg. tot rlen	0	0	0	0	0	0	100	0
+Avg. used rlen	0	0	0	0	0	0	100	0
+W/o clips	0	0	0	0	0	0	898	0
+
+
+Readgroup statistics:
+RG 1	Solexa	avg total len: 100	avg clip len: 100	total bases: 89800	used bases: 89800
+===========================================================================
+
+
+Sorting reads ... done.
+
+Tmp directory is not on a NFS mount, good.
+
+Localtime: Tue May 21 07:57:29 2019
+hashstat_t: 16
+freemem: 30647951360
+mbfb1: 512
+mbfb2: 2048
+TNH: 5356
+XME 1: 0.000212828
+XME 2: 0.1
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:29 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 965
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 957
+after comp: 957
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 583
+after comp: 583
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 654
+after comp: 654
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 760
+after comp: 760
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 734
+after comp: 734
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 482
+after comp: 482
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 531
+after comp: 531
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 651
+after comp: 651
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 643
+after comp: 643
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 690
+after comp: 690
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 482
+after comp: 482
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 584
+after comp: 584
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 621
+after comp: 621
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 643
+after comp: 643
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 732
+after comp: 732
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 965
+after comp: 965
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:29 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:29 2019
+Localtime: Tue May 21 07:57:29 2019
+PRED MAXTID 448
+Hash analysis for proposed cutbacks and chimera search and read editing:
+Localtime: Tue May 21 07:57:29 2019
+hashstat_t: 16
+freemem: 30367117312
+Percentage
+mbfb1: 21720
+mbfb2: 21720
+TNH: 62860
+XME 1: 0.00249783
+XME 2: 0.1
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:29 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 609
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 556
+after comp: 536
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 286
+after comp: 280
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 352
+after comp: 342
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 609
+after comp: 586
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 424
+after comp: 414
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 240
+after comp: 239
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 145
+after comp: 140
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 347
+after comp: 343
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 377
+after comp: 368
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 254
+after comp: 251
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 240
+after comp: 236
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 291
+after comp: 275
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 444
+after comp: 425
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 377
+after comp: 364
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 426
+after comp: 413
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 552
+after comp: 530
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:30 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:30 2019
+Localtime: Tue May 21 07:57:30 2019
+Kmer statistics:
+=========================================================
+Using kmers of size: 31
+Measured avg. raw frequency coverage: 23
+Corrected avg. raw frequency coverage: 23
+
+Final average frequency: 23
+
+Deduced thresholds:
+-------------------
+Rare freq: 9.2
+Min normal freq: 9.2
+Max normal freq 36.8
+Repeat freq: 43.7
+Heavy freq: 184
+Crazy freq: 460
+Mask freq: 2300
+
+Repeat ratio histogram:
+-----------------------
+0	254
+1	5384
+2	104
+=========================================================
+
+Hunting down chimeras:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 22
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+PEC chimera trophy count: 0
+Localtime: Tue May 21 07:57:30 2019
+Reloading statistics 3 tests_assembly/tests_d_tmp/peckmerstat.mhs.gz ... done.
+Localtime: Tue May 21 07:57:30 2019
+Performing PEC SDBG edits:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 22
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Performed 0 edits.
+Rejected 0 fishy edits.
+
+PEC SDBG edited reads: 0
+Localtime: Tue May 21 07:57:30 2019
+Reloading statistics 4 tests_assembly/tests_d_tmp/peckmerstat.mhs.gz ... done.
+Localtime: Tue May 21 07:57:30 2019
+Assigning statistics values (1):
+Localtime: Tue May 21 07:57:30 2019
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:31 2019
+Localtime: Tue May 21 07:57:31 2019
+
+Looking for proposed cutbacks ... done.
+Performed clips:
+	Num reads cliped left      : 5
+	Num reads cliped right     : 0
+	Num reads completely killed: 0
+	Total bases clipped        : 135
+
+Clipping dubious poly-base stretches at end of reads ... Hash analysis for proposed cutbacks and chimera search and read editing:
+Localtime: Tue May 21 07:57:31 2019
+hashstat_t: 16
+freemem: 30301503488
+Percentage
+mbfb1: 21672
+mbfb2: 21672
+TNH: 62725
+XME 1: 0.00249247
+XME 2: 0.1
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:31 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 586
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 536
+after comp: 535
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 280
+after comp: 280
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 342
+after comp: 341
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 586
+after comp: 585
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 414
+after comp: 413
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 239
+after comp: 239
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 140
+after comp: 139
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 343
+after comp: 343
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 368
+after comp: 368
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 251
+after comp: 251
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 236
+after comp: 236
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 275
+after comp: 274
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 425
+after comp: 424
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 364
+after comp: 363
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 413
+after comp: 413
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 530
+after comp: 528
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:32 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:32 2019
+Localtime: Tue May 21 07:57:32 2019
+Kmer statistics:
+=========================================================
+Using kmers of size: 31
+Measured avg. raw frequency coverage: 23
+Corrected avg. raw frequency coverage: 23
+
+Final average frequency: 23
+
+Deduced thresholds:
+-------------------
+Rare freq: 9.2
+Min normal freq: 9.2
+Max normal freq 36.8
+Repeat freq: 43.7
+Heavy freq: 184
+Crazy freq: 460
+Mask freq: 2300
+
+Repeat ratio histogram:
+-----------------------
+0	244
+1	5384
+2	104
+=========================================================
+
+Hunting down chimeras:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 22
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+PEC chimera trophy count: 0
+Localtime: Tue May 21 07:57:32 2019
+Reloading statistics 3 tests_assembly/tests_d_tmp/peckmerstat.mhs.gz ... done.
+Localtime: Tue May 21 07:57:32 2019
+Performing PEC SDBG edits:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 22
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Performed 0 edits.
+Rejected 0 fishy edits.
+
+PEC SDBG edited reads: 0
+Localtime: Tue May 21 07:57:32 2019
+Reloading statistics 4 tests_assembly/tests_d_tmp/peckmerstat.mhs.gz ... done.
+Localtime: Tue May 21 07:57:32 2019
+Assigning statistics values (1):
+Localtime: Tue May 21 07:57:32 2019
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:33 2019
+Localtime: Tue May 21 07:57:33 2019
+
+Looking for proposed cutbacks ... done.
+Performed clips:
+	Num reads cliped left      : 0
+	Num reads cliped right     : 1
+	Num reads completely killed: 0
+	Total bases clipped        : 5
+
+Clipping dubious poly-base stretches at end of reads ... 
+===========================================================================
+Backbones: 0	Backbone rails: 0
+Sequencing technology statistics:
+
+		Sanger	454	IonTor	PcBioHQ	PcBioLQ	Text	Solexa	Solid
+		------------------------------------------------------------
+Total reads	0	0	0	0	0	0	898	0
+Reads wo qual	0	0	0	0	0	0	0	0
+Used reads	0	0	0	0	0	0	898	0
+Avg. tot rlen	0	0	0	0	0	0	100	0
+Avg. used rlen	0	0	0	0	0	0	99	0
+W/o clips	0	0	0	0	0	0	893	0
+
+
+Readgroup statistics:
+RG 1	Solexa	avg total len: 100	avg clip len: 99	total bases: 89800	used bases: 89660
+===========================================================================
+
+
+Performing snapshot 1
+Localtime: Tue May 21 07:57:33 2019
+Creating directory tests_assembly/tests_d_chkpt ... done.
+Localtime: Tue May 21 07:57:33 2019
+all-auto determination of passes and kmer series.
+Number of passes used by MIRA: 4
+kmer series: 17, 31, 53, 69
+Dump from /proc/self/status
+--------------------------------------------------------------------------------
+Name:	mira
+Umask:	0002
+State:	R (running)
+Tgid:	20996
+Ngid:	0
+Pid:	20996
+PPid:	20995
+TracerPid:	0
+Uid:	1002	1002	1002	1002
+Gid:	1001	1001	1001	1001
+FDSize:	64
+Groups:	27 108 1001 
+NStgid:	20996
+NSpid:	20996
+NSpgid:	20966
+NSsid:	19067
+VmPeak:	 3883752 kB
+VmSize:	 2572944 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  796520 kB
+VmRSS:	  534252 kB
+RssAnon:	  528128 kB
+RssFile:	    6124 kB
+RssShmem:	       0 kB
+VmData:	 1516912 kB
+VmStk:	     132 kB
+VmExe:	    9396 kB
+VmLib:	       8 kB
+VmPTE:	    1228 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+Threads:	16
+SigQ:	0/128425
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	ffff
+Cpus_allowed_list:	0-15
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	134
+nonvoluntary_ctxt_switches:	10
+--------------------------------------------------------------------------------
+
+
+Pass: 1 / 4
+Localtime: Tue May 21 07:57:33 2019
+Automatic -SK:bph set to 17
+
+===========================================================================
+Backbones: 0	Backbone rails: 0
+Sequencing technology statistics:
+
+		Sanger	454	IonTor	PcBioHQ	PcBioLQ	Text	Solexa	Solid
+		------------------------------------------------------------
+Total reads	0	0	0	0	0	0	898	0
+Reads wo qual	0	0	0	0	0	0	0	0
+Used reads	0	0	0	0	0	0	898	0
+Avg. tot rlen	0	0	0	0	0	0	100	0
+Avg. used rlen	0	0	0	0	0	0	99	0
+W/o clips	0	0	0	0	0	0	893	0
+
+
+Readgroup statistics:
+RG 1	Solexa	avg total len: 100	avg clip len: 99	total bases: 89800	used bases: 89660
+===========================================================================
+
+
+Localtime: Tue May 21 07:57:33 2019
+hashstat_t: 16
+freemem: 30239416320
+Percentage
+mbfb1: 21628
+mbfb2: 21628
+TNH: 75292
+XME 1: 0.00299184
+XME 2: 0.1
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:33 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 591
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 536
+after comp: 536
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 281
+after comp: 281
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 344
+after comp: 344
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 591
+after comp: 591
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 419
+after comp: 419
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 239
+after comp: 239
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 143
+after comp: 143
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 344
+after comp: 344
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 370
+after comp: 370
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 252
+after comp: 252
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 238
+after comp: 238
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 279
+after comp: 279
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 427
+after comp: 427
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 373
+after comp: 373
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 414
+after comp: 414
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 536
+after comp: 536
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:33 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:33 2019
+Localtime: Tue May 21 07:57:34 2019
+Kmer statistics:
+=========================================================
+Using kmers of size: 17
+Measured avg. raw frequency coverage: 27
+Corrected avg. raw frequency coverage: 27
+
+Final average frequency: 27
+
+Deduced thresholds:
+-------------------
+Rare freq: 10.8
+Min normal freq: 10.8
+Max normal freq 43.2
+Repeat freq: 51.3
+Heavy freq: 216
+Crazy freq: 540
+Mask freq: 2700
+
+Repeat ratio histogram:
+-----------------------
+0	262
+1	5376
+2	148
+=========================================================
+
+Performing HA SDBG edits:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 27
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Performed 0 edits.
+Rejected 0 fishy edits.
+
+HA SDBG edited reads: 0
+Reloading statistics 2 tests_assembly/tests_d_tmp/tests_int_kmerstats_pass.1.mhs.gz ... done.
+Estimator of average coverage: 14
+Assigning statistics values (3):
+Localtime: Tue May 21 07:57:34 2019
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:35 2019
+Buntifying reads ... done.
+Adding fork tags ... done.
+Writing read repeat info to: tests_assembly/tests_d_info/tests_info_readrepeats.lst ... 0 sequences with 0 masked stretches.
+Looking for proposed cutbacks ... done.
+Performed clips:
+	Num reads cliped left      : 0
+	Num reads cliped right     : 0
+	Num reads completely killed: 0
+	Total bases clipped        : 0
+
+Found 1 incorrectible read ends or possible chimeras.
+AS_resumeasembly 0
+AS_resumeisok 0
+fileExists(tests_assembly/tests_d_tmp/tests_signal_findpossibleoverlaps_pass.1.ok) 0
+Localtime: Tue May 21 07:57:35 2019
+
+
+Searching for possible overlaps:
+Localtime: Tue May 21 07:57:35 2019
+Now running threaded and partitioned skimmer-17 with 1 partitions in 16 threads:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%]  done.
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.1.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.1.bin from 292464 to 278448
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.1.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.1.bin from 280560 to 265752
+
+
+Hits chosen: 45350
+
+Localtime: Tue May 21 07:57:35 2019
+
+Total megahubs: 0
+Cutting back possible chimeras ... done.
+Chimeras were searched for ... looking for hits to purge.
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.1.bin from 278448 to 278448
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.1.bin from 265752 to 265752
+System memory: 33728753664
+Mem2keepfree: 5059313049
+Used by MIRA: 2651856896
+Mem avail: 26017583719
+rsh increased memtouse to: 26017583719
+Edge vector capacity: 52617
+Can load up to 47617 skim edges at once.
+Partitioning into 1 blocks.
+Blocks: 898	
+We have 45350 skims in file.
+Localtime: Tue May 21 07:57:36 2019
+De-normalising SKIM hits ... (this will take a while)
+Localtime: Tue May 21 07:57:36 2019
+Localtime: Tue May 21 07:57:36 2019
+Writing normalised skimblock 0 (       1 MiB) ... done.
+Localtime: Tue May 21 07:57:36 2019
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:36 2019
+Step 0
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:36 2019
+Only short reads
+Step 10
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3708
+Step 15
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3708
+Step 20
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 4189
+Step 30
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 4189
+Step 40
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 4189
+Step 50
+Total skims taken: 4189
+Step 53
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 13031
+Step 55
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 13031
+Step 56
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 13031
+Step 57
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 13031
+Step 60
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 13031
+Step solexa by critlevel
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 4972 hits.
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 3435 hits.
+Step template overlaps
+Loading block 0
+Only one block, already loaded.
+Step NAO
+rsh4_takeNeedAllOverlaps.
+None needed.
+Total skims taken: 21438
+
+Filtering forward skims.
+Localtime: Tue May 21 07:57:36 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done.
+Filtering complement skims.
+Localtime: Tue May 21 07:57:36 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done all filtering.
+Localtime: Tue May 21 07:57:36 2019
+Making alignments.
+Localtime: Tue May 21 07:57:36 2019
+
+Aligning possible forward matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   10984
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 10984
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:36 2019
+
+Aligning possible complement matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   10454
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 10454
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:36 2019
+
+Localtime: Tue May 21 07:57:36 2019
+Counting number of alignments in files ... done.
+Expecting 21438 alignments.
+Localtime: Tue May 21 07:57:36 2019
+Loading confirmed 21438 overlaps from disk (will need approximately 1 MiB RAM):
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:36 2019
+
+
+Sorting confirmed overlaps (this may take a while) ... done.
+
+Localtime: Tue May 21 07:57:36 2019
+Generating clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Sorting clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:36 2019
+
+Writing clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Writing unclustered reads ... done.
+Localtime: Tue May 21 07:57:36 2019
+BFC: 1	0
+TGS: 449
+overlapcompressstepping: 898
+nextoverlapcompress: 898
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 0 reads moved to debris.
+bfc 1
+Localtime: Tue May 21 07:57:36 2019
+
+bfc 2
+Timing BFC prelim1: 47
+bfc 3
+bfc 4
+Timing BFC discard con: 25
+bfc 5
+bfc 6/0
+bfc 7/0
+Building new contig 1
+Localtime: Tue May 21 07:57:36 2019
+Unused reads: 898
+bfc 8/0
+0	Known 1: 0
+iter 0, PF init new contig
+Known 2: 0
+assemblymode_mapping: 0
+use general pathfinder: 1
+bfccp3
+Timing priv_initialiseLowerBoundOEdges: 154
+Timing priv_fdns_subFillCache 1 1 1 1 : 4055
+Startcache size: 1
+Timing priv_fdns_genome total: 4089
+[1]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   276	pft	34 / 185
+[61]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   678	pft	29 / 176
+[121]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   783	pft	31 / 177
+[181]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1130	pft	31 / 179
+[241]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1393	pft	32 / 177
+[301]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1737	pft	33 / 177
+[361]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1981	pft	29 / 178
+[421]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2087	pft	31 / 178
+[481]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2101	pft	39 / 176
+[541]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2119	pft	72 / 174
+[601]	+++++++++++++<++++++++++++++++++++++++++++++++++++++++++++++   2169	pft	75 / 174
+[660]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2516	pft	40 / 173
+[720]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2784	pft	35 / 174
+[780]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2887	pft	36 / 179
+[840]	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++<<priv_ld addRead: 161803
+priv_ld total: 193645
+Timing BFC paf construct: 198104
+
+ccon timings: 
+cct pre	1772
+cct dir	2367
+cct xcu	5244
+cct tmp	2323
+cct sw 	81991
+cct pic	1499
+cct ico	45856
+cct icm	0
+cct upd	1790
+cct del	0
+cct rmz	1799
+cct gcp	11
+
+ccon i timings (895): 
+ccit insglcc	528
+ccit insglaro	1240
+ccit insglact	149
+ccit insgltot	3909
+ccit pr		15876
+ccit templ	2354
+ccit index	1389
+ccit biglccins	0
+ccit biglinterpol	0
+ccit biglupdtags	0
+ccit biglfpcri	0
+ccit bigllgap	0
+ccit biglshiftread	0
+ccit bigltot	1639
+ccit insgr	1644
+ccit ucv	6837
+
+ccon d timings (0): 
+ccdt ubl	             0
+ccdt ucv	             0
+ccdt itf	             0
+ccdt itb	             0
+ccdt ccef	             0
+ccdt cceb	             0
+ccdt sdt	             0
+ccdt sr		             0
+ccdt smp	             0
+ccdt dt		             0
+ccdt rr		             0
+ccdt dsoc	             0
+ccdt total	             0
+0	Known 3: 896
+Triggering additional cluster check: shouldmovesmallclusterstodebris startCacheRanDry
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 2 reads moved to debris.
+bfc 9/0
+
+
+Finished building.
+Localtime: Tue May 21 07:57:36 2019
+Timing BFC analysereadcov: 5445
+makeIntelligentConsensus() complete calc .. mict_fin        2
+mict_pre        73
+mict_shadow     48
+mict_fallout    4662
+mict_newin      4783
+mict_helper1    11916
+mict_newin      4783
+mict_restofloop 5666
+mict_totalloop  43259
+done.
+
+-------------- Contig statistics ----------------
+Contig id: 1
+Contig length: 2896
+
+		      Sanger         454      IonTor     PcBioHQ     PcBioLQ        Text      Solexa       Solid
+Num. reads	           0           0           0           0           0           0         896           0
+100% merged reads	   -           -           -           -           -           -           0
+Max. coverage	           0           0           0           0           0           0          53           0
+Avg. coverage	       0.000       0.000       0.000       0.000       0.000       0.000      30.927       0.000
+
+Max. contig coverage: 53
+Avg. contig coverage: 30.927
+
+Consensus contains:	A: 814	C: 694	G: 449	T: 939	N: 0
+			IUPAC: 0	Funny: 0	*: 0
+GC content: 39.468%
+
+Contig positions with coverage: 0
+-------------------------------------------------
+Timing BFC cout constats: 44495
+Localtime: Tue May 21 07:57:36 2019
+bfc 10/0
+Timing BFC edit tricky1: 3
+Marking possibly misassembled repeats:  [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done step 1, starting step 2:done. Found none.
+Timing BFC mark reps: 4027
+bfc 11/0
+
+Searching for single discr. without HAF tags:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Edited 0 positions.
+Timing BFC edit single discrepancy, no HAF: 2921
+bfc 12/0
+Timing BFC delPSHP: 35
+bfc 13/0
+bfc 14/0
+bfc 15/0
+bfc 16/0
+Transfering reads to readpool.
+Timing BFC rp transfer: 1593
+Done.
+bfc 17/0
+I have newreptmarked 0 wasmajorovercalledited 0 contignotok 0	continueiter: 0
+bfc 19
+Timing BFC persistent small overlaps2: 6574
+bfc 20
+Timing BFC phix174 con: 3824
+Storing contig ... 10Searching for: SROs UNSs IUPACs, preparing needed data: sorting tags ... done
+makeIntelligentConsensus() complete calc .. mict_fin        284
+mict_pre        11
+mict_shadow     31
+mict_fallout    4721
+mict_newin      4775
+mict_helper1    12009
+mict_newin      4775
+mict_restofloop 5761
+mict_totalloop  43634
+done.
+fetching consensus for strain0 ...done.
+Starting search:
+done with search
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+Transfering tags to readpool.
+Transfering contig read tags to readpool reads.
+Saving temp MAF ... done.
+Saving temp FASTA ... done.
+done.
+Timing BFC store con: 58883
+Timing BFC loop total: 326915
+Timing BFC unused: 4
+CUnused: 0
+TUnused: 0
+AS_used_ids.size(): 898
+
+Buildstats - RM positions        :	0	0
+Buildstats - overcall edits      :	0	0
+Buildstats - hash edits          :	0	0
+Buildstats - contig disassemblies:	0	0
+
+ATG PREDICTIONS
+rgid: 1	c: 402	sp: -1 (innies)	m: 206.5210918114	d: 4.3436158411	s: 0.1754060479	-: 197	+: 215
+Final prediction: rgid: 1	c: 402	sp: -1 (innies)	m: 206.5210918114	d: 4.3436158411	s: 0.1754060479	-: 197	+: 215
+Saving debris list to file: tests_assembly/tests_d_tmp/tests_info_debrislist_pass.1.txt
+-------- CRITICAL warning --------
+
+MIRA warncode: CONCOV_SUSPICIOUS_DISTRIBUTION
+Title: Suspicious distribution of contig coverages
+
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  large contigs) have an average coverage less than 75% of the average coverage
+  of all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage more than 125% of the average coverage of
+  all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage 25% above or below the average coverage of
+  all non-repetitive large contigs.
+Summary: found 3 indicator(s) for coverage problem(s).
+
+If the DNA you are assembling is bacterial, this could indicate that you sampled
+and sequenced DNA from exponential or late exponential phase of a bacterial
+population. This leads to a coverage bias toward the origin of replication,
+hence false positive detection of repeats, hence an assembly which is more
+fragmented than it could be or may have misassemblies in regions located toward
+the opposite of the origin of replication.
+Only available countermeasure: for your next sequencing project, do not sample
+in exponential phase but sample in stationary phase (if possible).
+
+Saving readgroup info to file: tests_assembly/tests_d_tmp/tests_info_readgroups_pass.1.txt
+Performing snapshot 2
+Localtime: Tue May 21 07:57:36 2019
+Creating directory tests_assembly/tests_d_chkpt ... done.
+Localtime: Tue May 21 07:57:36 2019
+Dump from /proc/self/status
+--------------------------------------------------------------------------------
+Name:	mira
+Umask:	0002
+State:	R (running)
+Tgid:	20996
+Ngid:	0
+Pid:	20996
+PPid:	20995
+TracerPid:	0
+Uid:	1002	1002	1002	1002
+Gid:	1001	1001	1001	1001
+FDSize:	64
+Groups:	27 108 1001 
+NStgid:	20996
+NSpid:	20996
+NSpgid:	20966
+NSsid:	19067
+VmPeak:	 4051216 kB
+VmSize:	 2589704 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  810388 kB
+VmRSS:	  550932 kB
+RssAnon:	  543840 kB
+RssFile:	    7092 kB
+RssShmem:	       0 kB
+VmData:	 1533672 kB
+VmStk:	     132 kB
+VmExe:	    9396 kB
+VmLib:	       8 kB
+VmPTE:	    1260 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+Threads:	16
+SigQ:	0/128425
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	ffff
+Cpus_allowed_list:	0-15
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	151
+nonvoluntary_ctxt_switches:	12
+--------------------------------------------------------------------------------
+
+
+Pass: 2 / 4
+Localtime: Tue May 21 07:57:36 2019
+Automatic -SK:bph set to 31
+
+===========================================================================
+Backbones: 0	Backbone rails: 0
+Sequencing technology statistics:
+
+		Sanger	454	IonTor	PcBioHQ	PcBioLQ	Text	Solexa	Solid
+		------------------------------------------------------------
+Total reads	0	0	0	0	0	0	898	0
+Reads wo qual	0	0	0	0	0	0	0	0
+Used reads	0	0	0	0	0	0	898	0
+Avg. tot rlen	0	0	0	0	0	0	100	0
+Avg. used rlen	0	0	0	0	0	0	99	0
+W/o clips	0	0	0	0	0	0	893	0
+
+
+Readgroup statistics:
+RG 1	Solexa	avg total len: 100	avg clip len: 99	total bases: 89800	used bases: 89660
+===========================================================================
+
+
+Localtime: Tue May 21 07:57:36 2019
+hashstat_t: 16
+freemem: 30123945984
+Percentage
+mbfb1: 21546
+mbfb2: 21546
+TNH: 62720
+XME 1: 0.0024922689
+XME 2: 0.1000000000
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:36 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 585
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 535
+after comp: 535
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 280
+after comp: 280
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 341
+after comp: 341
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 585
+after comp: 585
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 413
+after comp: 413
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 239
+after comp: 239
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 139
+after comp: 139
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 343
+after comp: 343
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 368
+after comp: 368
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 251
+after comp: 251
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 236
+after comp: 236
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 274
+after comp: 274
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 424
+after comp: 424
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 363
+after comp: 363
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 413
+after comp: 413
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 528
+after comp: 528
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:36 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:36 2019
+Localtime: Tue May 21 07:57:37 2019
+Kmer statistics:
+=========================================================
+Using kmers of size: 31
+Measured avg. raw frequency coverage: 23
+Corrected avg. raw frequency coverage: 23
+
+Final average frequency: 23
+
+Deduced thresholds:
+-------------------
+Rare freq: 9.2000000000
+Min normal freq: 9.2000000000
+Max normal freq 36.8000000000
+Repeat freq: 43.7000000000
+Heavy freq: 184.0000000000
+Crazy freq: 460.0000000000
+Mask freq: 2300
+
+Repeat ratio histogram:
+-----------------------
+0	244
+1	5384
+2	104
+=========================================================
+
+Hunting down chimeras:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 22
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+HA-31 chimera trophy count: 0
+Reloading statistics 1 tests_assembly/tests_d_tmp/tests_int_kmerstats_pass.2.mhs.gz ... done.
+Performing HA SDBG edits:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 22
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Performed 0 edits.
+Rejected 0 fishy edits.
+
+HA SDBG edited reads: 0
+Reloading statistics 2 tests_assembly/tests_d_tmp/tests_int_kmerstats_pass.2.mhs.gz ... done.
+Estimator of average coverage: 18
+Assigning statistics values (3):
+Localtime: Tue May 21 07:57:37 2019
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:38 2019
+Buntifying reads ... done.
+Adding fork tags ... done.
+Writing read repeat info to: tests_assembly/tests_d_info/tests_info_readrepeats.lst ... 0 sequences with 0 masked stretches.
+Looking for proposed cutbacks ... done.
+Performed clips:
+	Num reads cliped left      : 0
+	Num reads cliped right     : 0
+	Num reads completely killed: 0
+	Total bases clipped        : 0
+
+Found 0 incorrectible read ends or possible chimeras.
+AS_resumeasembly 0
+AS_resumeisok 0
+fileExists(tests_assembly/tests_d_tmp/tests_signal_findpossibleoverlaps_pass.2.ok) 0
+Localtime: Tue May 21 07:57:38 2019
+
+
+Searching for possible overlaps:
+Localtime: Tue May 21 07:57:38 2019
+Now running threaded and partitioned skimmer-31 with 1 partitions in 16 threads:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%]  done.
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.2.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.2.bin from 246768 to 237576
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.2.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.2.bin from 232488 to 223896
+
+
+Hits chosen: 38456
+
+Localtime: Tue May 21 07:57:38 2019
+
+Total megahubs: 0
+Edge vector capacity: 52617
+Can load up to 38456 skim edges at once.
+Partitioning into 1 blocks.
+Blocks: 898	
+We have 38456 skims in file.
+Localtime: Tue May 21 07:57:38 2019
+De-normalising SKIM hits ... (this will take a while)
+Localtime: Tue May 21 07:57:38 2019
+Localtime: Tue May 21 07:57:38 2019
+Writing normalised skimblock 0 (     901 KiB) ... done.
+Localtime: Tue May 21 07:57:38 2019
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:38 2019
+Step 0
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:38 2019
+Only short reads
+Step 10
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3680
+Step 15
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3680
+Step 20
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3860
+Step 30
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3860
+Step 40
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3860
+Step 50
+Total skims taken: 3860
+Step 53
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 12667
+Step 55
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 12667
+Step 56
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 12667
+Step 57
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 12667
+Step 60
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 12667
+Step solexa by critlevel
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 4405 hits.
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 1899 hits.
+Step template overlaps
+Loading block 0
+Only one block, already loaded.
+Step NAO
+rsh4_takeNeedAllOverlaps.
+None needed.
+Total skims taken: 18971
+
+Filtering forward skims.
+Localtime: Tue May 21 07:57:38 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done.
+Filtering complement skims.
+Localtime: Tue May 21 07:57:38 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done all filtering.
+Localtime: Tue May 21 07:57:38 2019
+Making alignments.
+Localtime: Tue May 21 07:57:38 2019
+
+Aligning possible forward matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   9769
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 9769
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:38 2019
+
+Aligning possible complement matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   9202
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 9202
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:38 2019
+
+Localtime: Tue May 21 07:57:38 2019
+Counting number of alignments in files ... done.
+Expecting 21585 alignments.
+Localtime: Tue May 21 07:57:38 2019
+Loading confirmed 21585 overlaps from disk (will need approximately 1 MiB RAM):
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:39 2019
+
+
+Sorting confirmed overlaps (this may take a while) ... done.
+
+Localtime: Tue May 21 07:57:39 2019
+Generating clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Sorting clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:39 2019
+
+Writing clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Writing unclustered reads ... done.
+Localtime: Tue May 21 07:57:39 2019
+BFC: 2	0
+TGS: 449
+overlapcompressstepping: 898
+nextoverlapcompress: 898
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 0 reads moved to debris.
+bfc 1
+Localtime: Tue May 21 07:57:39 2019
+
+bfc 2
+Timing BFC prelim1: 11
+bfc 3
+bfc 4
+Timing BFC discard con: 8
+bfc 5
+bfc 6/0
+bfc 7/0
+Building new contig 1
+Localtime: Tue May 21 07:57:39 2019
+Unused reads: 897
+bfc 8/0
+0	Known 1: 0
+iter 0, PF init new contig
+Known 2: 0
+assemblymode_mapping: 0
+use general pathfinder: 1
+bfccp3
+Timing priv_initialiseLowerBoundOEdges: 156
+Timing priv_fdns_subFillCache 1 1 1 1 : 1865
+Startcache size: 5
+Timing priv_fdns_genome total: 1888
+[1]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   436	pft	33 / 180
+[61]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   830	pft	34 / 172
+[121]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   830	pft	30 / 172
+[181]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1166	pft	32 / 180
+[241]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1440	pft	30 / 176
+[301]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1719	pft	30 / 176
+[361]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1905	pft	31 / 176
+[421]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2025	pft	33 / 178
+[481]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2049	pft	80 / 174
+[541]	++++++++++++++++++++++++++++++++++++++++<+++++++++++++++++++   2067	pft	28 / 173
+[600]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2362	pft	79 / 171
+[660]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2587	pft	33 / 173
+[720]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2887	pft	32 / 174
+[780]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2887	pft	51 / 176
+[840]	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++<priv_ld addRead: 160080
+priv_ld total: 191498
+Timing BFC paf construct: 194091
+
+ccon timings: 
+cct pre	1747
+cct dir	2339
+cct xcu	5146
+cct tmp	2351
+cct sw 	81384
+cct pic	1473
+cct ico	44827
+cct icm	0
+cct upd	1822
+cct del	0
+cct rmz	1805
+cct gcp	7
+
+ccon i timings (895): 
+ccit insglcc	375
+ccit insglaro	985
+ccit insglact	115
+ccit insgltot	3378
+ccit pr		15405
+ccit templ	2324
+ccit index	1388
+ccit biglccins	0
+ccit biglinterpol	0
+ccit biglupdtags	0
+ccit biglfpcri	0
+ccit bigllgap	0
+ccit biglshiftread	0
+ccit bigltot	1651
+ccit insgr	1691
+ccit ucv	6804
+
+ccon d timings (0): 
+ccdt ubl	             0
+ccdt ucv	             0
+ccdt itf	             0
+ccdt itb	             0
+ccdt ccef	             0
+ccdt cceb	             0
+ccdt sdt	             0
+ccdt sr		             0
+ccdt smp	             0
+ccdt dt		             0
+ccdt rr		             0
+ccdt dsoc	             0
+ccdt total	             0
+0	Known 3: 896
+Triggering additional cluster check: shouldmovesmallclusterstodebris startCacheRanDry
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 1 reads moved to debris.
+bfc 9/0
+
+
+Finished building.
+Localtime: Tue May 21 07:57:39 2019
+Timing BFC analysereadcov: 5397
+makeIntelligentConsensus() complete calc .. mict_fin        2
+mict_pre        37
+mict_shadow     33
+mict_fallout    4650
+mict_newin      4751
+mict_helper1    12095
+mict_newin      4751
+mict_restofloop 5631
+mict_totalloop  43398
+done.
+
+-------------- Contig statistics ----------------
+Contig id: 1
+Contig length: 2896
+
+		      Sanger         454      IonTor     PcBioHQ     PcBioLQ        Text      Solexa       Solid
+Num. reads	           0           0           0           0           0           0         896           0
+100% merged reads	   -           -           -           -           -           -           0
+Max. coverage	           0           0           0           0           0           0          53           0
+Avg. coverage	       0.000       0.000       0.000       0.000       0.000       0.000      30.927       0.000
+
+Max. contig coverage: 53
+Avg. contig coverage: 30.927
+
+Consensus contains:	A: 814	C: 694	G: 449	T: 939	N: 0
+			IUPAC: 0	Funny: 0	*: 0
+GC content: 39.468%
+
+Contig positions with coverage: 0
+-------------------------------------------------
+Timing BFC cout constats: 44524
+Localtime: Tue May 21 07:57:39 2019
+bfc 10/0
+Timing BFC edit tricky1: 3
+Marking possibly misassembled repeats:  [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done step 1, starting step 2:done. Found none.
+Timing BFC mark reps: 3976
+bfc 11/0
+
+Searching for single discr. without HAF tags:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Edited 0 positions.
+Timing BFC edit single discrepancy, no HAF: 2889
+bfc 12/0
+Timing BFC delPSHP: 37
+bfc 13/0
+bfc 14/0
+bfc 15/0
+bfc 16/0
+Transfering reads to readpool.
+Timing BFC rp transfer: 1800
+Done.
+bfc 17/0
+1st covnum: CINFO: 2	53	89565	31	32	8
+
+2nd covnum: CINFO: 2	53	89565	32	32	6
+
+Using: 32
+Coverageremove: 0
+I have newreptmarked 0 wasmajorovercalledited 0 contignotok 0	continueiter: 0
+bfc 19
+Timing BFC persistent small overlaps2: 13252
+bfc 20
+Timing BFC phix174 con: 2396
+Storing contig ... 10Searching for: SROs UNSs IUPACs, preparing needed data: sorting tags ... done
+makeIntelligentConsensus() complete calc .. mict_fin        282
+mict_pre        12
+mict_shadow     32
+mict_fallout    4647
+mict_newin      4783
+mict_helper1    11998
+mict_newin      4783
+mict_restofloop 5564
+mict_totalloop  43177
+done.
+fetching consensus for strain0 ...done.
+Starting search:
+done with search
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+Transfering tags to readpool.
+Transfering contig read tags to readpool reads.
+Saving temp MAF ... done.
+Saving temp FASTA ... done.
+done.
+Timing BFC store con: 58008
+Timing BFC loop total: 329798
+Timing BFC unused: 4
+CUnused: 0
+TUnused: 0
+AS_used_ids.size(): 898
+
+Buildstats - RM positions        :	0	0
+Buildstats - overcall edits      :	0	0
+Buildstats - hash edits          :	0	0
+Buildstats - contig disassemblies:	0	0
+
+ATG PREDICTIONS
+rgid: 1	c: 413	sp: -1 (innies)	m: 206.7995169082	d: 4.4614680333	s: 0.0329827160	-: 197	+: 215
+Final prediction: rgid: 1	c: 413	sp: -1 (innies)	m: 206.7995169082	d: 4.4614680333	s: 0.0329827160	-: 197	+: 215
+Saving debris list to file: tests_assembly/tests_d_tmp/tests_info_debrislist_pass.2.txt
+-------- CRITICAL warning --------
+
+MIRA warncode: CONCOV_SUSPICIOUS_DISTRIBUTION
+Title: Suspicious distribution of contig coverages
+
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  large contigs) have an average coverage less than 75% of the average coverage
+  of all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage more than 125% of the average coverage of
+  all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage 25% above or below the average coverage of
+  all non-repetitive large contigs.
+Summary: found 3 indicator(s) for coverage problem(s).
+
+If the DNA you are assembling is bacterial, this could indicate that you sampled
+and sequenced DNA from exponential or late exponential phase of a bacterial
+population. This leads to a coverage bias toward the origin of replication,
+hence false positive detection of repeats, hence an assembly which is more
+fragmented than it could be or may have misassemblies in regions located toward
+the opposite of the origin of replication.
+Only available countermeasure: for your next sequencing project, do not sample
+in exponential phase but sample in stationary phase (if possible).
+
+Saving readgroup info to file: tests_assembly/tests_d_tmp/tests_info_readgroups_pass.2.txt
+Performing snapshot 3
+Localtime: Tue May 21 07:57:39 2019
+Creating directory tests_assembly/tests_d_chkpt ... done.
+Localtime: Tue May 21 07:57:39 2019
+Dump from /proc/self/status
+--------------------------------------------------------------------------------
+Name:	mira
+Umask:	0002
+State:	R (running)
+Tgid:	20996
+Ngid:	0
+Pid:	20996
+PPid:	20995
+TracerPid:	0
+Uid:	1002	1002	1002	1002
+Gid:	1001	1001	1001	1001
+FDSize:	64
+Groups:	27 108 1001 
+NStgid:	20996
+NSpid:	20996
+NSpgid:	20966
+NSsid:	19067
+VmPeak:	 4053892 kB
+VmSize:	 2585988 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  815288 kB
+VmRSS:	  540816 kB
+RssAnon:	  533724 kB
+RssFile:	    7092 kB
+RssShmem:	       0 kB
+VmData:	 1529956 kB
+VmStk:	     132 kB
+VmExe:	    9396 kB
+VmLib:	       8 kB
+VmPTE:	    1248 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+Threads:	16
+SigQ:	0/128425
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	ffff
+Cpus_allowed_list:	0-15
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	167
+nonvoluntary_ctxt_switches:	16
+--------------------------------------------------------------------------------
+
+
+Pass: 3 / 4
+Localtime: Tue May 21 07:57:39 2019
+Automatic -SK:bph set to 53
+
+===========================================================================
+Backbones: 0	Backbone rails: 0
+Sequencing technology statistics:
+
+		Sanger	454	IonTor	PcBioHQ	PcBioLQ	Text	Solexa	Solid
+		------------------------------------------------------------
+Total reads	0	0	0	0	0	0	898	0
+Reads wo qual	0	0	0	0	0	0	0	0
+Used reads	0	0	0	0	0	0	898	0
+Avg. tot rlen	0	0	0	0	0	0	100	0
+Avg. used rlen	0	0	0	0	0	0	99	0
+W/o clips	0	0	0	0	0	0	893	0
+
+
+Readgroup statistics:
+RG 1	Solexa	avg total len: 100	avg clip len: 99	total bases: 89800	used bases: 89660
+===========================================================================
+
+
+Localtime: Tue May 21 07:57:39 2019
+hashstat_t: 24
+freemem: 30035849216
+Percentage
+mbfb1: 21483
+mbfb2: 21483
+TNH: 42986
+XME 1: 0.0011387401
+XME 2: 0.1000000000
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:39 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 578
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 530
+after comp: 530
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 279
+after comp: 279
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 340
+after comp: 340
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 578
+after comp: 578
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 411
+after comp: 411
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 238
+after comp: 238
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 139
+after comp: 139
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 341
+after comp: 341
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 365
+after comp: 365
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 248
+after comp: 248
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 236
+after comp: 236
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 272
+after comp: 272
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 420
+after comp: 420
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 363
+after comp: 363
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 407
+after comp: 407
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 521
+after comp: 521
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:39 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:39 2019
+Localtime: Tue May 21 07:57:39 2019
+Kmer statistics:
+=========================================================
+Using kmers of size: 53
+Measured avg. raw frequency coverage: 16
+Corrected avg. raw frequency coverage: 16
+
+Final average frequency: 16
+
+Deduced thresholds:
+-------------------
+Rare freq: 6.4000000000
+Min normal freq: 6.4000000000
+Max normal freq 25.6000000000
+Repeat freq: 30.4000000000
+Heavy freq: 128.0000000000
+Crazy freq: 320.0000000000
+Mask freq: 1600
+
+Repeat ratio histogram:
+-----------------------
+0	210
+1	5290
+2	188
+=========================================================
+
+Hunting down chimeras:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 500: 17
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+HA-53 chimera trophy count: 0
+Reloading statistics 1 tests_assembly/tests_d_tmp/tests_int_kmerstats_pass.3.mhs.gz ... done.
+Performing HA SDBG edits:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 2000: 15
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Performed 0 edits.
+Rejected 0 fishy edits.
+
+HA SDBG edited reads: 0
+Reloading statistics 2 tests_assembly/tests_d_tmp/tests_int_kmerstats_pass.3.mhs.gz ... done.
+Estimator of average coverage: 23
+Assigning statistics values (3):
+Localtime: Tue May 21 07:57:40 2019
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:41 2019
+Buntifying reads ... done.
+Adding fork tags ... done.
+Writing read repeat info to: tests_assembly/tests_d_info/tests_info_readrepeats.lst ... 0 sequences with 0 masked stretches.
+Looking for proposed cutbacks ... done.
+Performed clips:
+	Num reads cliped left      : 2
+	Num reads cliped right     : 0
+	Num reads completely killed: 0
+	Total bases clipped        : 28
+
+Found 0 incorrectible read ends or possible chimeras.
+AS_resumeasembly 0
+AS_resumeisok 0
+fileExists(tests_assembly/tests_d_tmp/tests_signal_findpossibleoverlaps_pass.3.ok) 0
+Localtime: Tue May 21 07:57:41 2019
+
+
+Searching for possible overlaps:
+Localtime: Tue May 21 07:57:41 2019
+Now running threaded and partitioned skimmer-53 with 1 partitions in 16 threads:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%]  done.
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.3.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.3.bin from 170304 to 166296
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.3.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.3.bin from 157128 to 153816
+
+
+Hits chosen: 26676
+
+Localtime: Tue May 21 07:57:41 2019
+
+Total megahubs: 0
+Edge vector capacity: 52617
+Can load up to 26676 skim edges at once.
+Partitioning into 1 blocks.
+Blocks: 898	
+We have 26676 skims in file.
+Localtime: Tue May 21 07:57:41 2019
+De-normalising SKIM hits ... (this will take a while)
+Localtime: Tue May 21 07:57:41 2019
+Localtime: Tue May 21 07:57:41 2019
+Writing normalised skimblock 0 (     625 KiB) ... done.
+Localtime: Tue May 21 07:57:41 2019
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:41 2019
+Step 0
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:41 2019
+Only short reads
+Step 10
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3518
+Step 15
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3518
+Step 20
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3721
+Step 30
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3721
+Step 40
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3721
+Step 50
+Total skims taken: 3721
+Step 53
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 11492
+Step 55
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 11492
+Step 56
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 11492
+Step 57
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 11492
+Step 60
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 11492
+Step solexa by critlevel
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 1699 hits.
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 147 hits.
+Step template overlaps
+Loading block 0
+Only one block, already loaded.
+Step NAO
+rsh4_takeNeedAllOverlaps.
+None needed.
+Total skims taken: 13338
+
+Filtering forward skims.
+Localtime: Tue May 21 07:57:41 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done.
+Filtering complement skims.
+Localtime: Tue May 21 07:57:41 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done all filtering.
+Localtime: Tue May 21 07:57:41 2019
+Making alignments.
+Localtime: Tue May 21 07:57:41 2019
+
+Aligning possible forward matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   6929
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 6929
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:41 2019
+
+Aligning possible complement matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   6409
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 6409
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:41 2019
+
+Localtime: Tue May 21 07:57:41 2019
+Counting number of alignments in files ... done.
+Expecting 21566 alignments.
+Localtime: Tue May 21 07:57:41 2019
+Loading confirmed 21566 overlaps from disk (will need approximately 1 MiB RAM):
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:41 2019
+
+
+Sorting confirmed overlaps (this may take a while) ... done.
+
+Localtime: Tue May 21 07:57:41 2019
+Generating clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Sorting clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:41 2019
+
+Writing clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Writing unclustered reads ... done.
+Localtime: Tue May 21 07:57:41 2019
+BFC: 3	0
+TGS: 449
+overlapcompressstepping: 898
+nextoverlapcompress: 898
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 0 reads moved to debris.
+bfc 1
+Localtime: Tue May 21 07:57:41 2019
+
+bfc 2
+Timing BFC prelim1: 11
+bfc 3
+bfc 4
+Timing BFC discard con: 8
+bfc 5
+bfc 6/0
+bfc 7/0
+Building new contig 1
+Localtime: Tue May 21 07:57:41 2019
+Unused reads: 897
+bfc 8/0
+0	Known 1: 0
+iter 0, PF init new contig
+Known 2: 0
+assemblymode_mapping: 0
+use general pathfinder: 1
+bfccp3
+Timing priv_initialiseLowerBoundOEdges: 171
+Timing priv_fdns_subFillCache 1 1 1 1 : 125
+Startcache size: 0
+Timing priv_fdns_subFillCache 0 0 1 1 : 4759
+Startcache size: 1
+hit unlooked threshold
+Timing priv_fdns_genome total: 4925
+[1]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   427	pft	36 / 287
+[61]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   612	pft	32 / 171
+[121]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   835	pft	36 / 177
+[181]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1172	pft	34 / 177
+[241]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1297	pft	41 / 178
+[301]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1690	pft	44 / 173
+[361]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1880	pft	33 / 174
+[421]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2025	pft	36 / 174
+[481]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2042	pft	64 / 176
+[541]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2045	pft	29 / 176
+[601]	++++++<+++++++++++++++++++++++++++++++++++++++++++++++++++++   2348	pft	81 / 172
+[660]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2573	pft	35 / 173
+[720]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2873	pft	35 / 174
+[780]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2882	pft	50 / 175
+[840]	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++priv_ld addRead: 166500
+priv_ld total: 199085
+Timing BFC paf construct: 204283
+
+ccon timings: 
+cct pre	1865
+cct dir	2528
+cct xcu	5206
+cct tmp	2439
+cct sw 	81608
+cct pic	1519
+cct ico	50549
+cct icm	0
+cct upd	1786
+cct del	0
+cct rmz	1814
+cct gcp	4
+
+ccon i timings (895): 
+ccit insglcc	237
+ccit insglaro	725
+ccit insglact	80
+ccit insgltot	2868
+ccit pr		15425
+ccit templ	8620
+ccit index	1364
+ccit biglccins	0
+ccit biglinterpol	0
+ccit biglupdtags	0
+ccit biglfpcri	0
+ccit bigllgap	0
+ccit biglshiftread	0
+ccit bigltot	1682
+ccit insgr	1734
+ccit ucv	6816
+
+ccon d timings (0): 
+ccdt ubl	             0
+ccdt ucv	             0
+ccdt itf	             0
+ccdt itb	             0
+ccdt ccef	             0
+ccdt cceb	             0
+ccdt sdt	             0
+ccdt sr		             0
+ccdt smp	             0
+ccdt dt		             0
+ccdt rr		             0
+ccdt dsoc	             0
+ccdt total	             0
+0	Known 3: 896
+Triggering additional cluster check: shouldmovesmallclusterstodebris startCacheRanDry
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 1 reads moved to debris.
+bfc 9/0
+
+
+Finished building.
+Localtime: Tue May 21 07:57:41 2019
+Timing BFC analysereadcov: 5402
+makeIntelligentConsensus() complete calc .. mict_fin        2
+mict_pre        20
+mict_shadow     34
+mict_fallout    4671
+mict_newin      4753
+mict_helper1    11862
+mict_newin      4753
+mict_restofloop 5790
+mict_totalloop  43256
+done.
+
+-------------- Contig statistics ----------------
+Contig id: 1
+Contig length: 2882
+
+		      Sanger         454      IonTor     PcBioHQ     PcBioLQ        Text      Solexa       Solid
+Num. reads	           0           0           0           0           0           0         896           0
+100% merged reads	   -           -           -           -           -           -           0
+Max. coverage	           0           0           0           0           0           0          53           0
+Avg. coverage	       0.000       0.000       0.000       0.000       0.000       0.000      31.068       0.000
+
+Max. contig coverage: 53
+Avg. contig coverage: 31.068
+
+Consensus contains:	A: 810	C: 688	G: 447	T: 937	N: 0
+			IUPAC: 0	Funny: 0	*: 0
+GC content: 39.382%
+
+Contig positions with coverage: 0
+-------------------------------------------------
+Timing BFC cout constats: 44353
+Localtime: Tue May 21 07:57:42 2019
+bfc 10/0
+Timing BFC edit tricky1: 3
+Marking possibly misassembled repeats:  [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done step 1, starting step 2:done. Found none.
+Timing BFC mark reps: 3893
+bfc 11/0
+
+Searching for single discr. without HAF tags:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Edited 0 positions.
+Timing BFC edit single discrepancy, no HAF: 2873
+bfc 12/0
+Timing BFC delPSHP: 37
+bfc 13/0
+bfc 14/0
+bfc 15/0
+bfc 16/0
+Transfering reads to readpool.
+Timing BFC rp transfer: 1754
+Done.
+bfc 17/0
+1st covnum: CINFO: 3	53	89537	31	32	8
+
+2nd covnum: CINFO: 3	53	89537	32	32	6
+
+Using: 32
+Coverageremove: 0
+I have newreptmarked 0 wasmajorovercalledited 0 contignotok 0	continueiter: 0
+bfc 19
+Timing BFC persistent small overlaps2: 35902
+bfc 20
+Timing BFC phix174 con: 2663
+Storing contig ... 10Searching for: SROs UNSs IUPACs, preparing needed data: sorting tags ... done
+makeIntelligentConsensus() complete calc .. mict_fin        282
+mict_pre        11
+mict_shadow     32
+mict_fallout    4666
+mict_newin      4795
+mict_helper1    12083
+mict_newin      4795
+mict_restofloop 5743
+mict_totalloop  43390
+done.
+fetching consensus for strain0 ...done.
+Starting search:
+done with search
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+Transfering tags to readpool.
+Transfering contig read tags to readpool reads.
+Saving temp MAF ... done.
+Saving temp FASTA ... done.
+done.
+Timing BFC store con: 58326
+Hunting join spoiler
+HSS At end: 1 0	phred_base_read_325/1
+HSS At end: 1 0	phred_base_read_148/2
+HSS At end: 1 0	phred_base_read_202/2
+HSS At end: 1 0	phred_base_read_312/2
+HSS At end: 1 0	phred_base_read_20/2
+HSS At end: 1 0	phred_base_read_304/1
+HSS At end: 1 0	phred_base_read_155/2
+HSS At end: 1 0	phred_base_read_172/2
+HSS At end: 1 0	phred_base_read_14/2
+HSS At end: 1 0	phred_base_read_240/2
+HSS At end: 1 0	phred_base_read_356/1
+HSS At end: 1 0	phred_base_read_286/2
+HSS At end: 1 0	phred_base_read_83/2
+HSS At end: 0 1	phred_base_read_5/1
+HSS At end: 0 1	phred_base_read_105/2
+HSS At end: 0 1	phred_base_read_361/1
+HSS At end: 0 1	phred_base_read_417/1
+HSS At end: 0 1	phred_base_read_411/1
+HSS At end: 0 1	phred_base_read_174/2
+HSS At end: 0 1	phred_base_read_40/1
+HSS At end: 0 1	phred_base_read_203/1
+Timing BFC loop total: 363336
+Timing BFC unused: 3
+CUnused: 0
+TUnused: 0
+AS_used_ids.size(): 898
+
+Buildstats - RM positions        :	0	0
+Buildstats - overcall edits      :	0	0
+Buildstats - hash edits          :	0	0
+Buildstats - contig disassemblies:	0	0
+
+ATG PREDICTIONS
+rgid: 1	c: 414	sp: -1 (innies)	m: 207.0096385542	d: 4.5990979532	s: -0.0417810849	-: 197	+: 216
+Final prediction: rgid: 1	c: 414	sp: -1 (innies)	m: 207.0096385542	d: 4.5990979532	s: -0.0417810849	-: 197	+: 216
+Saving debris list to file: tests_assembly/tests_d_tmp/tests_info_debrislist_pass.3.txt
+-------- CRITICAL warning --------
+
+MIRA warncode: CONCOV_SUSPICIOUS_DISTRIBUTION
+Title: Suspicious distribution of contig coverages
+
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  large contigs) have an average coverage less than 75% of the average coverage
+  of all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage more than 125% of the average coverage of
+  all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage 25% above or below the average coverage of
+  all non-repetitive large contigs.
+Summary: found 3 indicator(s) for coverage problem(s).
+
+If the DNA you are assembling is bacterial, this could indicate that you sampled
+and sequenced DNA from exponential or late exponential phase of a bacterial
+population. This leads to a coverage bias toward the origin of replication,
+hence false positive detection of repeats, hence an assembly which is more
+fragmented than it could be or may have misassemblies in regions located toward
+the opposite of the origin of replication.
+Only available countermeasure: for your next sequencing project, do not sample
+in exponential phase but sample in stationary phase (if possible).
+
+Saving readgroup info to file: tests_assembly/tests_d_tmp/tests_info_readgroups_pass.3.txt
+Performing snapshot 4
+Localtime: Tue May 21 07:57:42 2019
+Creating directory tests_assembly/tests_d_chkpt ... done.
+Localtime: Tue May 21 07:57:42 2019
+Dump from /proc/self/status
+--------------------------------------------------------------------------------
+Name:	mira
+Umask:	0002
+State:	R (running)
+Tgid:	20996
+Ngid:	0
+Pid:	20996
+PPid:	20995
+TracerPid:	0
+Uid:	1002	1002	1002	1002
+Gid:	1001	1001	1001	1001
+FDSize:	64
+Groups:	27 108 1001 
+NStgid:	20996
+NSpid:	20996
+NSpgid:	20966
+NSsid:	19067
+VmPeak:	 4055224 kB
+VmSize:	 2585988 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  816088 kB
+VmRSS:	  541596 kB
+RssAnon:	  534440 kB
+RssFile:	    7156 kB
+RssShmem:	       0 kB
+VmData:	 1530032 kB
+VmStk:	     132 kB
+VmExe:	    9396 kB
+VmLib:	       8 kB
+VmPTE:	    1248 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+Threads:	16
+SigQ:	0/128425
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	ffff
+Cpus_allowed_list:	0-15
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	232
+nonvoluntary_ctxt_switches:	17
+--------------------------------------------------------------------------------
+
+
+Pass: 4 / 4
+Localtime: Tue May 21 07:57:42 2019
+Automatic -SK:bph set to 69
+
+===========================================================================
+Backbones: 0	Backbone rails: 0
+Sequencing technology statistics:
+
+		Sanger	454	IonTor	PcBioHQ	PcBioLQ	Text	Solexa	Solid
+		------------------------------------------------------------
+Total reads	0	0	0	0	0	0	898	0
+Reads wo qual	0	0	0	0	0	0	0	0
+Used reads	0	0	0	0	0	0	898	0
+Avg. tot rlen	0	0	0	0	0	0	100	0
+Avg. used rlen	0	0	0	0	0	0	99	0
+W/o clips	0	0	0	0	0	0	892	0
+
+
+Readgroup statistics:
+RG 1	Solexa	avg total len: 100	avg clip len: 99	total bases: 89800	used bases: 89632
+===========================================================================
+
+
+Localtime: Tue May 21 07:57:42 2019
+hashstat_t: 40
+freemem: 29940813824
+Percentage
+mbfb1: 21414
+mbfb2: 21414
+TNH: 28609
+XME 1: 0.0004547278
+XME 2: 0.1000000000
+HS_nepb: 104857
+Writing temporary hstat files:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done
+Localtime: Tue May 21 07:57:42 2019
+Flushing buffers to disk:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done.
+
+Analysing hstat files:
+Max elements per file: 572
+ [0%] Loading tests_assembly/tests_d_tmp/stattmp0.bin.gz
+elements in file: 521
+after comp: 520
+....|.Loading tests_assembly/tests_d_tmp/stattmp1.bin.gz
+elements in file: 274
+after comp: 272
+... [10%] ..Loading tests_assembly/tests_d_tmp/stattmp2.bin.gz
+elements in file: 339
+after comp: 338
+..|...Loading tests_assembly/tests_d_tmp/stattmp3.bin.gz
+elements in file: 572
+after comp: 570
+. [20%] ....|Loading tests_assembly/tests_d_tmp/stattmp4.bin.gz
+elements in file: 409
+after comp: 408
+.... [30%] .Loading tests_assembly/tests_d_tmp/stattmp5.bin.gz
+elements in file: 235
+after comp: 235
+...|..Loading tests_assembly/tests_d_tmp/stattmp6.bin.gz
+elements in file: 136
+after comp: 134
+.. [40%] ...Loading tests_assembly/tests_d_tmp/stattmp7.bin.gz
+elements in file: 336
+after comp: 335
+.|.... [50%] Loading tests_assembly/tests_d_tmp/stattmp8.bin.gz
+elements in file: 360
+after comp: 360
+....|.Loading tests_assembly/tests_d_tmp/stattmp9.bin.gz
+elements in file: 247
+after comp: 246
+... [60%] ..Loading tests_assembly/tests_d_tmp/stattmpa.bin.gz
+elements in file: 235
+after comp: 235
+..|...Loading tests_assembly/tests_d_tmp/stattmpb.bin.gz
+elements in file: 268
+after comp: 266
+. [70%] ....|Loading tests_assembly/tests_d_tmp/stattmpc.bin.gz
+elements in file: 416
+after comp: 412
+.... [80%] .Loading tests_assembly/tests_d_tmp/stattmpd.bin.gz
+elements in file: 361
+after comp: 358
+...|..Loading tests_assembly/tests_d_tmp/stattmpe.bin.gz
+elements in file: 400
+after comp: 400
+.. [90%] ...Loading tests_assembly/tests_d_tmp/stattmpf.bin.gz
+elements in file: 519
+after comp: 517
+.|.... [100%] opening gz
+loading header
+loading main statistics
+some statistics
+sort low24
+save statistics
+
+Localtime: Tue May 21 07:57:42 2019
+clean up temporary stat files...Localtime: Tue May 21 07:57:42 2019
+Localtime: Tue May 21 07:57:42 2019
+Kmer statistics:
+=========================================================
+Using kmers of size: 69
+Measured avg. raw frequency coverage: 11
+Corrected avg. raw frequency coverage: 11
+
+Final average frequency: 11
+
+Deduced thresholds:
+-------------------
+Rare freq: 4.4000000000
+Min normal freq: 4.4000000000
+Max normal freq 17.6000000000
+Repeat freq: 20.9000000000
+Heavy freq: 88.0000000000
+Crazy freq: 220.0000000000
+Mask freq: 1100
+
+Repeat ratio histogram:
+-----------------------
+0	412
+1	5004
+2	190
+=========================================================
+
+Hunting down chimeras:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 200: 15
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+HA-69 chimera trophy count: 0
+Reloading statistics 1 tests_assembly/tests_d_tmp/tests_int_kmerstats_pass.4.mhs.gz ... done.
+Performing HA SDBG edits:
+Starting priv_sdbg_populateHashStatNodes
+Populating HSN:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Starting priv_sdbg_assignGraphIDsMakeSeqsAndCollectStats
+Collecting DBG stats:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Median >= 1000: 11
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Performed 0 edits.
+Rejected 0 fishy edits.
+
+HA SDBG edited reads: 0
+Reloading statistics 2 tests_assembly/tests_d_tmp/tests_int_kmerstats_pass.4.mhs.gz ... done.
+Assigning statistics values (3):
+Localtime: Tue May 21 07:57:42 2019
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:44 2019
+Buntifying reads ... done.
+Adding fork tags ... done.
+Writing read repeat info to: tests_assembly/tests_d_info/tests_info_readrepeats.lst ... 0 sequences with 0 masked stretches.
+Looking for proposed cutbacks ... done.
+Performed clips:
+	Num reads cliped left      : 2
+	Num reads cliped right     : 1
+	Num reads completely killed: 0
+	Total bases clipped        : 61
+
+Found 3 terminally incorrectible reads or possible chimeras.
+AS_resumeasembly 0
+AS_resumeisok 0
+fileExists(tests_assembly/tests_d_tmp/tests_signal_findpossibleoverlaps_pass.4.ok) 0
+Localtime: Tue May 21 07:57:44 2019
+
+
+Searching for possible overlaps:
+Localtime: Tue May 21 07:57:44 2019
+Now running threaded and partitioned skimmer-69 with 1 partitions in 16 threads:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%]  done.
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.4.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchf_pass.4.bin from 112008 to 109680
+
+truncating tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.4.bin
+truncated tests_assembly/tests_d_tmp/tests_int_posmatchc_pass.4.bin from 103536 to 101520
+
+
+Hits chosen: 17600
+
+Localtime: Tue May 21 07:57:44 2019
+
+Total megahubs: 0
+Edge vector capacity: 52617
+Can load up to 17600 skim edges at once.
+Partitioning into 1 blocks.
+Blocks: 898	
+We have 17600 skims in file.
+Localtime: Tue May 21 07:57:44 2019
+De-normalising SKIM hits ... (this will take a while)
+Localtime: Tue May 21 07:57:44 2019
+Localtime: Tue May 21 07:57:44 2019
+Writing normalised skimblock 0 (     412 KiB) ... done.
+Localtime: Tue May 21 07:57:44 2019
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:44 2019
+Step 0
+Loading block 0
+Only one block, already loaded.
+Localtime: Tue May 21 07:57:44 2019
+Only short reads
+Step 10
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3083
+Step 15
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3083
+Step 20
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3217
+Step 30
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3217
+Step 40
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 3217
+Step 50
+Total skims taken: 3217
+Step 53
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 8562
+Step 55
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 8562
+Step 56
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 8562
+Step 57
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 8567
+Step 60
+Loading block 0
+Only one block, already loaded.
+Total skims taken: 8567
+Step solexa by critlevel
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 233 hits.
+rsh4_takeSolexaByCritLevel.
+Loading block 0
+Only one block, already loaded.
+Taken 0 hits.
+Step template overlaps
+Loading block 0
+Only one block, already loaded.
+Step NAO
+rsh4_takeNeedAllOverlaps.
+None needed.
+Total skims taken: 8800
+
+Filtering forward skims.
+Localtime: Tue May 21 07:57:44 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done.
+Filtering complement skims.
+Localtime: Tue May 21 07:57:44 2019
+Writing reduced skim file:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done.
+Done all filtering.
+Localtime: Tue May 21 07:57:44 2019
+Making alignments.
+Localtime: Tue May 21 07:57:44 2019
+
+Aligning possible forward matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   4570
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 4570
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:44 2019
+
+Aligning possible complement matches:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Alignment stats:
+Potential:   4230
+Calculated:  0
+Evaded (PB): 0
+Rejected (checkfun): 0
+Trans 100 saved: 4230
+
+Banned overlap pairs: 0	in 0 sets.
+
+Localtime: Tue May 21 07:57:44 2019
+
+Localtime: Tue May 21 07:57:44 2019
+Counting number of alignments in files ... done.
+Expecting 21553 alignments.
+Localtime: Tue May 21 07:57:44 2019
+Loading confirmed 21553 overlaps from disk (will need approximately 1 MiB RAM):
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:44 2019
+
+
+Sorting confirmed overlaps (this may take a while) ... done.
+
+Localtime: Tue May 21 07:57:44 2019
+Generating clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Sorting clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] Localtime: Tue May 21 07:57:44 2019
+
+Writing clusters:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Writing unclustered reads ... done.
+Localtime: Tue May 21 07:57:44 2019
+BFC: 4	1
+TGS: 449
+overlapcompressstepping: 898
+nextoverlapcompress: 898
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 0 reads moved to debris.
+bfc 1
+Localtime: Tue May 21 07:57:44 2019
+
+bfc 2
+Timing BFC prelim1: 11
+bfc 3
+bfc 4
+Timing BFC discard con: 9
+bfc 5
+bfc 6/0
+bfc 7/0
+Building new contig 1
+Localtime: Tue May 21 07:57:44 2019
+Unused reads: 897
+bfc 8/0
+0	Known 1: 0
+iter 0, PF init new contig
+Known 2: 0
+assemblymode_mapping: 0
+use general pathfinder: 1
+bfccp3
+Timing priv_initialiseLowerBoundOEdges: 175
+Timing priv_fdns_subFillCache 1 1 1 1 : 123
+Startcache size: 0
+Timing priv_fdns_subFillCache 0 0 1 1 : 5169
+Startcache size: 2
+Timing priv_fdns_genome total: 5332
+[1]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   427	pft	35 / 182
+[61]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   612	pft	32 / 170
+[121]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   883	pft	35 / 179
+[181]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1076	pft	34 / 178
+[241]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1282	pft	41 / 177
+[301]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1690	pft	36 / 172
+[361]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1785	pft	31 / 175
+[421]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   1999	pft	33 / 173
+[481]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2042	pft	69 / 177
+[541]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2045	pft	27 / 176
+[601]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2381	pft	79 / 176
+[661]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2672	pft	33 / 174
+[721]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2873	pft	34 / 175
+[781]	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   2882	pft	48 / 178
+[841]	++++++++++++++++++++++++++++++++++++++++++++++++++++<++++priv_ld addRead: 160853
+priv_ld total: 193520
+Timing BFC paf construct: 199129
+
+ccon timings: 
+cct pre	1700
+cct dir	2499
+cct xcu	5419
+cct tmp	2402
+cct sw 	82084
+cct pic	1511
+cct ico	44294
+cct icm	0
+cct upd	1802
+cct del	0
+cct rmz	1787
+cct gcp	5
+
+ccon i timings (895): 
+ccit insglcc	240
+ccit insglaro	743
+ccit insglact	99
+ccit insgltot	2872
+ccit pr		15514
+ccit templ	2419
+ccit index	1373
+ccit biglccins	0
+ccit biglinterpol	0
+ccit biglupdtags	0
+ccit biglfpcri	0
+ccit bigllgap	0
+ccit biglshiftread	0
+ccit bigltot	1649
+ccit insgr	1762
+ccit ucv	6837
+
+ccon d timings (0): 
+ccdt ubl	             0
+ccdt ucv	             0
+ccdt itf	             0
+ccdt itb	             0
+ccdt ccef	             0
+ccdt cceb	             0
+ccdt sdt	             0
+ccdt sr		             0
+ccdt smp	             0
+ccdt dt		             0
+ccdt rr		             0
+ccdt dsoc	             0
+ccdt total	             0
+0	Known 3: 896
+Triggering additional cluster check: shouldmovesmallclusterstodebris startCacheRanDry
+Moving small clusters to debris:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Done. 1 reads moved to debris.
+bfc 9/0
+
+
+Finished building.
+Localtime: Tue May 21 07:57:44 2019
+Timing BFC analysereadcov: 5451
+makeIntelligentConsensus() complete calc .. mict_fin        2
+mict_pre        21
+mict_shadow     35
+mict_fallout    4680
+mict_newin      4797
+mict_helper1    12169
+mict_newin      4797
+mict_restofloop 5669
+mict_totalloop  43524
+done.
+
+-------------- Contig statistics ----------------
+Contig id: 1
+Contig length: 2882
+
+		      Sanger         454      IonTor     PcBioHQ     PcBioLQ        Text      Solexa       Solid
+Num. reads	           0           0           0           0           0           0         896           0
+100% merged reads	   -           -           -           -           -           -           0
+Max. coverage	           0           0           0           0           0           0          53           0
+Avg. coverage	       0.000       0.000       0.000       0.000       0.000       0.000      31.046       0.000
+
+Max. contig coverage: 53
+Avg. contig coverage: 31.046
+
+Consensus contains:	A: 810	C: 688	G: 447	T: 937	N: 0
+			IUPAC: 0	Funny: 0	*: 0
+GC content: 39.382%
+
+Contig positions with coverage: 0
+-------------------------------------------------
+Timing BFC cout constats: 44630
+Localtime: Tue May 21 07:57:44 2019
+bfc 10/0
+Timing BFC edit tricky1: 3
+Marking possibly misassembled repeats:  [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] done step 1, starting step 2:done. Found none.
+Timing BFC mark reps: 3879
+bfc 11/0
+
+Searching for single discr. without HAF tags:
+ [0%] ....|.... [10%] ....|.... [20%] ....|.... [30%] ....|.... [40%] ....|.... [50%] ....|.... [60%] ....|.... [70%] ....|.... [80%] ....|.... [90%] ....|.... [100%] 
+Edited 0 positions.
+Timing BFC edit single discrepancy, no HAF: 2791
+bfc 12/0
+Timing BFC delPSHP: 37
+bfc 13/0
+bfc 14/0
+bfc 15/0
+bfc 16/0
+Transfering reads to readpool.
+Timing BFC rp transfer: 2012
+Done.
+bfc 17/0
+1st covnum: CINFO: 3	53	89476	31	32	8
+
+2nd covnum: CINFO: 3	53	89476	32	32	6
+
+Using: 32
+Coverageremove: 0
+I have newreptmarked 0 wasmajorovercalledited 0 contignotok 0	continueiter: 0
+bfc 19
+Timing BFC persistent small overlaps2: 3
+bfc 20
+Timing BFC phix174 con: 2088
+Storing contig ... 10Searching for: SROs UNSs IUPACs, preparing needed data: sorting tags ... done
+makeIntelligentConsensus() complete calc .. mict_fin        295
+mict_pre        10
+mict_shadow     35
+mict_fallout    4703
+mict_newin      4779
+mict_helper1    12222
+mict_newin      4779
+mict_restofloop 5529
+mict_totalloop  43371
+done.
+fetching consensus for strain0 ...done.
+Starting search:
+done with search
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+sorting consensus tags
+reducing consensus tags
+done reducing
+Transfering tags to readpool.
+Transfering contig read tags to readpool reads.
+Saving CAF ... done.
+Saving MAF ... done.
+Saving FASTA ... done.
+Saving Wiggle ... done.
+done.
+Timing BFC store con: 76313
+Timing BFC loop total: 339771
+Timing BFC unused: 5
+CUnused: 0
+TUnused: 0
+AS_used_ids.size(): 898
+
+Buildstats - RM positions        :	0	0
+Buildstats - overcall edits      :	0	0
+Buildstats - hash edits          :	0	0
+Buildstats - contig disassemblies:	0	0
+
+ATG PREDICTIONS
+rgid: 1	c: 418	sp: -1 (innies)	m: 206.8456057007	d: 4.5070107110	s: 0.0779057693	-: 197	+: 215
+Final prediction: rgid: 1	c: 418	sp: -1 (innies)	m: 206.8456057007	d: 4.5070107110	s: 0.0779057693	-: 197	+: 215
+Saving debris list to file: tests_assembly/tests_d_info/tests_info_debrislist.txt
+-------- CRITICAL warning --------
+
+MIRA warncode: CONCOV_SUSPICIOUS_DISTRIBUTION
+Title: Suspicious distribution of contig coverages
+
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  large contigs) have an average coverage less than 75% of the average coverage
+  of all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage more than 125% of the average coverage of
+  all non-repetitive large contigs.
+- 0 contig(s) with a total of 0 bases (= -nan% of bases in all non-repetitive
+  contigs) have an average coverage 25% above or below the average coverage of
+  all non-repetitive large contigs.
+Summary: found 3 indicator(s) for coverage problem(s).
+
+If the DNA you are assembling is bacterial, this could indicate that you sampled
+and sequenced DNA from exponential or late exponential phase of a bacterial
+population. This leads to a coverage bias toward the origin of replication,
+hence false positive detection of repeats, hence an assembly which is more
+fragmented than it could be or may have misassemblies in regions located toward
+the opposite of the origin of replication.
+Only available countermeasure: for your next sequencing project, do not sample
+in exponential phase but sample in stationary phase (if possible).
+
+Saving readgroup info to file: tests_assembly/tests_d_info/tests_info_readgroups.txt
+Performing snapshot 5
+Localtime: Tue May 21 07:57:44 2019
+Creating directory tests_assembly/tests_d_chkpt ... done.
+Localtime: Tue May 21 07:57:44 2019
+
+
+
+
+========================== Memory self assessment ==============================
+Running in 64 bit mode.
+
+Dump from /proc/meminfo
+--------------------------------------------------------------------------------
+MemTotal:       32938236 kB
+MemFree:        12569648 kB
+MemAvailable:   30192448 kB
+Buffers:          831832 kB
+Cached:         16574668 kB
+SwapCached:            0 kB
+Active:          8365544 kB
+Inactive:       10766264 kB
+Active(anon):    1726868 kB
+Inactive(anon):      104 kB
+Active(file):    6638676 kB
+Inactive(file): 10766160 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:              4924 kB
+Writeback:             0 kB
+AnonPages:       1725460 kB
+Mapped:           108544 kB
+Shmem:              1308 kB
+Slab:            1112316 kB
+SReclaimable:     684748 kB
+SUnreclaim:       427568 kB
+KernelStack:        5836 kB
+PageTables:        10132 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    16469116 kB
+Committed_AS:    4765468 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:     1138616 kB
+DirectMap2M:    32415744 kB
+--------------------------------------------------------------------------------
+
+Dump from /proc/self/status
+--------------------------------------------------------------------------------
+Name:	mira
+Umask:	0002
+State:	R (running)
+Tgid:	20996
+Ngid:	0
+Pid:	20996
+PPid:	20995
+TracerPid:	0
+Uid:	1002	1002	1002	1002
+Gid:	1001	1001	1001	1001
+FDSize:	64
+Groups:	27 108 1001 
+NStgid:	20996
+NSpid:	20996
+NSpgid:	20966
+NSsid:	19067
+VmPeak:	 4057928 kB
+VmSize:	 2585988 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  819360 kB
+VmRSS:	  545080 kB
+RssAnon:	  537920 kB
+RssFile:	    7160 kB
+RssShmem:	       0 kB
+VmData:	 1530188 kB
+VmStk:	     132 kB
+VmExe:	    9396 kB
+VmLib:	       8 kB
+VmPTE:	    1248 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+Threads:	16
+SigQ:	0/128425
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000001001000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	vulnerable
+Cpus_allowed:	ffff
+Cpus_allowed_list:	0-15
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	268
+nonvoluntary_ctxt_switches:	19
+--------------------------------------------------------------------------------
+
+Information on current assembly object:
+
+AS_readpool: 898 reads.
+AS_contigs: 0 contigs.
+AS_bbcontigs: 0 contigs.
+Mem used for reads: 192 (192 B)
+
+Memory used in assembly structures:
+                                           Eff. Size   Free cap. LostByAlign
+     AS_writtenskimhitsperid:        898       4 KiB         0 B         0 B
+               AS_skim_edges:          0       1 MiB       1 MiB         0 B
+                 AS_adsfacts:      21553     481 KiB      60 KiB         0 B
+          AS_confirmed_edges:      43106     963 KiB     121 KiB         0 B
+   AS_permanent_overlap_bans:          1        24 B         0 B         0 B
+              AS_readhitmiss:          0        24 B         0 B         0 B
+            AS_readhmcovered:          0        24 B         0 B         0 B
+                AS_count_rhm:          0        24 B         0 B         0 B
+                 AS_clipleft:        898       4 KiB         0 B         0 B
+                AS_clipright:        898       4 KiB         0 B         0 B
+                 AS_used_ids:          0       928 B       898 B         6 B
+              AS_multicopies:        898       928 B         0 B         6 B
+            AS_hasmcoverlaps:          0       928 B       898 B         6 B
+       AS_maxcoveragereached:        898       4 KiB         0 B         0 B
+       AS_coverageperseqtype:          0        24 B         0 B         0 B
+           AS_istroublemaker:        898       928 B         0 B         6 B
+                 AS_isdebris:        898       928 B         0 B         6 B
+          AS_needalloverlaps:        898       928 B         0 B         6 B
+    AS_readsforrepeatresolve:          0        40 B         0 B         0 B
+                AS_allrmbsok:          0        24 B         0 B         0 B
+        AS_probablermbsnotok:          0        24 B         0 B         0 B
+            AS_weakrmbsnotok:          0        24 B         0 B         0 B
+          AS_readmaytakeskim:          0        40 B         0 B         0 B
+               AS_skimstaken:          0        40 B         0 B         0 B
+          AS_numskimoverlaps:          0        24 B         0 B         0 B
+       AS_numleftextendskims:          0        24 B         0 B         0 B
+         AS_rightextendskims:          0        24 B         0 B         0 B
+      AS_skimleftextendratio:          0        24 B         0 B         0 B
+     AS_skimrightextendratio:          0        24 B         0 B         0 B
+             AS_skimmegahubs:        898       928 B         0 B         6 B
+             AS_usedtmpfiles:         82       6 KiB         0 B         0 B
+Total: 2769928 (3 MiB)
+
+================================================================================
+Dynamic s allocs: 8
+Dynamic m allocs: 0
+Align allocs: 8
+
+
+End of assembly process, thank you for using MIRA.
+Looking for files named in data ...
+
+We're done here, thank you for using MIRA.
+2019-05-21 07:58:12,818  Minia:
+Minia 3, git commit 099e154
+setting storage type to hdf5
+bcalm_algo params, prefix:minia.unitigs.fa k:77 a:2 minsize:10 threads:16 mintype:1
+DSK used 1 passes and 16 partitions
+prior to queues allocation                      07:58:16     memory [current, maxRSS]: [ 628,  628] MB 
+Starting BCALM2                                 07:58:16     memory [current, maxRSS]: [ 628,  628] MB 
+
+Iterated 205 kmers, among them 7 were doubled
+
+In this superbucket (containing 3 active minimizers),
+                  sum of time spent in lambda's: 3.0 msecs
+                                 longest lambda: 1.1 msecs
+         tot time of best scheduling of lambdas: 3.0 msecs
+                       best theoretical speedup: 2.7x
+Done with partition 0                           07:58:16     memory [current, maxRSS]: [ 683,  683] MB 
+
+Iterated 155 kmers, among them 7 were doubled
+Loaded 4 doubled kmers for partition 2
+
+In this superbucket (containing 5 active minimizers),
+                  sum of time spent in lambda's: 2.8 msecs
+                                 longest lambda: 1.1 msecs
+         tot time of best scheduling of lambdas: 2.8 msecs
+                       best theoretical speedup: 2.6x
+Done with partition 2                           07:58:16     memory [current, maxRSS]: [ 683,  684] MB 
+
+Iterated 172 kmers, among them 9 were doubled
+Loaded 8 doubled kmers for partition 4
+
+In this superbucket (containing 8 active minimizers),
+                  sum of time spent in lambda's: 3.1 msecs
+                                 longest lambda: 0.9 msecs
+         tot time of best scheduling of lambdas: 3.1 msecs
+                       best theoretical speedup: 3.3x
+Done with partition 4                           07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 224 kmers, among them 14 were doubled
+Loaded 11 doubled kmers for partition 6
+
+In this superbucket (containing 13 active minimizers),
+                  sum of time spent in lambda's: 5.4 msecs
+                                 longest lambda: 1.2 msecs
+         tot time of best scheduling of lambdas: 5.4 msecs
+                       best theoretical speedup: 4.6x
+Done with partition 6                           07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 204 kmers, among them 7 were doubled
+Loaded 6 doubled kmers for partition 8
+
+In this superbucket (containing 7 active minimizers),
+                  sum of time spent in lambda's: 3.9 msecs
+                                 longest lambda: 0.9 msecs
+         tot time of best scheduling of lambdas: 3.9 msecs
+                       best theoretical speedup: 4.1x
+Done with partition 8                           07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 200 kmers, among them 41 were doubled
+Loaded 21 doubled kmers for partition 10
+
+In this superbucket (containing 41 active minimizers),
+                  sum of time spent in lambda's: 4.7 msecs
+                                 longest lambda: 1.0 msecs
+         tot time of best scheduling of lambdas: 4.7 msecs
+                       best theoretical speedup: 4.8x
+Done with partition 10                          07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 165 kmers, among them 15 were doubled
+Loaded 13 doubled kmers for partition 12
+
+In this superbucket (containing 17 active minimizers),
+                  sum of time spent in lambda's: 3.6 msecs
+                                 longest lambda: 0.7 msecs
+         tot time of best scheduling of lambdas: 3.6 msecs
+                       best theoretical speedup: 5.1x
+Done with partition 12                          07:58:16     memory [current, maxRSS]: [ 684,  684] MB 
+
+Iterated 0 kmers, among them 0 were doubled
+Number of sequences in glue: 206
+Number of pre-tips removed : 0
+Buckets compaction and gluing           : 0.7 secs
+Within that, 
+                                 creating buckets from superbuckets: 0.6 secs
+                      bucket compaction (wall-clock during threads): 0.0 secs
+
+                within all bucket compaction threads,
+                       adding nodes to subgraphs: 0.0 secs
+         subgraphs constructions and compactions: 0.0 secs
+                  compacted nodes redistribution: 0.0 secs
+Sum of CPU times for bucket compactions: 0.7 secs
+BCALM total wallclock (excl kmer counting): 1.1 secs
+Maximum number of kmers in a subgraph: 109
+Performance of compaction step:
+
+                 Wallclock time spent in parallel section : 0.0 secs
+             Best theoretical speedup in parallel section : 3.9x
+Best theor. speedup in parallel section using 1 threads : 1.0x
+             Sum of longest bucket compaction for each sb : 0.0 secs
+                       Sum of best scheduling for each sb : 0.1 secs
+Done with all compactions                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+bglue_algo params, prefix:minia.unitigs.fa k:77 threads:16
+Starting bglue with 16 threads                  07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+number of sequences to be glued: 206            07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+140 marked kmers, 2 unmarked kmers              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+created vector of hashes, size approx 0 MB)        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+pass 1/3, 70 unique hashes written to disk, size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+142 marked kmers, 2 unmarked kmers              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+created vector of hashes, size approx 0 MB)        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+pass 2/3, 71 unique hashes written to disk, size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+128 marked kmers, 2 unmarked kmers              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+created vector of hashes, size approx 0 MB)        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+pass 3/3, 64 unique hashes written to disk, size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+loaded all unique UF elements (205) into a single vector of size 0 MB        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Bitarray            7168  bits (100.00 %)   (array + ranks )
+final hash             0  bits (0.00 %) (nb in final hash 0)
+UF MPHF constructed (0 MB)                      07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+UF constructed                                  07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+freed original UF (0 MB)                        07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+loaded 32-bit UF (0 MB)                         07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Allowed 24 MB memory for buffers                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Disk partitioning of glue                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Done disk partitioning of glue                  07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Top 10 glue partitions by size:
+Glue partition 4 has 206 sequences 
+Glue partition 1 has 0 sequences 
+Glue partition 8 has 0 sequences 
+Glue partition 9 has 0 sequences 
+Glue partition 7 has 0 sequences 
+Glue partition 3 has 0 sequences 
+Glue partition 5 has 0 sequences 
+Glue partition 0 has 0 sequences 
+Glue partition 2 has 0 sequences 
+Glue partition 6 has 0 sequences 
+Glueing partitions                              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 0 (size: 0 MB)                 07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 20 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 40 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 60 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 80 (size: 0 MB)                07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 100 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 120 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 140 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 160 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 180 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 200 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 220 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 240 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 260 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 280 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 300 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 320 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 340 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 360 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 380 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 400 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 420 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 440 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 460 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 480 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Gluing partition 500 (size: 0 MB)               07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+end                                             07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+debug: not deleting glue files
+Finding links between unitigs                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 0                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 1                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 2                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 3                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 4                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 5                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 6                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 7                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+gathering links from disk                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Done finding links between unitigs              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+iterating on 2 nodes on disk
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 tips removed. 
+2 tip candidates passed degree check. 
+Tips timings:   0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal, including:
+                    0.0 CPUsecs long simple paths
+                    0.0 CPUsecs short (topological) simple paths
+                    0.0 CPUsecs short (RCTC) simple paths
+                0.0 CPUsecs tip decision
+                0.0 CPUsecs tip processing
+Nodes deletion:   0.0 CPUsecs.
+Nodes caching :   0.0 CPUsecs.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 bulges removed. 
+0/0+0 any=long+short simple path examined across all threads, among them 0 topological bulges, 0+0 were first-node duplicates.
+0 bulges candidates passed degree check. 
+0+0+0 without alt. path (complex+loop+noend), 0 didn't satisfy cov. criterion.
+Bulges timings: 0.0 CPUsecs total.
+                0.0 CPUsecs simple path traversal.
+                0.0(/0.0) CPUsecs path-finding(/failed). Longest: 0.0 CPUmillisecs (depth 0).
+                0.0 CPUsecs topological bulge processing, 
+                0.0 CPUsecs nodes deletion.
+                0.0 CPUsecs various overhead.
+iterating on 2 cached nodes
+NodesDeleter mem usage prior to flush: 0 MB
+0 erroneous connections removed. 
+0 EC candidates passed degree check. 
+0/0+0 any=long+short simple path examined across all threads
+0 topological ECs. 
+EC Timings: 0.0 CPUsecs total, including
+                0.0 CPUsecs EC simple paths
+                0.0 CPUsecs EC coverage test
+                0.0 CPUsecs EC processing
+Nodes deletion: 0.0 CPUsecs.
+Finding links between unitigs                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 0                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 1                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 2                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 3                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 4                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 5                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (1kmers/1extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 6                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 1 pass 7                                   07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+step 2 (0kmers/0extremities)                    07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+gathering links from disk                       07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+Done finding links between unitigs              07:58:17     memory [current, maxRSS]: [ 684,  684] MB 
+    -in                                      : /home/gneumann/gaaf/unit_tests/tests/assemblies/minia/test1/minia.txt
+    -kmer-size                               : 77
+    -nb-cores                                : 16
+    -traversal                               : contig
+    -fasta-line                              : 0
+    -tip-len-topo-kmult                      : 2.500000
+    -tip-len-rctc-kmult                      : 10.000000
+    -tip-rctc-cutoff                         : 2.000000
+    -bulge-len-kmult                         : 3.000000
+    -bulge-len-kadd                          : 100
+    -bulge-altpath-kadd                      : 50
+    -bulge-altpath-covmult                   : 1
+    -ec-len-kmult                            : 9.000000
+    -ec-rctc-cutoff                          : 4.000000
+    -abundance-min                           : 2
+    -abundance-max                           : 2147483647
+    -abundance-min-threshold                 : 2
+    -histo-max                               : 10000
+    -solidity-kind                           : sum
+    -max-memory                              : 5000
+    -max-disk                                : 0
+    -out-dir                                 : .
+    -out-tmp                                 : .
+    -out-compress                            : 0
+    -storage-type                            : hdf5
+    -histo2D                                 : 0
+    -histo                                   : 0
+    -minimizer-type                          : 1
+    -minimizer-size                          : 10
+    -repartition-type                        : 1
+    -bloom                                   : neighbor
+    -debloom                                 : cascading
+    -debloom-impl                            : minimizer
+    -branching-nodes                         : stored
+    -topology-stats                          : 0
+    -verbose                                 : 1
+    -integer-precision                       : 0
+    -nb-glue-partitions                      : 0
+    -storage-type                            : 1
+    -verbose                                 : 1
+    -verbose                                 : 1
+    -verbose                                 : 1
+    stats                                   
+        traversal                                : contig
+        nb_contigs                               : 1
+        nb_small_contigs_discarded               : 0
+        nt_assembled                             : 2977
+        max_length                               : 2977
+        graph simpification stats               
+            tips removed                             : 0 + 0 + 0 + 0
+            bulges removed                           : 0 + 0 + 0 + 0
+            EC removed                               : 0 + 0 + 0 + 0
+        assembly traversal stats                
+    time                                     : 4.485
+        assembly                                 : 0.109
+        graph construction                       : 4.376
+2019-05-21 07:58:48,780  Spades:
+2019-05-21 07:59:29,657  Ssake:
+2019-05-21 07:59:51,782  Velvet:
+2019-05-21 08:01:53,699  Stats:
+2019-05-21 08:01:53,728 <class 'TypeError'>
+2019-05-21 08:03:08,765  Velvet:
+[0.000001] Reading FastA file /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa;
+[0.000090] Reading FastA file /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa;
+[0.005179] 898 sequences found in total in the paired sequence files
+[0.005184] Done
+[0.026701] Reading read set file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/Sequences;
+[0.027097] 898 sequences found
+[0.029069] Done
+[0.029073] 898 sequences in total.
+[0.029144] Writing into roadmap file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/Roadmaps...
+[0.030795] Inputting sequences...
+[0.031774] Inputting sequence 0 / 898
+[0.056388]  === Sequences loaded in 0.025630 s
+[0.056432] Done inputting sequences
+[0.056434] Destroying splay table
+[0.061006] Splay table destroyed
+2019-05-21 08:09:54,467  Quast:
+2019-05-21 08:09:54,487  Calling Quast tool
+quast/quast.py -r pO113.fasta -t 15 -o /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades --glimmer --rna-finding -b -1 /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa -2 /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa /home/gneumann/gaaf/unit_tests/tests/assemblies/spades/test1/scaffolds.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.15.0-45-generic-x86_64-with-Ubuntu-18.04-bionic (linux_64)
+  Python version: 3.6.7
+  CPUs number: 16
+
+Started: 2019-05-21 08:09:54
+
+Logging to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/quast.log
+
+CWD: /home/gneumann/gaaf/unit_tests
+Main parameters: 
+  MODE: default, threads: 15, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  /home/gneumann/gaaf/unit_tests/pO113.fasta ==> pO113
+
+Contigs:
+  Pre-processing...
+  /home/gneumann/gaaf/unit_tests/tests/assemblies/spades/test1/scaffolds.fasta ==> scaffolds
+
+2019-05-21 08:09:55
+Running Reads analyzer...
+  Logging to files /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_stats.log and /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_stats.err...
+  Pre-processing reads...
+  Pre-processing reads...
+  Running BWA for reference...
+  Running BWA...
+  Done.
+  Done.
+  Sorting SAM-file...
+  Sorting SAM-file for reference...
+  Analysis for reference is finished.
+  Analysis is finished.
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_report.txt, reads_report.tsv, and reads_report.tex
+  Calculating reads coverage...
+  Calculating physical coverage...
+  Looking for trivial deletions (long zero-covered fragments)...
+  Trivial deletions: 0 found
+    Saving to: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/trivial_deletions.bed
+  Searching structural variations with GRIDSS...
+    Saving to: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/pO113_structural_variations.bed
+  No structural variations were found.
+  Coverage distribution along the reference genome is in /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.cov
+Done.
+
+2019-05-21 08:10:00
+Running Basic statistics processor...
+  Reference genome:
+    pO113.fasta, length = 2997, num fragments = 1, GC % = 39.07
+  Contig files: 
+    scaffolds
+  Calculating N50 and L50...
+    scaffolds, N50 = 2987, L50 = 1, Total length = 2987, GC % = 39.07, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/GC_content_plot.pdf
+  Drawing scaffolds GC content plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/scaffolds_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/coverage_histogram.pdf
+  Drawing scaffolds coverage histogram (bin size: 1x)...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/scaffolds_coverage_histogram.pdf
+Done.
+
+2019-05-21 08:10:02
+Running Contig analyzer...
+  scaffolds
+  Logging to files /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/contigs_report_scaffolds.stdout and contigs_report_scaffolds.stderr...
+  Aligning contigs to the reference
+  Analysis is finished.
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2019-05-21 08:10:03
+Running NA-NGA calculation...
+  scaffolds, Largest alignment = 2987, NA50 = 2987, NGA50 = 2987, LA50 = 1, LGA50 = 1
+  Drawing cumulative plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/NGAx_plot.pdf
+Done.
+
+2019-05-21 08:10:04
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  scaffolds
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+2019-05-21 08:10:04
+Running GlimmerHMM...
+  scaffolds
+    Genes = 2 unique, 2 total
+    Predicted genes (GFF): /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/scaffolds_glimmer_genes.gff.gz
+Done.
+
+2019-05-21 08:10:04
+Running Barrnap...
+Logging to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/barrnap.log...
+    Ribosomal RNA genes = 0
+    Predicted genes (GFF): /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/scaffolds.rna.gff
+Done.
+
+2019-05-21 08:10:05
+Running BUSCO...
+Logs and results will be saved under /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/busco_stats...
+Done.
+
+2019-05-21 08:10:08
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+2019-05-21 08:10:09,737  Metrics generated
+2019-05-21 08:10:41,243  Quast:
+2019-05-21 08:10:41,244  Calling Quast tool
+quast/quast.py -r pO113.fasta -t 15 -o /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades --glimmer --rna-finding -b -1 /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa -2 /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa /home/gneumann/gaaf/unit_tests/tests/assemblies/spades/test1/scaffolds.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.15.0-45-generic-x86_64-with-Ubuntu-18.04-bionic (linux_64)
+  Python version: 3.6.7
+  CPUs number: 16
+
+Started: 2019-05-21 08:10:41
+
+Logging to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/quast.log
+NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
+
+CWD: /home/gneumann/gaaf/unit_tests
+Main parameters: 
+  MODE: default, threads: 15, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  /home/gneumann/gaaf/unit_tests/pO113.fasta ==> pO113
+
+Contigs:
+  Pre-processing...
+  /home/gneumann/gaaf/unit_tests/tests/assemblies/spades/test1/scaffolds.fasta ==> scaffolds
+
+2019-05-21 08:10:42
+Running Reads analyzer...
+  Logging to files /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_stats.log and /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_stats.err...
+  Using existing reads coverage file: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.cov
+  Using existing physical coverage file: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.physical.cov
+  Using existing flag statistics file /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/scaffolds.stat
+  Pre-processing reads...
+  Running BWA for reference...
+  Done.
+  Sorting SAM-file for reference...
+  Using existing BAM-file: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/pO113.bam
+  Using existing flag statistics file /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.stat
+  Analysis for reference is finished.
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_report.txt, reads_report.tsv, and reads_report.tex
+  Looking for trivial deletions (long zero-covered fragments)...
+  Trivial deletions: 0 found
+    Saving to: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/trivial_deletions.bed
+  Searching structural variations with GRIDSS...
+    Saving to: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/pO113_structural_variations.bed
+  No structural variations were found.
+  Coverage distribution along the reference genome is in /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.cov
+Done.
+
+2019-05-21 08:10:45
+Running Basic statistics processor...
+  Reference genome:
+    pO113.fasta, length = 2997, num fragments = 1, GC % = 39.07
+  Contig files: 
+    scaffolds
+  Calculating N50 and L50...
+    scaffolds, N50 = 2987, L50 = 1, Total length = 2987, GC % = 39.07, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/GC_content_plot.pdf
+  Drawing scaffolds GC content plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/scaffolds_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/coverage_histogram.pdf
+  Drawing scaffolds coverage histogram (bin size: 1x)...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/scaffolds_coverage_histogram.pdf
+Done.
+
+2019-05-21 08:10:47
+Running Contig analyzer...
+  scaffolds
+  Logging to files /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/contigs_report_scaffolds.stdout and contigs_report_scaffolds.stderr...
+  Using existing alignments... 
+  Analysis is finished.
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2019-05-21 08:10:48
+Running NA-NGA calculation...
+  scaffolds, Largest alignment = 2987, NA50 = 2987, NGA50 = 2987, LA50 = 1, LGA50 = 1
+  Drawing cumulative plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/NGAx_plot.pdf
+Done.
+
+2019-05-21 08:10:49
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  scaffolds
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+2019-05-21 08:10:49
+Running GlimmerHMM...
+  scaffolds
+    Genes = 2 unique, 2 total
+    Predicted genes (GFF): /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/scaffolds_glimmer_genes.gff.gz
+Done.
+
+2019-05-21 08:10:49
+Running Barrnap...
+Logging to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/barrnap.log...
+    Ribosomal RNA genes = 0
+    Predicted genes (GFF): /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/scaffolds.rna.gff
+Done.
+
+2019-05-21 08:10:49
+Running BUSCO...
+Logs and results will be saved under /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/busco_stats...
+Done.
+
+2019-05-21 08:10:52
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2019-05-21 08:10:55
+RESULTS:
+  Text versions of total report are saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/report.html
+  PDF version (tables and plots) is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/report.pdf
+  Icarus (contig browser) is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/icarus.html
+  Log is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/quast.log
+
+Finished: 2019-05-21 08:10:55
+Elapsed time: 0:00:14.169817
+NOTICEs: 3; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
+2019-05-21 08:10:55,776  Metrics generated

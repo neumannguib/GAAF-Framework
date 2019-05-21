@@ -12,4 +12,4 @@ import unit_tests as ts
 
 print('Testing Reads Generator')
 test=ts.unit_tests()
-test.Reads_Generator('tests','/home/gneumann/gaef/unit_tests/tests/')
+test.Reads_Generator('tests','/home/gneumann/gaaf/unit_tests/tests/')

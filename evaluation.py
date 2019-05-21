@@ -8,23 +8,32 @@ import os
 import logging
 import importlib
 import multiprocessing
+from abc import ABC, abstractmethod
 
-
-class Evaluation:
+class Evaluation_Control:
     """Genome Evaluation Step
     
     Attributes
     ----------
     file_format : str
             the format of the reads, generally fa or fq 
+    read_files : list
+        List to the files containing the sequencing reads
+    reference : str
+        Genome reference path
+    assemblies : list
+        List to assembly files
             
     Methods
     -------
-    command(sample,t, assembler)
+    apply_features(self, tools, assemblies, reads )
         Generate the features
     """
    
     file_format="fa"
+    read_files=[]
+    reference=''
+    assemblies=[]
     
     
     def __init__(self, reference, exp,out):
@@ -52,7 +61,7 @@ class Evaluation:
         if not (os.path.exists(self.out+"features")):
             os.system("mkdir "+self.out+"features")
     
-    def generate_features(self, tools, assemblies, reads ):
+    def apply_features(self, tools, assemblies, reads ):
         """
         Generates the features
         
@@ -96,8 +105,145 @@ class Evaluation:
                         exists = os.path.isfile(self.out+"assemblies/"+k+"/"+sample+"/"+v)
                         if exists:
                             software=my_class(self.out+"assemblies/"+k+"/"+sample+"/"+v,ref, self.exp,self.out)
-                            software.file_format=self.file_format
-                            software.command(sample,t,k)
+                            software.reads_format=self.file_format
+                            if type(software)=='Evaluation_Tool':
+                                software.run(sample,t,k)
+                            else:
+                                software.calculate(sample,t,k)
                     except TypeError:
                         logging.error(TypeError) 
                         exit()
+
+class Feature(ABC):
+    """Feature for Genome Assembly Evaluation 
+    
+    Attributes
+    ----------
+    reads_format : str
+            the format of the reads, generally fa or fq 
+    reference : str
+            Genome Reference
+    assembly : str
+            Path to the assembly
+            
+    Methods
+    -------
+    calculate(sample,t, assembler)
+        Runs quast command
+    """
+    
+    reads_format="fa"
+    reference=''
+    assembly=''
+    
+    
+    def __init__(self, path, reference, exp,out):
+        """
+        Parameters
+        ----------
+        path : str
+            Path to the assembly
+        reference : str
+            Genome Reference
+        exp : str
+            The Experiment Name
+        out : str
+            The output directory to store the results and where the reads 
+            are stored
+        """
+        
+        self.path=path
+        self.exp=exp
+        self.out=out
+        super(Feature,self).__init__()
+        if not (os.path.exists(self.out+"features/")):
+            os.system("mkdir "+self.out+"features/")
+        logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
+        if reference == '':
+            logging.error('There`s no reference file attached')
+            exit()
+        self.ref = reference
+        
+    @abstractmethod
+    def calculate(self,sample,t, assembler): 
+        """
+        It calculates the feature, and outputs a report.tex.
+        
+        Parameters
+        ----------
+        sample : str
+            Sample name
+        t : int
+            Number of threads
+        assembler : str
+            Assembler name
+        """
+        
+        pass
+    
+class Evaluation_Tool(ABC):
+    """Tool for Genome Assembly Evaluation 
+    
+    Attributes
+    ----------
+    reads_format : str
+            the format of the reads, generally fa or fq 
+    reference : str
+            Genome Reference
+    assembly : str
+            Path to the assembly
+            
+    Methods
+    -------
+    run(sample,t, assembler)
+        Runs tool command
+    """
+    
+    reads_format="fa"
+    reference=''
+    assembly=''
+    
+    
+    def __init__(self, path, reference, exp,out):
+        """
+        Parameters
+        ----------
+        path : str
+            Path to the assembly
+        reference : str
+            Genome Reference
+        exp : str
+            The Experiment Name
+        out : str
+            The output directory to store the results and where the reads 
+            are stored
+        """
+        
+        self.assembly=path
+        self.exp=exp
+        self.out=out
+        super(Evaluation_Tool,self).__init__()
+        if not (os.path.exists(self.out+"features/")):
+            os.system("mkdir "+self.out+"features/")
+        logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
+        if reference == '':
+            logging.error('There`s no reference file attached')
+            exit()
+        self.ref = reference
+        
+    @abstractmethod
+    def run(self,sample,t, assembler): 
+        """
+        It runs the command, and outputs a report.tex.
+        
+        Parameters
+        ----------
+        sample : str
+            Sample name
+        t : int
+            Number of threads
+        assembler : str
+            Assembler name
+        """
+        
+        pass

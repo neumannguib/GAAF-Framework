@@ -9,4 +9,4 @@ import unit_tests as ts
 
 print('Testing mira')
 test=ts.unit_tests()
-test.mira('tests/',100,77)
+test.mira('tests',100,77)

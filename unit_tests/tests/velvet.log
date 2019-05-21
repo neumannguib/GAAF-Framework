@@ -1,0 +1,145 @@
+[0.000001] Reading FastA file /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa;
+[0.000090] Reading FastA file /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa;
+[0.005179] 898 sequences found in total in the paired sequence files
+[0.005184] Done
+[0.026701] Reading read set file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/Sequences;
+[0.027097] 898 sequences found
+[0.029069] Done
+[0.029073] 898 sequences in total.
+[0.029144] Writing into roadmap file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/Roadmaps...
+[0.030795] Inputting sequences...
+[0.031774] Inputting sequence 0 / 898
+[0.056388]  === Sequences loaded in 0.025630 s
+[0.056432] Done inputting sequences
+[0.056434] Destroying splay table
+[0.061006] Splay table destroyed
+[0.000000] Reading roadmap file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/Roadmaps
+[0.002094] 898 roadmaps read
+[0.002225] Creating insertion markers
+[0.002359] Ordering insertion markers
+[0.007239] Counting preNodes
+[0.007395] 1357 preNodes counted, creating them now
+[0.013638] Adjusting marker info...
+[0.016065] Connecting preNodes
+[0.018773] Cleaning up memory
+[0.018777] Done creating preGraph
+[0.018778] Concatenation...
+[0.019287] Renumbering preNodes
+[0.019289] Initial preNode count 1357
+[0.019293] Destroyed 1356 preNodes
+[0.019294] Concatenation over!
+[0.019294] Clipping short tips off preGraph
+[0.019296] Concatenation...
+[0.019296] Renumbering preNodes
+[0.019296] Initial preNode count 1
+[0.019297] Destroyed 0 preNodes
+[0.019298] Concatenation over!
+[0.019298] 0 tips cut off
+[0.019299] 1 nodes left
+[0.019347] Writing into pregraph file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/PreGraph...
+[0.020572] Reading read set file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/Sequences;
+[0.020820] 898 sequences found
+[0.021893] Done
+[0.023327] Reading pre-graph file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/PreGraph
+[0.023347] Graph has 1 nodes and 898 sequences
+[0.023499] Scanning pre-graph file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/PreGraph for k-mers
+[0.023631] 2911 kmers found
+[0.024214] Sorting kmer occurence table ... 
+[0.025208] Sorting done.
+[0.025211] Computing acceleration table... 
+[0.088194] Computing offsets... 
+[0.093286] Ghost Threading through reads 0 / 898
+[0.099451]  === Ghost-Threaded in 0.011100 s
+[0.101579] Threading through reads 0 / 898
+[0.124667]  === Threaded in 0.025213 s
+[0.132340] Correcting graph with cutoff 0.200000
+[0.132381] Determining eligible starting points
+[0.132412] Done listing starting nodes
+[0.132414] Initializing todo lists
+[0.132414] Done with initilization
+[0.132415] Activating arc lookup table
+[0.132416] Done activating arc lookup table
+[0.132425] Concatenation...
+[0.132427] Renumbering nodes
+[0.132427] Initial node count 1
+[0.132430] Removed 0 null nodes
+[0.132431] Concatenation over!
+[0.132432] Clipping short tips off graph, drastic
+[0.132433] Concatenation...
+[0.132434] Renumbering nodes
+[0.132434] Initial node count 1
+[0.132435] Removed 0 null nodes
+[0.132435] Concatenation over!
+[0.132436] 1 nodes left
+[0.132518] Writing into graph file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/Graph2...
+[0.133412] Measuring median coverage depth...
+[0.133416] Median coverage depth = 7.403641
+[0.133437] Removing contigs with coverage < 3.701821...
+[0.133440] Concatenation...
+[0.133441] Renumbering nodes
+[0.133441] Initial node count 1
+[0.133442] Removed 0 null nodes
+[0.133443] Concatenation over!
+[0.133443] Concatenation...
+[0.133444] Renumbering nodes
+[0.133444] Initial node count 1
+[0.133445] Removed 0 null nodes
+[0.133445] Concatenation over!
+[0.133463] Clipping short tips off graph, drastic
+[0.133465] Concatenation...
+[0.133465] Renumbering nodes
+[0.133466] Initial node count 1
+[0.133466] Removed 0 null nodes
+[0.133467] Concatenation over!
+[0.133467] 1 nodes left
+[0.133468] Read coherency...
+[0.133469] Identifying unique nodes
+[0.133470] Done, 1 unique nodes counted
+[0.133470] Trimming read tips
+[0.133472] Renumbering nodes
+[0.133472] Initial node count 1
+[0.133473] Removed 0 null nodes
+[0.133473] Confronted to 0 multiple hits and 0 null over 0
+[0.133474] Read coherency over!
+[0.133492] Starting pebble resolution...
+[0.133500] Computing read to node mapping array sizes
+[0.135827] Computing read to node mappings
+[0.144494] Estimating library insert lengths...
+[0.144505] Done
+[0.144506] Computing direct node to node mappings
+[0.151124] Scaffolding node 0
+[0.157665]  === Nodes Scaffolded in 0.013158 s
+[0.157690] Preparing to correct graph with cutoff 0.200000
+[0.157774] Cleaning memory
+[0.157839] Deactivating local correction settings
+[0.157846] Pebble done.
+[0.157847] Starting pebble resolution...
+[0.157855] Computing read to node mapping array sizes
+[0.161999] Computing read to node mappings
+[0.170603] Estimating library insert lengths...
+[0.170614] Done
+[0.170615] Computing direct node to node mappings
+[0.177036] Scaffolding node 0
+[0.183521]  === Nodes Scaffolded in 0.012905 s
+[0.183533] Preparing to correct graph with cutoff 0.200000
+[0.183581] Cleaning memory
+[0.183583] Deactivating local correction settings
+[0.183589] Pebble done.
+[0.183590] Concatenation...
+[0.183590] Renumbering nodes
+[0.183591] Initial node count 1
+[0.183592] Removed 0 null nodes
+[0.183592] Concatenation over!
+[0.183593] Removing reference contigs with coverage < 3.701821...
+[0.183595] Concatenation...
+[0.183596] Renumbering nodes
+[0.183596] Initial node count 1
+[0.183597] Removed 0 null nodes
+[0.183597] Concatenation over!
+[0.183641] Writing contigs into /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/contigs.fa...
+[0.184350] Writing into stats file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/stats.txt...
+[0.184409] Writing into graph file /home/gneumann/gaaf/unit_tests/tests/assemblies/velvet/test1/LastGraph...
+[0.185222] Estimated Coverage = 7.403641
+[0.185224] Estimated Coverage cutoff = 3.701821
+Final graph has 1 nodes and n50 of 2911, max 2911, total 2911, using 898/898 reads
+Testing velvet

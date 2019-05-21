@@ -1,0 +1,154 @@
+quast/quast.py -r pO113.fasta -t 15 -o /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades --glimmer --rna-finding -b -1 /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa -2 /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa /home/gneumann/gaaf/unit_tests/tests/assemblies/spades/test1/scaffolds.fasta
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.15.0-45-generic-x86_64-with-Ubuntu-18.04-bionic (linux_64)
+  Python version: 3.6.7
+  CPUs number: 16
+
+Started: 2019-05-21 08:10:41
+
+Logging to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/quast.log
+NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
+
+CWD: /home/gneumann/gaaf/unit_tests
+Main parameters: 
+  MODE: default, threads: 15, minimum contig length: 500, minimum alignment length: 65, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  /home/gneumann/gaaf/unit_tests/pO113.fasta ==> pO113
+
+Contigs:
+  Pre-processing...
+  /home/gneumann/gaaf/unit_tests/tests/assemblies/spades/test1/scaffolds.fasta ==> scaffolds
+
+2019-05-21 08:10:42
+Running Reads analyzer...
+  Logging to files /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_stats.log and /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_stats.err...
+  Using existing reads coverage file: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.cov
+  Using existing physical coverage file: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.physical.cov
+  Using existing flag statistics file /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/scaffolds.stat
+  Pre-processing reads...
+  Running BWA for reference...
+  Done.
+  Sorting SAM-file for reference...
+  Using existing BAM-file: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/pO113.bam
+  Using existing flag statistics file /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.stat
+  Analysis for reference is finished.
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/reads_report.txt, reads_report.tsv, and reads_report.tex
+  Looking for trivial deletions (long zero-covered fragments)...
+  Trivial deletions: 0 found
+    Saving to: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/trivial_deletions.bed
+  Searching structural variations with GRIDSS...
+    Saving to: /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/temp_output/pO113_structural_variations.bed
+  No structural variations were found.
+  Coverage distribution along the reference genome is in /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/reads_stats/pO113.cov
+Done.
+
+2019-05-21 08:10:45
+Running Basic statistics processor...
+  Reference genome:
+    pO113.fasta, length = 2997, num fragments = 1, GC % = 39.07
+  Contig files: 
+    scaffolds
+  Calculating N50 and L50...
+    scaffolds, N50 = 2987, L50 = 1, Total length = 2987, GC % = 39.07, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/GC_content_plot.pdf
+  Drawing scaffolds GC content plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/scaffolds_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/coverage_histogram.pdf
+  Drawing scaffolds coverage histogram (bin size: 1x)...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/basic_stats/scaffolds_coverage_histogram.pdf
+Done.
+
+2019-05-21 08:10:47
+Running Contig analyzer...
+  scaffolds
+  Logging to files /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/contigs_report_scaffolds.stdout and contigs_report_scaffolds.stderr...
+  Using existing alignments... 
+  Analysis is finished.
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2019-05-21 08:10:48
+Running NA-NGA calculation...
+  scaffolds, Largest alignment = 2987, NA50 = 2987, NGA50 = 2987, LA50 = 1, LGA50 = 1
+  Drawing cumulative plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/aligned_stats/NGAx_plot.pdf
+Done.
+
+2019-05-21 08:10:49
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  scaffolds
+  Analysis is finished.
+  Skipping drawing Genome fraction, % histogram... (less than 2 columns histogram makes no sense)
+Done.
+
+2019-05-21 08:10:49
+Running GlimmerHMM...
+  scaffolds
+    Genes = 2 unique, 2 total
+    Predicted genes (GFF): /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/scaffolds_glimmer_genes.gff.gz
+Done.
+
+2019-05-21 08:10:49
+Running Barrnap...
+Logging to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/barrnap.log...
+    Ribosomal RNA genes = 0
+    Predicted genes (GFF): /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/predicted_genes/scaffolds.rna.gff
+Done.
+
+2019-05-21 08:10:49
+Running BUSCO...
+Logs and results will be saved under /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/busco_stats...
+Done.
+
+2019-05-21 08:10:52
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2019-05-21 08:10:55
+RESULTS:
+  Text versions of total report are saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/report.html
+  PDF version (tables and plots) is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/report.pdf
+  Icarus (contig browser) is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/icarus.html
+  Log is saved to /home/gneumann/gaaf/unit_tests/tests/features/quast/test1--spades/quast.log
+
+Finished: 2019-05-21 08:10:55
+Elapsed time: 0:00:14.169817
+NOTICEs: 3; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
+Testing quast

@@ -12,9 +12,9 @@ import threading as thr
 import multiprocessing
 import time
 import os
+from abc import ABC, abstractmethod
 
-
-class Reads_generator():
+class Reads_generation_Control():
     """
     This Class generates artifitial sequencing reads through third-party 
     algorithms. Not only one can generate reads for a unique assemblies,
@@ -26,7 +26,7 @@ class Reads_generator():
     -------
     fasta2fastq(file,ql,name='')
         Converts a fasta file to a fastq file
-    generator(alg,parameters)
+    generate(alg,parameters)
         The method where the reads are generated
     """
 
@@ -46,37 +46,8 @@ class Reads_generator():
         
         logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
         
-    def fasta2fastq(self,file,ql,name=''): 
-        """
-        It converts a fasta file to a fastq file.
-        
-        Parameters
-        ----------
-        file : str
-            file name, including format, e.g. 'reads_1.fa'
-        ql : int
-            phred number
-        """
-        
-        
-        try:
-            if name!='':
-                fq=name+".fastq"
-            else:
-                fq=file.split(".")
-                fq=fq[0] + ".fastq"
-            with open(file, "r") as fasta, open(fq, "w") as fastq:
-                for record in SeqIO.parse(fasta, "fasta"):
-                    record.letter_annotations["phred_quality"] = [ql] * len(record)
-                    SeqIO.write(record, fastq, "fastq")
-            fasta.close()
-            fastq.close()
-        
-        except IOError:
-                    logging.error(IOError)
-                    exit()
                     
-    def generator(self,alg,parameters):
+    def generate(self,alg,parameters):
         """
         Here the reads are generated.
         
@@ -128,6 +99,8 @@ class Reads_generator():
                     threads[-1].daemon=True
                     threads[-1].setName(sample)
                     threads[-1].start()
+                else:
+                    reads.files.append(sample)
         elif self.exp not in done:
             reads.t=t
             threads.append(thr.Thread(target=reads.command,args=(self.exp,)))
@@ -147,7 +120,83 @@ class Reads_generator():
         
         
         return reads
+
+class Generator(ABC):
+    """
+    Abstract class responsable for generating reads
+    
+    Attributes
+    ----------
+    parameters : dict
+        A dictionary containing all the generation parameters
+    files : list
+        The list of the samples generated
+        
+    Methods
+    -------
+    fasta2fastq(file,ql,name='')
+        Converts a fasta file to a fastq file
+    command(sample)
+        Run the command to the sample
+    """
+    
+    t=multiprocessing.cpu_count()-2
+    parameters=dict()
+    files=[]
+    
+    def __init__(self,exp,out):
+        """
+        Parameters
+        ----------
+        exp : str
+            The Experiment Name
+        out : str
+            The output directory to store the results and where the reads 
+            are stored
+        """
+        
+        self.exp=exp
+        self.out=out
+        super(Generator,self).__init__()
+        logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
     
     
+    def fasta2fastq(self,file,ql,name=''): 
+        """
+        It converts a fasta file to a fastq file.
+        
+        Parameters
+        ----------
+        file : str
+            file name, including format, e.g. 'reads_1.fa'
+        ql : int
+            phred number
+        """
+        
+        
+        try:
+            if name!='':
+                fq=name+".fastq"
+            else:
+                fq=file.split(".")
+                fq=fq[0] + ".fastq"
+            with open(file, "r") as fasta, open(fq, "w") as fastq:
+                for record in SeqIO.parse(fasta, "fasta"):
+                    record.letter_annotations["phred_quality"] = [ql] * len(record)
+                    SeqIO.write(record, fastq, "fastq")
+            fasta.close()
+            fastq.close()
+        
+        except IOError:
+                    logging.error(IOError)
+                    exit()
+                  
+                    
+    @abstractmethod
+    def command(self,sample):
+        """
+        Run the command.
+        """
+        pass
     
 

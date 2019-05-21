@@ -1,0 +1,17 @@
+Verifying PATHS...
+jellyfish OK
+runCA OK
+createSuperReadsForDirectory.perl OK
+creating script file for the actions...done.
+execute /home/gneumann/gaaf/unit_tests/tests/assemblies/masurca/phred_test/assemble.sh to run assembly
+[Tue May 21 07:55:17 -03 2019] Processing pe library reads
+[Tue May 21 07:55:17 -03 2019] Average PE read length 100
+[Tue May 21 07:55:17 -03 2019] MIN_Q_CHAR: 64
+[Tue May 21 07:55:17 -03 2019] Creating mer database for Quorum
+[Tue May 21 07:55:18 -03 2019] Error correct PE
+[Tue May 21 07:55:18 -03 2019] Estimating genome size
+[Tue May 21 07:55:18 -03 2019] Estimated genome size: 2907
+[Tue May 21 07:55:18 -03 2019] Creating k-unitigs with k=77
+[Tue May 21 07:55:18 -03 2019] Computing super reads from PE 
+[Tue May 21 07:55:18 -03 2019] Super reads failed, check super1.err and files in ./work1/
+Testing masurca

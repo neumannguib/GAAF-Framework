@@ -1,0 +1,92 @@
+Edena v3.131028
+Rapid file(s) examination... done
+Number of reads upper bound estimation: 900
+Reads layout initialization... done
+Opening paired files:
+   /home/gneumann/gaaf/unit_tests/tests/reads/test1_1.fa
+   /home/gneumann/gaaf/unit_tests/tests/reads/test1_2.fa
+   Loaded: 898, discarded: 0
+   Reads length: 100
+done
+   Number of reads: 898
+   Number of distinct sequences: 776
+   Average reads redundancy: 1.2
+Building pairing index... done
+Initializing prefix tables...done
+Minimum overlaps size: 50
+Computing overlaps >=50... Computing overlaps >=50 done        
+Flagging transitive edges...Flagging transitive edges... done    
+Removing flagged edges... done
+writing the overlaps graph to the file test1.ovl... done
+Edena v3.131028
+Loading file "test1.ovl"...  done
+   reads length:             100
+   number of reads:          898
+   number of nodes:          776
+   number of edges:          775
+   minimum overlap size:     50
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Removed orphan non-usable nodes: 0 (0.0% of the total number of reads)
+Removing dead-end paths... done
+   Removed dead-ends: 0 (0.0% of the total number of reads)
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Contextual cleaning: step1...Contextual cleaning: step1... done                    
+Contextual cleaning: step2...Contextual cleaning: step2... done                 
+   0 edges have been cleaned out
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Removing dead-end paths...done
+   Removed dead-ends: 0 (0.0% of the total number of reads)
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Removed orphan non-usable nodes: 0
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Nodes coverage sampling:
+   mean: 31.1
+   median: 31.1
+   1st percentile 0.0
+   1st decile 0.0
+   sd: 0.0
+   minimum required coverage automatically set to: 15.5
+   target size (roughly) estimated as 2888
+Resolving bubbles... done
+Resolved bubbles: 0
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Discarding suspicious nodes... done
+   Suspicious nodes removed: 0
+Condensing overlaps graph... done          
+   Updating node IDs...   Updating node IDs... done
+   Renumbering nodes... done
+   Graph has been condensed to 1 nodes
+Short-range paired-end horizon: 1000
+Estimating pairing distance... done               
+   [allowed distance range] (mean,sd) (tot,valid,sampled,usable)
+   lib1 >< [200,200] (200.000,0.000) (449,449,449,449)
+Building contigs...
+Building contigs... done                               
+Number of contigs:  1
+   sum:  2.96 Kbp
+   N50:  2.96 Kbp
+   mean: 2.96 Kbp
+   max:  2.96 Kbp
+   min:  2.96 Kbp
+Assembly breaks occurred due to:
+   non-resolved ambiguity: 0
+   dead-end: 2
+Testing edena

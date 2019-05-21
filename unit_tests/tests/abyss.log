@@ -1,0 +1,115 @@
+make: Entering directory '/home/gneumann/gaaf/unit_tests/tests/assemblies/abyss/test1'
+ABYSS -k77 -q3    --coverage-hist=coverage.hist -s test1-bubbles.fa  -o test1-1.fa test1_1.fa test1_2.fa 
+ABySS 2.0.3
+ABYSS -k77 -q3 --coverage-hist=coverage.hist -s test1-bubbles.fa -o test1-1.fa test1_1.fa test1_2.fa
+Reading `test1_1.fa'...
+Reading `test1_2.fa'...
+Loaded 2911 k-mer
+Minimum k-mer coverage is 1
+Using a coverage threshold of 3...
+The median k-mer coverage is 7
+The reconstruction is 2851
+The k-mer coverage threshold is 2.64575
+Setting parameter e (erode) to 3
+Setting parameter E (erodeStrand) to 1
+Setting parameter c (coverage) to 2.64575
+Generating adjacency
+Added 5820 edges.
+Eroding tips
+Eroded 200 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruning tips shorter than 2 bp...
+Pruning tips shorter than 4 bp...
+Pruning tips shorter than 8 bp...
+Pruning tips shorter than 16 bp...
+Pruning tips shorter than 32 bp...
+Pruning tips shorter than 64 bp...
+Pruning tips shorter than 77 bp...
+Pruned 0 tips in 7 rounds.
+Marked 0 edges of 0 ambiguous vertices.
+Removing low-coverage contigs (mean k-mer coverage < 2.64575)
+Found 2711 k-mer in 1 contigs before removing low-coverage contigs.
+Removed 0 k-mer in 0 low-coverage contigs.
+Split 0 ambigiuous branches.
+Eroding tips
+Eroded 0 tips.
+Eroded 0 tips.
+Pruning tips shorter than 1 bp...
+Pruning tips shorter than 2 bp...
+Pruning tips shorter than 4 bp...
+Pruning tips shorter than 8 bp...
+Pruning tips shorter than 16 bp...
+Pruning tips shorter than 32 bp...
+Pruning tips shorter than 64 bp...
+Pruning tips shorter than 77 bp...
+Pruned 0 tips in 7 rounds.
+Popping bubbles
+Removed 0 bubbles
+Marked 0 edges of 0 ambiguous vertices.
+Assembled 2711 k-mer in 1 contigs.
+Removed 200 k-mer.
+The signal-to-noise ratio (SNR) is 11.321 dB.
+AdjList    -k77 -m50 --dot test1-1.fa >test1-1.dot
+abyss-filtergraph  --dot   -k77 -g test1-2.dot1 test1-1.dot test1-1.fa >test1-1.path
+MergeContigs --dot   -k77 -g test1-2.dot -o test1-2.fa test1-1.fa test1-2.dot1 test1-1.path
+PopBubbles  --dot -j16 -k77  -p0.9  -g test1-3.dot test1-2.fa test1-2.dot >test1-2.path
+MergeContigs   -k77 -o test1-3.fa test1-2.fa test1-2.dot test1-2.path
+awk '!/^>/ {x[">" $1]=1; next} {getline s} $1 in x {print $0 "\n" s}' \
+	test1-2.path test1-1.fa >test1-indel.fa
+ln -sf test1-3.fa test1-unitigs.fa
+abyss-map   -j16 -l40    test1_1.fa test1_2.fa test1-3.fa \
+	|abyss-fixmate   -l40  -h test1-3.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   -j16 -k77  -l40 -s1000 -n10  -o test1-3.dist test1-3.hist
+Overlap  --dot   -k77 -g test1-4.dot -o test1-4.fa test1-3.fa test1-3.dot test1-3.dist
+Overlap: 0
+Scaffold: 0
+No overlap: 0
+Insignificant (<5bp): 0
+Homopolymer: 0
+Motif: 0
+Ambiguous: 0
+SimpleGraph    -j16 -k77 -o test1-4.path1 test1-4.dot test1-3.dist
+Total paths attempted: 0
+Unique path: 0
+No possible paths: 0
+No valid paths: 0
+Repetitive: 0
+Multiple valid paths: 0
+Too many solutions: 0
+Too complex: 0
+
+The minimum number of pairs in a distance estimate is 4294967295.
+abyss-index  --fai test1-3.fa
+abyss-index  --fai test1-4.fa
+cat test1-3.fa.fai test1-4.fa.fai \
+	|MergePaths   -j16 -k77  -o test1-4.path2 - test1-4.path1
+PathOverlap --assemble   -k77  test1-4.dot test1-4.path2 >test1-4.path3
+cat test1-3.fa test1-4.fa \
+	|PathConsensus  --dot -k77  -p0.9  -o test1-5.path -s test1-5.fa -g test1-5.dot - test1-4.dot test1-4.path3
+cat test1-3.fa test1-4.fa test1-5.fa |MergeContigs   -k77 -o test1-6.fa - test1-5.dot test1-5.path
+ln -sf test1-6.fa test1-contigs.fa
+PathOverlap --overlap   -k77 --dot test1-5.dot test1-5.path >test1-6.dot
+ln -sf test1-6.dot test1-contigs.dot
+abyss-map   -j16 -l40    test1_1.fa test1_2.fa test1-6.fa \
+	|abyss-fixmate   -l40  -h test1-6.hist \
+	|sort -snk3 -k4 \
+	|DistanceEst   --dot --mean -j16 -k77  -l40 -s1000 -n10  -o test1-6.dist.dot test1-6.hist
+abyss-scaffold    -k77 -s1000-10000 -n10 -g test1-6.path.dot  test1-6.dot test1-6.dist.dot >test1-6.path
+PathConsensus  --dot -k77  -p0.9  -s test1-7.fa -g test1-7.dot -o test1-7.path test1-6.fa test1-6.dot test1-6.path
+cat test1-6.fa test1-7.fa \
+	|MergeContigs   -k77 -o test1-8.fa - test1-7.dot test1-7.path
+ln -sf test1-8.fa test1-scaffolds.fa
+PathOverlap --overlap   -k77 --dot test1-7.dot test1-7.path >test1-8.dot
+ln -sf test1-8.dot test1-scaffolds.dot
+abyss-fac   test1-unitigs.fa test1-contigs.fa test1-scaffolds.fa |tee test1-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+1	1	1	2787	2787	2787	2787	2787	2787	2787	test1-unitigs.fa
+1	1	1	2787	2787	2787	2787	2787	2787	2787	test1-contigs.fa
+1	1	1	2787	2787	2787	2787	2787	2787	2787	test1-scaffolds.fa
+ln -sf test1-stats.tab test1-stats
+tr '\t' , <test1-stats.tab >test1-stats.csv
+abyss-tabtomd test1-stats.tab >test1-stats.md
+make: Leaving directory '/home/gneumann/gaaf/unit_tests/tests/assemblies/abyss/test1'
+Testing Abyss

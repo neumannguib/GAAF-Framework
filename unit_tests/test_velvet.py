@@ -2,7 +2,7 @@
 """
 Created on Tue Feb 26 11:06:53 2019
 
-@author: Guilherme Neumann
+@author: Aluno
 """
 
 

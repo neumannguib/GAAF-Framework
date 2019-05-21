@@ -11,4 +11,4 @@ import unit_tests as ts
 
 print('Testing pirs')
 test=ts.unit_tests()
-test.Pirs('tests','/home/gneumann/gaef/unit_tests/tests/')
+test.Pirs('tests','/home/gneumann/gaaf/unit_tests/tests/')

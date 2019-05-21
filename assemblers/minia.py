@@ -7,14 +7,18 @@ Created on Sun May  5 19:00:08 2019
 
 import os
 import logging 
+from assembly import Assembler
 
 
-class Minia:
+
+class Minia(Assembler):
     """ 
     Minia assembler
     
     Attributes
     ----------
+     __assembler_name : str
+        The name of the assembler
     require_fastq : bool
         if the assembler only work with fastq files, please set as True 
         (default False)
@@ -29,61 +33,19 @@ class Minia:
         Run the assembly    
     """
     
-    
+    __assembler_name='minia'
     require_fastq=False
     python_threads=False
     
-    def __init__(self, technology, exp, out, sample,read_len,file_format,k,t):
-        """
-        Parameters
-        ----------
-        technology : str
-            the sequencing technology, e.g. Illumina
-        exp : str
-            The Experiment Name
-        out : str
-            The output directory to store the results and where the reads 
-            are stored
-        sample : str
-            Sample Name (assembly name)
-        read_len : int
-            The average reads length 
-        file_format : str
-            the format of the reads, generally fa or fq 
-        k : int
-            the k-mer number used in k-based assemblers
-        t : int
-           Number of threads
-        """
-        
-        
-        self.tech=technology
-        self.exp=exp
-        self.out=out
-        self.sample=sample
-        self.read_len=read_len
-        self.file_format=file_format
-        self.k=k
-        self.t=t
-        try:
-            #Using the shared logging system
-            logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
-            if file_format=="fa" or file_format=="fasta" or file_format=="fna":
-                self.tipo="fasta"
-            else:
-                self.tipo="fastq"
-            if not(os.path.exists(out+"assemblies/minia/")):
-                os.system("mkdir "+out+"assemblies/minia/")  
-            os.system("mkdir "+out+"assemblies/minia/"+sample)
-        except IOError:
-            logging.error(IOError)
-            exit()
-            
+    
     def run(self):
         """
         Run the assembly. It firstly runs velveth and then velvetg. By the moment,
         it only works with Illumina.
         """
+        if not(os.path.exists(self.out+"assemblies/"+self.__assembler_name)):
+            os.system("mkdir "+self.out+"assemblies/"+self.__assembler_name)  
+        os.system("mkdir "+self.out+"assemblies/"+self.__assembler_name+"/"+self.sample)        
                 
         try:
             manifest=open(self.out+"assemblies/minia/"+self.sample+"/minia.txt","w")
