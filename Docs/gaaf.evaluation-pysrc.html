@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>gaaf.evaluation</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >gaaf</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="gaaf-module.html">Package&nbsp;gaaf</a> ::
+        Module&nbsp;evaluation
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="gaaf.evaluation-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="gaaf.evaluation-module.html">Module gaaf.evaluation</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">Created on Tue May  7 12:58:00 2019</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">@author: Guilherme Neumann</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">importlib</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">multiprocessing</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">abc</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ABC</tt><tt class="py-op">,</tt> <tt class="py-name">abstractmethod</tt> </tt>
+<a name="Evaluation_Controller"></a><div id="Evaluation_Controller-def"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt> <a class="py-toggle" href="#" id="Evaluation_Controller-toggle" onclick="return toggle('Evaluation_Controller');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="gaaf.evaluation.Evaluation_Controller-class.html">Evaluation_Controller</a><tt class="py-op">:</tt> </tt>
+</div><div id="Evaluation_Controller-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Evaluation_Controller-expanded"><a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">    <tt class="py-docstring">"""Genome Evaluation Step</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">    Attributes</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">    ----------</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">    file_format : str</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">            the format of the reads, generally fa or fq </tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">    read_files : list</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-docstring">        List to the files containing the sequencing reads</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    reference : str</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">        Genome reference path</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    assemblies : list</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">        List to assembly files</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">            </tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    Methods</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    -------</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">    apply_features(self, tools, assemblies, reads )</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">        Generate the features</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt id="link-0" class="py-name" targets="Variable gaaf.assembly.Assembling_Controller.file_format=gaaf.assembly.Assembling_Controller-class.html#file_format,Variable gaaf.evaluation.Evaluation_Controller.file_format=gaaf.evaluation.Evaluation_Controller-class.html#file_format,Variable gaaf.unit_tests.assembly.Assembling_Controller.file_format=gaaf.unit_tests.assembly.Assembling_Controller-class.html#file_format,Variable gaaf.unit_tests.evaluation.Evaluation_Controller.file_format=gaaf.unit_tests.evaluation.Evaluation_Controller-class.html#file_format"><a title="gaaf.assembly.Assembling_Controller.file_format
+gaaf.evaluation.Evaluation_Controller.file_format
+gaaf.unit_tests.assembly.Assembling_Controller.file_format
+gaaf.unit_tests.evaluation.Evaluation_Controller.file_format" class="py-name" href="#" onclick="return doclink('link-0', 'file_format', 'link-0');">file_format</a></tt><tt class="py-op">=</tt><tt class="py-string">"fa"</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Variable gaaf.evaluation.Evaluation_Controller.read_files=gaaf.evaluation.Evaluation_Controller-class.html#read_files,Variable gaaf.unit_tests.evaluation.Evaluation_Controller.read_files=gaaf.unit_tests.evaluation.Evaluation_Controller-class.html#read_files"><a title="gaaf.evaluation.Evaluation_Controller.read_files
+gaaf.unit_tests.evaluation.Evaluation_Controller.read_files" class="py-name" href="#" onclick="return doclink('link-1', 'read_files', 'link-1');">read_files</a></tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt id="link-2" class="py-name" targets="Variable gaaf.evaluation.Evaluation_Controller.reference=gaaf.evaluation.Evaluation_Controller-class.html#reference,Variable gaaf.evaluation.Feature_Calculator.reference=gaaf.evaluation.Feature_Calculator-class.html#reference,Variable gaaf.features.quast.Quast.reference=gaaf.features.quast.Quast-class.html#reference,Variable gaaf.unit_tests.evaluation.Evaluation_Controller.reference=gaaf.unit_tests.evaluation.Evaluation_Controller-class.html#reference,Variable gaaf.unit_tests.evaluation.Feature_Calculator.reference=gaaf.unit_tests.evaluation.Feature_Calculator-class.html#reference,Variable gaaf.unit_tests.features.quast.Quast.reference=gaaf.unit_tests.features.quast.Quast-class.html#reference"><a title="gaaf.evaluation.Evaluation_Controller.reference
+gaaf.evaluation.Feature_Calculator.reference
+gaaf.features.quast.Quast.reference
+gaaf.unit_tests.evaluation.Evaluation_Controller.reference
+gaaf.unit_tests.evaluation.Feature_Calculator.reference
+gaaf.unit_tests.features.quast.Quast.reference" class="py-name" href="#" onclick="return doclink('link-2', 'reference', 'link-2');">reference</a></tt><tt class="py-op">=</tt><tt class="py-string">''</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable gaaf.evaluation.Evaluation_Controller.assemblies=gaaf.evaluation.Evaluation_Controller-class.html#assemblies,Variable gaaf.unit_tests.evaluation.Evaluation_Controller.assemblies=gaaf.unit_tests.evaluation.Evaluation_Controller-class.html#assemblies"><a title="gaaf.evaluation.Evaluation_Controller.assemblies
+gaaf.unit_tests.evaluation.Evaluation_Controller.assemblies" class="py-name" href="#" onclick="return doclink('link-3', 'assemblies', 'link-3');">assemblies</a></tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">     </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">     </tt>
+<a name="Evaluation_Controller.__init__"></a><div id="Evaluation_Controller.__init__-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="Evaluation_Controller.__init__-toggle" onclick="return toggle('Evaluation_Controller.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.evaluation.Evaluation_Controller-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">reference</tt><tt class="py-op">,</tt> <tt class="py-param">exp</tt><tt class="py-op">,</tt><tt class="py-param">out</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Evaluation_Controller.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Evaluation_Controller.__init__-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">        reference : str</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">            Reference Genome</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">        exp : str</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">            The Experiment Name</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        out : str</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">            The output directory to store the results and where the reads </tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">            and assemblies are stored</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">         </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">         </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">=</tt><tt class="py-name">exp</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Variable gaaf.statistics.Statistics_Calculator.out=gaaf.statistics.Statistics_Calculator-class.html#out"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-4', 'out', 'link-4');">out</a></tt><tt class="py-op">=</tt><tt id="link-5" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-5', 'out', 'link-4');">out</a></tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">basicConfig</tt><tt class="py-op">(</tt><tt class="py-name">format</tt><tt class="py-op">=</tt><tt class="py-string">'%(asctime)s %(message)s'</tt><tt class="py-op">,</tt><tt class="py-name">filename</tt><tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-6', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt> <tt class="py-name">exp</tt> <tt class="py-op">+</tt> <tt class="py-string">'.log'</tt><tt class="py-op">,</tt><tt class="py-name">level</tt><tt class="py-op">=</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">DEBUG</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">" Calling Evaluation tools"</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-7" class="py-name"><a title="gaaf.evaluation.Evaluation_Controller.reference
+gaaf.evaluation.Feature_Calculator.reference
+gaaf.features.quast.Quast.reference
+gaaf.unit_tests.evaluation.Evaluation_Controller.reference
+gaaf.unit_tests.evaluation.Feature_Calculator.reference
+gaaf.unit_tests.features.quast.Quast.reference" class="py-name" href="#" onclick="return doclink('link-7', 'reference', 'link-2');">reference</a></tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-string">'There`s no reference file attached'</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ref</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="gaaf.evaluation.Evaluation_Controller.reference
+gaaf.evaluation.Feature_Calculator.reference
+gaaf.features.quast.Quast.reference
+gaaf.unit_tests.evaluation.Evaluation_Controller.reference
+gaaf.unit_tests.evaluation.Feature_Calculator.reference
+gaaf.unit_tests.features.quast.Quast.reference" class="py-name" href="#" onclick="return doclink('link-8', 'reference', 'link-2');">reference</a></tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-9', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"features"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-string">"mkdir "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-10', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"features"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">     </tt>
+<a name="Evaluation_Controller.apply_features"></a><div id="Evaluation_Controller.apply_features-def"><a name="L64"></a><tt class="py-lineno"> 64</tt> <a class="py-toggle" href="#" id="Evaluation_Controller.apply_features-toggle" onclick="return toggle('Evaluation_Controller.apply_features');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.evaluation.Evaluation_Controller-class.html#apply_features">apply_features</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">tools</tt><tt class="py-op">,</tt> <tt class="py-param">assemblies</tt><tt class="py-op">,</tt> <tt class="py-param">reads</tt> <tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Evaluation_Controller.apply_features-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Evaluation_Controller.apply_features-expanded"><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        Generates the features</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        tools : list</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">            List of tools, such as quast, to generate features. These tools must</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">            be stored in features/ dir.</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        assemblies : list</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">            List of dictionaries informing for each assembler, where to find the</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">            final assembly, as contigs, or scaffolds. e. g.</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">            assemblies=[{"spades":"contigs.fasta", "abyss":reads100-contigs.fa"}, </tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">            {"spades":"contigs.fasta", "abyss":reads150-contigs.fa"}]</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">            EACH ASSEMBLY IS STORED INSIDE A DIR NAMED AS THE ASSEMBLER NAME</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">            it measn for reads100 sample, it has a assembly spades/contigs.fasta</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">            and abyss/reads100-contigs.fa.</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">        reads : list</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">            A list of the raw reads names (does not include format), ordered according </tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">            to assemblies</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">         </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">tool</tt> <tt class="py-keyword">in</tt> <tt id="link-11" class="py-name" targets="Variable gaaf.unit_tests.test_assembly.tools=gaaf.unit_tests.test_assembly-module.html#tools"><a title="gaaf.unit_tests.test_assembly.tools" class="py-name" href="#" onclick="return doclink('link-11', 'tools', 'link-11');">tools</a></tt><tt class="py-op">:</tt>  </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">         </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-name">module</tt> <tt class="py-op">=</tt> <tt class="py-name">importlib</tt><tt class="py-op">.</tt><tt class="py-name">import_module</tt><tt class="py-op">(</tt><tt class="py-string">'features.'</tt><tt class="py-op">+</tt><tt class="py-name">tool</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">            <tt class="py-name">my_class</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">module</tt><tt class="py-op">,</tt> <tt class="py-name">tool</tt><tt class="py-op">.</tt><tt class="py-name">capitalize</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-12', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"features/"</tt><tt class="py-op">+</tt><tt class="py-name">tool</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-string">"mkdir "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-13', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"features/"</tt><tt class="py-op">+</tt><tt class="py-name">tool</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt id="link-14" class="py-name" targets="Variable gaaf.assembly.Assembling_Controller.t=gaaf.assembly.Assembling_Controller-class.html#t,Variable gaaf.reads_generation.Generator.t=gaaf.reads_generation.Generator-class.html#t,Variable gaaf.unit_tests.assembly.Assembling_Controller.t=gaaf.unit_tests.assembly.Assembling_Controller-class.html#t"><a title="gaaf.assembly.Assembling_Controller.t
+gaaf.reads_generation.Generator.t
+gaaf.unit_tests.assembly.Assembling_Controller.t" class="py-name" href="#" onclick="return doclink('link-14', 't', 'link-14');">t</a></tt><tt class="py-op">=</tt><tt class="py-name">multiprocessing</tt><tt class="py-op">.</tt><tt class="py-name">cpu_count</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">j</tt><tt class="py-op">,</tt><tt class="py-name">sample</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name" targets="Variable gaaf.gaaf.reads=gaaf.gaaf-module.html#reads"><a title="gaaf.gaaf.reads" class="py-name" href="#" onclick="return doclink('link-15', 'reads', 'link-15');">reads</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">" Sample:"</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"\n======================Sample:"</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"================================================="</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">"======================Sample "</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"================================================="</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                 </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt id="link-16" class="py-name" targets="Variable gaaf.assembly.Assembling_Controller.k=gaaf.assembly.Assembling_Controller-class.html#k,Variable gaaf.unit_tests.assembly.Assembling_Controller.k=gaaf.unit_tests.assembly.Assembling_Controller-class.html#k"><a title="gaaf.assembly.Assembling_Controller.k
+gaaf.unit_tests.assembly.Assembling_Controller.k" class="py-name" href="#" onclick="return doclink('link-16', 'k', 'link-16');">k</a></tt><tt class="py-op">,</tt><tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt id="link-17" class="py-name"><a title="gaaf.evaluation.Evaluation_Controller.assemblies
+gaaf.unit_tests.evaluation.Evaluation_Controller.assemblies" class="py-name" href="#" onclick="return doclink('link-17', 'assemblies', 'link-3');">assemblies</a></tt><tt class="py-op">[</tt><tt class="py-name">j</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">items</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">" Evaluation:"</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Evaluation:"</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ref</tt><tt class="py-op">)</tt><tt class="py-op">==</tt><tt class="py-name">list</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                            <tt class="py-name">ref</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ref</tt><tt class="py-op">[</tt><tt class="py-name">j</tt><tt class="py-op">]</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                            <tt class="py-name">ref</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ref</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                        <tt class="py-name">exists</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-18', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/"</tt><tt class="py-op">+</tt><tt id="link-19" class="py-name"><a title="gaaf.assembly.Assembling_Controller.k
+gaaf.unit_tests.assembly.Assembling_Controller.k" class="py-name" href="#" onclick="return doclink('link-19', 'k', 'link-16');">k</a></tt><tt class="py-op">+</tt><tt class="py-string">"/"</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"/"</tt><tt class="py-op">+</tt><tt class="py-name">v</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">exists</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                            <tt class="py-name">software</tt><tt class="py-op">=</tt><tt class="py-name">my_class</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-20', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/"</tt><tt class="py-op">+</tt><tt id="link-21" class="py-name"><a title="gaaf.assembly.Assembling_Controller.k
+gaaf.unit_tests.assembly.Assembling_Controller.k" class="py-name" href="#" onclick="return doclink('link-21', 'k', 'link-16');">k</a></tt><tt class="py-op">+</tt><tt class="py-string">"/"</tt><tt class="py-op">+</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"/"</tt><tt class="py-op">+</tt><tt class="py-name">v</tt><tt class="py-op">,</tt><tt class="py-name">ref</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-22', 'out', 'link-4');">out</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                            <tt class="py-name">software</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Variable gaaf.evaluation.Feature_Calculator.reads_format=gaaf.evaluation.Feature_Calculator-class.html#reads_format,Variable gaaf.features.quast.Quast.reads_format=gaaf.features.quast.Quast-class.html#reads_format,Variable gaaf.unit_tests.evaluation.Feature_Calculator.reads_format=gaaf.unit_tests.evaluation.Feature_Calculator-class.html#reads_format,Variable gaaf.unit_tests.features.quast.Quast.reads_format=gaaf.unit_tests.features.quast.Quast-class.html#reads_format"><a title="gaaf.evaluation.Feature_Calculator.reads_format
+gaaf.features.quast.Quast.reads_format
+gaaf.unit_tests.evaluation.Feature_Calculator.reads_format
+gaaf.unit_tests.features.quast.Quast.reads_format" class="py-name" href="#" onclick="return doclink('link-23', 'reads_format', 'link-23');">reads_format</a></tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="gaaf.assembly.Assembling_Controller.file_format
+gaaf.evaluation.Evaluation_Controller.file_format
+gaaf.unit_tests.assembly.Assembling_Controller.file_format
+gaaf.unit_tests.evaluation.Evaluation_Controller.file_format" class="py-name" href="#" onclick="return doclink('link-24', 'file_format', 'link-0');">file_format</a></tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                            <tt class="py-name">software</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method gaaf.evaluation.Feature_Calculator.calculate()=gaaf.evaluation.Feature_Calculator-class.html#calculate,Method gaaf.features.quast.Quast.calculate()=gaaf.features.quast.Quast-class.html#calculate,Method gaaf.unit_tests.evaluation.Feature_Calculator.calculate()=gaaf.unit_tests.evaluation.Feature_Calculator-class.html#calculate,Method gaaf.unit_tests.features.quast.Quast.calculate()=gaaf.unit_tests.features.quast.Quast-class.html#calculate"><a title="gaaf.evaluation.Feature_Calculator.calculate
+gaaf.features.quast.Quast.calculate
+gaaf.unit_tests.evaluation.Feature_Calculator.calculate
+gaaf.unit_tests.features.quast.Quast.calculate" class="py-name" href="#" onclick="return doclink('link-25', 'calculate', 'link-25');">calculate</a></tt><tt class="py-op">(</tt><tt class="py-name">sample</tt><tt class="py-op">,</tt><tt id="link-26" class="py-name"><a title="gaaf.assembly.Assembling_Controller.t
+gaaf.reads_generation.Generator.t
+gaaf.unit_tests.assembly.Assembling_Controller.t" class="py-name" href="#" onclick="return doclink('link-26', 't', 'link-14');">t</a></tt><tt class="py-op">,</tt><tt id="link-27" class="py-name"><a title="gaaf.assembly.Assembling_Controller.k
+gaaf.unit_tests.assembly.Assembling_Controller.k" class="py-name" href="#" onclick="return doclink('link-27', 'k', 'link-16');">k</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                    <tt class="py-keyword">except</tt> <tt class="py-name">TypeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-name">TypeError</tt><tt class="py-op">)</tt>  </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                        <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"> </tt>
+<a name="Feature_Calculator"></a><div id="Feature_Calculator-def"><a name="L115"></a><tt class="py-lineno">115</tt> <a class="py-toggle" href="#" id="Feature_Calculator-toggle" onclick="return toggle('Feature_Calculator');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="gaaf.evaluation.Feature_Calculator-class.html">Feature_Calculator</a><tt class="py-op">(</tt><tt class="py-base-class">ABC</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Feature_Calculator-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Feature_Calculator-expanded"><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-docstring">"""Feature for Genome Assembly Evaluation </tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">    Attributes</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">    ----------</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">    reads_format : str</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">            the format of the reads, generally fa or fq </tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">    reference : str</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">            Genome Reference</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-docstring">    assembly : str</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">            Path to the assembly</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">            </tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">    Methods</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">    -------</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">    calculate(sample,t, assembler)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">        Runs quast command</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">     </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt id="link-28" class="py-name"><a title="gaaf.evaluation.Feature_Calculator.reads_format
+gaaf.features.quast.Quast.reads_format
+gaaf.unit_tests.evaluation.Feature_Calculator.reads_format
+gaaf.unit_tests.features.quast.Quast.reads_format" class="py-name" href="#" onclick="return doclink('link-28', 'reads_format', 'link-23');">reads_format</a></tt><tt class="py-op">=</tt><tt class="py-string">"fa"</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt id="link-29" class="py-name"><a title="gaaf.evaluation.Evaluation_Controller.reference
+gaaf.evaluation.Feature_Calculator.reference
+gaaf.features.quast.Quast.reference
+gaaf.unit_tests.evaluation.Evaluation_Controller.reference
+gaaf.unit_tests.evaluation.Feature_Calculator.reference
+gaaf.unit_tests.features.quast.Quast.reference" class="py-name" href="#" onclick="return doclink('link-29', 'reference', 'link-2');">reference</a></tt><tt class="py-op">=</tt><tt class="py-string">''</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt id="link-30" class="py-name" targets="Module gaaf.assembly=gaaf.assembly-module.html,Variable gaaf.evaluation.Feature_Calculator.assembly=gaaf.evaluation.Feature_Calculator-class.html#assembly,Variable gaaf.features.quast.Quast.assembly=gaaf.features.quast.Quast-class.html#assembly,Module gaaf.unit_tests.assembly=gaaf.unit_tests.assembly-module.html,Variable gaaf.unit_tests.evaluation.Feature_Calculator.assembly=gaaf.unit_tests.evaluation.Feature_Calculator-class.html#assembly,Variable gaaf.unit_tests.features.quast.Quast.assembly=gaaf.unit_tests.features.quast.Quast-class.html#assembly"><a title="gaaf.assembly
+gaaf.evaluation.Feature_Calculator.assembly
+gaaf.features.quast.Quast.assembly
+gaaf.unit_tests.assembly
+gaaf.unit_tests.evaluation.Feature_Calculator.assembly
+gaaf.unit_tests.features.quast.Quast.assembly" class="py-name" href="#" onclick="return doclink('link-30', 'assembly', 'link-30');">assembly</a></tt><tt class="py-op">=</tt><tt class="py-string">''</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">     </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">     </tt>
+<a name="Feature_Calculator.__init__"></a><div id="Feature_Calculator.__init__-def"><a name="L138"></a><tt class="py-lineno">138</tt> <a class="py-toggle" href="#" id="Feature_Calculator.__init__-toggle" onclick="return toggle('Feature_Calculator.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.evaluation.Feature_Calculator-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">assembly</tt><tt class="py-op">,</tt> <tt class="py-param">reference</tt><tt class="py-op">,</tt> <tt class="py-param">exp</tt><tt class="py-op">,</tt><tt class="py-param">out</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Feature_Calculator.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Feature_Calculator.__init__-expanded"><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring">        assembly : str</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring">            Path to the assembly</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">        reference : str</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-docstring">            Genome Reference</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">        exp : str</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring">            The Experiment Name</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">        out : str</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">            The output directory to store the results and where the reads </tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">            are stored</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">         </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="gaaf.assembly
+gaaf.evaluation.Feature_Calculator.assembly
+gaaf.features.quast.Quast.assembly
+gaaf.unit_tests.assembly
+gaaf.unit_tests.evaluation.Feature_Calculator.assembly
+gaaf.unit_tests.features.quast.Quast.assembly" class="py-name" href="#" onclick="return doclink('link-31', 'assembly', 'link-30');">assembly</a></tt><tt class="py-op">=</tt><tt id="link-32" class="py-name"><a title="gaaf.assembly
+gaaf.evaluation.Feature_Calculator.assembly
+gaaf.features.quast.Quast.assembly
+gaaf.unit_tests.assembly
+gaaf.unit_tests.evaluation.Feature_Calculator.assembly
+gaaf.unit_tests.features.quast.Quast.assembly" class="py-name" href="#" onclick="return doclink('link-32', 'assembly', 'link-30');">assembly</a></tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">=</tt><tt class="py-name">exp</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-33', 'out', 'link-4');">out</a></tt><tt class="py-op">=</tt><tt id="link-34" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-34', 'out', 'link-4');">out</a></tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-35" class="py-name" targets="Class gaaf.evaluation.Feature_Calculator=gaaf.evaluation.Feature_Calculator-class.html,Class gaaf.unit_tests.evaluation.Feature_Calculator=gaaf.unit_tests.evaluation.Feature_Calculator-class.html"><a title="gaaf.evaluation.Feature_Calculator
+gaaf.unit_tests.evaluation.Feature_Calculator" class="py-name" href="#" onclick="return doclink('link-35', 'Feature_Calculator', 'link-35');">Feature_Calculator</a></tt><tt class="py-op">,</tt><tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method gaaf.assembly.Assembler.__init__()=gaaf.assembly.Assembler-class.html#__init__,Method gaaf.assembly.Assembling_Controller.__init__()=gaaf.assembly.Assembling_Controller-class.html#__init__,Method gaaf.evaluation.Evaluation_Controller.__init__()=gaaf.evaluation.Evaluation_Controller-class.html#__init__,Method gaaf.evaluation.Feature_Calculator.__init__()=gaaf.evaluation.Feature_Calculator-class.html#__init__,Method gaaf.kmergenie.Kmergenie.__init__()=gaaf.kmergenie.Kmergenie-class.html#__init__,Method gaaf.management.Manager.__init__()=gaaf.management.Manager-class.html#__init__,Method gaaf.reads_generation.Generator.__init__()=gaaf.reads_generation.Generator-class.html#__init__,Method gaaf.reads_generation.Reads_generation_Controller.__init__()=gaaf.reads_generation.Reads_generation_Controller-class.html#__init__,Method gaaf.statistics.Statistics_Calculator.__init__()=gaaf.statistics.Statistics_Calculator-class.html#__init__,Method gaaf.statistics.Statistics_Controller.__init__()=gaaf.statistics.Statistics_Controller-class.html#__init__,Method gaaf.unit_tests.assembly.Assembler.__init__()=gaaf.unit_tests.assembly.Assembler-class.html#__init__,Method gaaf.unit_tests.assembly.Assembling_Controller.__init__()=gaaf.unit_tests.assembly.Assembling_Controller-class.html#__init__,Method gaaf.unit_tests.evaluation.Evaluation_Controller.__init__()=gaaf.unit_tests.evaluation.Evaluation_Controller-class.html#__init__,Method gaaf.unit_tests.evaluation.Feature_Calculator.__init__()=gaaf.unit_tests.evaluation.Feature_Calculator-class.html#__init__,Method gaaf.unit_tests.kmergenie.Kmergenie.__init__()=gaaf.unit_tests.kmergenie.Kmergenie-class.html#__init__,Method gaaf.unit_tests.unit_tests.__init__()=gaaf.unit_tests.unit_tests-class.html#__init__,Method gaaf.unit_tests.unit_tests.unit_tests.__init__()=gaaf.unit_tests.unit_tests.unit_tests-class.html#__init__"><a title="gaaf.assembly.Assembler.__init__
+gaaf.assembly.Assembling_Controller.__init__
+gaaf.evaluation.Evaluation_Controller.__init__
+gaaf.evaluation.Feature_Calculator.__init__
+gaaf.kmergenie.Kmergenie.__init__
+gaaf.management.Manager.__init__
+gaaf.reads_generation.Generator.__init__
+gaaf.reads_generation.Reads_generation_Controller.__init__
+gaaf.statistics.Statistics_Calculator.__init__
+gaaf.statistics.Statistics_Controller.__init__
+gaaf.unit_tests.assembly.Assembler.__init__
+gaaf.unit_tests.assembly.Assembling_Controller.__init__
+gaaf.unit_tests.evaluation.Evaluation_Controller.__init__
+gaaf.unit_tests.evaluation.Feature_Calculator.__init__
+gaaf.unit_tests.kmergenie.Kmergenie.__init__
+gaaf.unit_tests.unit_tests.__init__
+gaaf.unit_tests.unit_tests.unit_tests.__init__" class="py-name" href="#" onclick="return doclink('link-36', '__init__', 'link-36');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">basicConfig</tt><tt class="py-op">(</tt><tt class="py-name">format</tt><tt class="py-op">=</tt><tt class="py-string">'%(asctime)s %(message)s'</tt><tt class="py-op">,</tt><tt class="py-name">filename</tt><tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-37', 'out', 'link-4');">out</a></tt><tt class="py-op">+</tt> <tt class="py-name">exp</tt> <tt class="py-op">+</tt> <tt class="py-string">'.log'</tt><tt class="py-op">,</tt><tt class="py-name">level</tt><tt class="py-op">=</tt><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">DEBUG</tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-38" class="py-name"><a title="gaaf.evaluation.Evaluation_Controller.reference
+gaaf.evaluation.Feature_Calculator.reference
+gaaf.features.quast.Quast.reference
+gaaf.unit_tests.evaluation.Evaluation_Controller.reference
+gaaf.unit_tests.evaluation.Feature_Calculator.reference
+gaaf.unit_tests.features.quast.Quast.reference" class="py-name" href="#" onclick="return doclink('link-38', 'reference', 'link-2');">reference</a></tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-string">'There`s no reference file attached'</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">            <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">ref</tt> <tt class="py-op">=</tt> <tt id="link-39" class="py-name"><a title="gaaf.evaluation.Evaluation_Controller.reference
+gaaf.evaluation.Feature_Calculator.reference
+gaaf.features.quast.Quast.reference
+gaaf.unit_tests.evaluation.Evaluation_Controller.reference
+gaaf.unit_tests.evaluation.Feature_Calculator.reference
+gaaf.unit_tests.features.quast.Quast.reference" class="py-name" href="#" onclick="return doclink('link-39', 'reference', 'link-2');">reference</a></tt> </tt>
+</div><a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">         </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">abstractmethod</tt> </tt>
+<a name="Feature_Calculator.calculate"></a><div id="Feature_Calculator.calculate-def"><a name="L164"></a><tt class="py-lineno">164</tt> <a class="py-toggle" href="#" id="Feature_Calculator.calculate-toggle" onclick="return toggle('Feature_Calculator.calculate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.evaluation.Feature_Calculator-class.html#calculate">calculate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">sample</tt><tt class="py-op">,</tt><tt class="py-param">t</tt><tt class="py-op">,</tt> <tt class="py-param">assembler</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>  </tt>
+</div><a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring">        It calculates the feature, and outputs a report.tex.</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">        Parameters</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">        ----------</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">        sample : str</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">            Sample name</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring">        t : int</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">            Number of threads</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        assembler : str</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">            Assembler name</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">         </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >gaaf</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Jun 10 16:13:53 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

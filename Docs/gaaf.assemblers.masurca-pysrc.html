@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>gaaf.assemblers.masurca</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >gaaf</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="gaaf-module.html">Package&nbsp;gaaf</a> ::
+        <a href="gaaf.assemblers-module.html">Package&nbsp;assemblers</a> ::
+        Module&nbsp;masurca
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="gaaf.assemblers.masurca-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="gaaf.assemblers.masurca-module.html">Module gaaf.assemblers.masurca</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">Created on Sun May  5 18:45:48 2019</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">@author: Guilherme Neumann</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt>  </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module gaaf.assembly=gaaf.assembly-module.html,Variable gaaf.evaluation.Feature_Calculator.assembly=gaaf.evaluation.Feature_Calculator-class.html#assembly,Variable gaaf.features.quast.Quast.assembly=gaaf.features.quast.Quast-class.html#assembly,Module gaaf.unit_tests.assembly=gaaf.unit_tests.assembly-module.html,Variable gaaf.unit_tests.evaluation.Feature_Calculator.assembly=gaaf.unit_tests.evaluation.Feature_Calculator-class.html#assembly,Variable gaaf.unit_tests.features.quast.Quast.assembly=gaaf.unit_tests.features.quast.Quast-class.html#assembly"><a title="gaaf.assembly
+gaaf.evaluation.Feature_Calculator.assembly
+gaaf.features.quast.Quast.assembly
+gaaf.unit_tests.assembly
+gaaf.unit_tests.evaluation.Feature_Calculator.assembly
+gaaf.unit_tests.features.quast.Quast.assembly" class="py-name" href="#" onclick="return doclink('link-0', 'assembly', 'link-0');">assembly</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class gaaf.assembly.Assembler=gaaf.assembly.Assembler-class.html,Class gaaf.unit_tests.assembly.Assembler=gaaf.unit_tests.assembly.Assembler-class.html"><a title="gaaf.assembly.Assembler
+gaaf.unit_tests.assembly.Assembler" class="py-name" href="#" onclick="return doclink('link-1', 'Assembler', 'link-1');">Assembler</a></tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="Masurca"></a><div id="Masurca-def"><a name="L13"></a><tt class="py-lineno">13</tt> <a class="py-toggle" href="#" id="Masurca-toggle" onclick="return toggle('Masurca');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="gaaf.assemblers.masurca.Masurca-class.html">Masurca</a><tt class="py-op">(</tt><tt class="py-base-class">Assembler</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Masurca-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Masurca-expanded"><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-docstring">""" </tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">    Masurca assembler. Only works with fastq files.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    Attributes</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    ----------</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">    __assembler_name : str</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">        The name of the assembler tool</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">    Methods</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">    -------</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">    run_assembly()</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-docstring">        Run the assembly    </tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">     </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt id="link-2" class="py-name" targets="Variable gaaf.assemblers.abyss.Abyss.__assembler_name=gaaf.assemblers.abyss.Abyss-class.html#__assembler_name,Variable gaaf.assemblers.edena.Edena.__assembler_name=gaaf.assemblers.edena.Edena-class.html#__assembler_name,Variable gaaf.assemblers.masurca.Masurca.__assembler_name=gaaf.assemblers.masurca.Masurca-class.html#__assembler_name,Variable gaaf.assemblers.minia.Minia.__assembler_name=gaaf.assemblers.minia.Minia-class.html#__assembler_name,Variable gaaf.assemblers.mira.Mira.__assembler_name=gaaf.assemblers.mira.Mira-class.html#__assembler_name,Variable gaaf.assemblers.spades.Spades.__assembler_name=gaaf.assemblers.spades.Spades-class.html#__assembler_name,Variable gaaf.assemblers.ssake.Ssake.__assembler_name=gaaf.assemblers.ssake.Ssake-class.html#__assembler_name,Variable gaaf.assemblers.velvet.Velvet.__assembler_name=gaaf.assemblers.velvet.Velvet-class.html#__assembler_name,Variable gaaf.assembly.Assembler.__assembler_name=gaaf.assembly.Assembler-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.abyss.Abyss.__assembler_name=gaaf.unit_tests.assemblers.abyss.Abyss-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.edena.Edena.__assembler_name=gaaf.unit_tests.assemblers.edena.Edena-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.masurca.Masurca.__assembler_name=gaaf.unit_tests.assemblers.masurca.Masurca-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.minia.Minia.__assembler_name=gaaf.unit_tests.assemblers.minia.Minia-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.mira.Mira.__assembler_name=gaaf.unit_tests.assemblers.mira.Mira-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.spades.Spades.__assembler_name=gaaf.unit_tests.assemblers.spades.Spades-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.ssake.Ssake.__assembler_name=gaaf.unit_tests.assemblers.ssake.Ssake-class.html#__assembler_name,Variable gaaf.unit_tests.assemblers.velvet.Velvet.__assembler_name=gaaf.unit_tests.assemblers.velvet.Velvet-class.html#__assembler_name,Variable gaaf.unit_tests.assembly.Assembler.__assembler_name=gaaf.unit_tests.assembly.Assembler-class.html#__assembler_name"><a title="gaaf.assemblers.abyss.Abyss.__assembler_name
+gaaf.assemblers.edena.Edena.__assembler_name
+gaaf.assemblers.masurca.Masurca.__assembler_name
+gaaf.assemblers.minia.Minia.__assembler_name
+gaaf.assemblers.mira.Mira.__assembler_name
+gaaf.assemblers.spades.Spades.__assembler_name
+gaaf.assemblers.ssake.Ssake.__assembler_name
+gaaf.assemblers.velvet.Velvet.__assembler_name
+gaaf.assembly.Assembler.__assembler_name
+gaaf.unit_tests.assemblers.abyss.Abyss.__assembler_name
+gaaf.unit_tests.assemblers.edena.Edena.__assembler_name
+gaaf.unit_tests.assemblers.masurca.Masurca.__assembler_name
+gaaf.unit_tests.assemblers.minia.Minia.__assembler_name
+gaaf.unit_tests.assemblers.mira.Mira.__assembler_name
+gaaf.unit_tests.assemblers.spades.Spades.__assembler_name
+gaaf.unit_tests.assemblers.ssake.Ssake.__assembler_name
+gaaf.unit_tests.assemblers.velvet.Velvet.__assembler_name
+gaaf.unit_tests.assembly.Assembler.__assembler_name" class="py-name" href="#" onclick="return doclink('link-2', '__assembler_name', 'link-2');">__assembler_name</a></tt><tt class="py-op">=</tt><tt class="py-string">'masurca'</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable gaaf.assemblers.abyss.Abyss.require_fastq=gaaf.assemblers.abyss.Abyss-class.html#require_fastq,Variable gaaf.assemblers.edena.Edena.require_fastq=gaaf.assemblers.edena.Edena-class.html#require_fastq,Variable gaaf.assemblers.masurca.Masurca.require_fastq=gaaf.assemblers.masurca.Masurca-class.html#require_fastq,Variable gaaf.assemblers.minia.Minia.require_fastq=gaaf.assemblers.minia.Minia-class.html#require_fastq,Variable gaaf.assemblers.mira.Mira.require_fastq=gaaf.assemblers.mira.Mira-class.html#require_fastq,Variable gaaf.assemblers.spades.Spades.require_fastq=gaaf.assemblers.spades.Spades-class.html#require_fastq,Variable gaaf.assemblers.ssake.Ssake.require_fastq=gaaf.assemblers.ssake.Ssake-class.html#require_fastq,Variable gaaf.assemblers.velvet.Velvet.require_fastq=gaaf.assemblers.velvet.Velvet-class.html#require_fastq,Variable gaaf.assembly.Assembler.require_fastq=gaaf.assembly.Assembler-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.abyss.Abyss.require_fastq=gaaf.unit_tests.assemblers.abyss.Abyss-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.edena.Edena.require_fastq=gaaf.unit_tests.assemblers.edena.Edena-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.masurca.Masurca.require_fastq=gaaf.unit_tests.assemblers.masurca.Masurca-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.minia.Minia.require_fastq=gaaf.unit_tests.assemblers.minia.Minia-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.mira.Mira.require_fastq=gaaf.unit_tests.assemblers.mira.Mira-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.spades.Spades.require_fastq=gaaf.unit_tests.assemblers.spades.Spades-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.ssake.Ssake.require_fastq=gaaf.unit_tests.assemblers.ssake.Ssake-class.html#require_fastq,Variable gaaf.unit_tests.assemblers.velvet.Velvet.require_fastq=gaaf.unit_tests.assemblers.velvet.Velvet-class.html#require_fastq,Variable gaaf.unit_tests.assembly.Assembler.require_fastq=gaaf.unit_tests.assembly.Assembler-class.html#require_fastq"><a title="gaaf.assemblers.abyss.Abyss.require_fastq
+gaaf.assemblers.edena.Edena.require_fastq
+gaaf.assemblers.masurca.Masurca.require_fastq
+gaaf.assemblers.minia.Minia.require_fastq
+gaaf.assemblers.mira.Mira.require_fastq
+gaaf.assemblers.spades.Spades.require_fastq
+gaaf.assemblers.ssake.Ssake.require_fastq
+gaaf.assemblers.velvet.Velvet.require_fastq
+gaaf.assembly.Assembler.require_fastq
+gaaf.unit_tests.assemblers.abyss.Abyss.require_fastq
+gaaf.unit_tests.assemblers.edena.Edena.require_fastq
+gaaf.unit_tests.assemblers.masurca.Masurca.require_fastq
+gaaf.unit_tests.assemblers.minia.Minia.require_fastq
+gaaf.unit_tests.assemblers.mira.Mira.require_fastq
+gaaf.unit_tests.assemblers.spades.Spades.require_fastq
+gaaf.unit_tests.assemblers.ssake.Ssake.require_fastq
+gaaf.unit_tests.assemblers.velvet.Velvet.require_fastq
+gaaf.unit_tests.assembly.Assembler.require_fastq" class="py-name" href="#" onclick="return doclink('link-3', 'require_fastq', 'link-3');">require_fastq</a></tt><tt class="py-op">=</tt><tt class="py-name">True</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable gaaf.assemblers.abyss.Abyss.python_threads=gaaf.assemblers.abyss.Abyss-class.html#python_threads,Variable gaaf.assemblers.edena.Edena.python_threads=gaaf.assemblers.edena.Edena-class.html#python_threads,Variable gaaf.assemblers.masurca.Masurca.python_threads=gaaf.assemblers.masurca.Masurca-class.html#python_threads,Variable gaaf.assemblers.minia.Minia.python_threads=gaaf.assemblers.minia.Minia-class.html#python_threads,Variable gaaf.assemblers.mira.Mira.python_threads=gaaf.assemblers.mira.Mira-class.html#python_threads,Variable gaaf.assemblers.spades.Spades.python_threads=gaaf.assemblers.spades.Spades-class.html#python_threads,Variable gaaf.assemblers.ssake.Ssake.python_threads=gaaf.assemblers.ssake.Ssake-class.html#python_threads,Variable gaaf.assemblers.velvet.Velvet.python_threads=gaaf.assemblers.velvet.Velvet-class.html#python_threads,Variable gaaf.assembly.Assembler.python_threads=gaaf.assembly.Assembler-class.html#python_threads,Variable gaaf.unit_tests.assemblers.abyss.Abyss.python_threads=gaaf.unit_tests.assemblers.abyss.Abyss-class.html#python_threads,Variable gaaf.unit_tests.assemblers.edena.Edena.python_threads=gaaf.unit_tests.assemblers.edena.Edena-class.html#python_threads,Variable gaaf.unit_tests.assemblers.masurca.Masurca.python_threads=gaaf.unit_tests.assemblers.masurca.Masurca-class.html#python_threads,Variable gaaf.unit_tests.assemblers.minia.Minia.python_threads=gaaf.unit_tests.assemblers.minia.Minia-class.html#python_threads,Variable gaaf.unit_tests.assemblers.mira.Mira.python_threads=gaaf.unit_tests.assemblers.mira.Mira-class.html#python_threads,Variable gaaf.unit_tests.assemblers.spades.Spades.python_threads=gaaf.unit_tests.assemblers.spades.Spades-class.html#python_threads,Variable gaaf.unit_tests.assemblers.ssake.Ssake.python_threads=gaaf.unit_tests.assemblers.ssake.Ssake-class.html#python_threads,Variable gaaf.unit_tests.assemblers.velvet.Velvet.python_threads=gaaf.unit_tests.assemblers.velvet.Velvet-class.html#python_threads,Variable gaaf.unit_tests.assembly.Assembler.python_threads=gaaf.unit_tests.assembly.Assembler-class.html#python_threads"><a title="gaaf.assemblers.abyss.Abyss.python_threads
+gaaf.assemblers.edena.Edena.python_threads
+gaaf.assemblers.masurca.Masurca.python_threads
+gaaf.assemblers.minia.Minia.python_threads
+gaaf.assemblers.mira.Mira.python_threads
+gaaf.assemblers.spades.Spades.python_threads
+gaaf.assemblers.ssake.Ssake.python_threads
+gaaf.assemblers.velvet.Velvet.python_threads
+gaaf.assembly.Assembler.python_threads
+gaaf.unit_tests.assemblers.abyss.Abyss.python_threads
+gaaf.unit_tests.assemblers.edena.Edena.python_threads
+gaaf.unit_tests.assemblers.masurca.Masurca.python_threads
+gaaf.unit_tests.assemblers.minia.Minia.python_threads
+gaaf.unit_tests.assemblers.mira.Mira.python_threads
+gaaf.unit_tests.assemblers.spades.Spades.python_threads
+gaaf.unit_tests.assemblers.ssake.Ssake.python_threads
+gaaf.unit_tests.assemblers.velvet.Velvet.python_threads
+gaaf.unit_tests.assembly.Assembler.python_threads" class="py-name" href="#" onclick="return doclink('link-4', 'python_threads', 'link-4');">python_threads</a></tt><tt class="py-op">=</tt><tt class="py-name">False</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">     </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">     </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">             </tt>
+<a name="Masurca.run_assembly"></a><div id="Masurca.run_assembly-def"><a name="L34"></a><tt class="py-lineno">34</tt> <a class="py-toggle" href="#" id="Masurca.run_assembly-toggle" onclick="return toggle('Masurca.run_assembly');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="gaaf.assemblers.masurca.Masurca-class.html#run_assembly">run_assembly</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Masurca.run_assembly-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="Masurca.run_assembly-expanded"><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">        Run the assembly. It uses a config file to run the assembly. </tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        By the moment, it only works with Illumina.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">                 </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Variable gaaf.statistics.Statistics_Calculator.out=gaaf.statistics.Statistics_Calculator-class.html#out"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-5', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/masurca/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-string">"mkdir "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-6', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/masurca/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">          </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">            <tt class="py-name">config</tt><tt class="py-op">=</tt><tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-7', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/masurca/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"/config.txt"</tt><tt class="py-op">,</tt><tt class="py-string">"w"</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">"DATA \nPE= pe "</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">read_len</tt><tt class="py-op">*</tt><tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">" 1 "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-8', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"reads/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"_1."</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Variable gaaf.assembly.Assembling_Controller.file_format=gaaf.assembly.Assembling_Controller-class.html#file_format,Variable gaaf.evaluation.Evaluation_Controller.file_format=gaaf.evaluation.Evaluation_Controller-class.html#file_format,Variable gaaf.unit_tests.assembly.Assembling_Controller.file_format=gaaf.unit_tests.assembly.Assembling_Controller-class.html#file_format,Variable gaaf.unit_tests.evaluation.Evaluation_Controller.file_format=gaaf.unit_tests.evaluation.Evaluation_Controller-class.html#file_format"><a title="gaaf.assembly.Assembling_Controller.file_format
+gaaf.evaluation.Evaluation_Controller.file_format
+gaaf.unit_tests.assembly.Assembling_Controller.file_format
+gaaf.unit_tests.evaluation.Evaluation_Controller.file_format" class="py-name" href="#" onclick="return doclink('link-9', 'file_format', 'link-9');">file_format</a></tt><tt class="py-op">+</tt><tt class="py-string">" "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-10', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"reads/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"_2."</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="gaaf.assembly.Assembling_Controller.file_format
+gaaf.evaluation.Evaluation_Controller.file_format
+gaaf.unit_tests.assembly.Assembling_Controller.file_format
+gaaf.unit_tests.evaluation.Evaluation_Controller.file_format" class="py-name" href="#" onclick="return doclink('link-11', 'file_format', 'link-9');">file_format</a></tt><tt class="py-op">+</tt><tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">"END \nPARAMETERS \nGRAPH_KMER_SIZE = "</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Variable gaaf.assembly.Assembling_Controller.k=gaaf.assembly.Assembling_Controller-class.html#k,Variable gaaf.unit_tests.assembly.Assembling_Controller.k=gaaf.unit_tests.assembly.Assembling_Controller-class.html#k"><a title="gaaf.assembly.Assembling_Controller.k
+gaaf.unit_tests.assembly.Assembling_Controller.k" class="py-name" href="#" onclick="return doclink('link-12', 'k', 'link-12');">k</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">            <tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">"\nGRID_ENGINE=SGE \nGRID_QUEUE=all.q \nCA_PARAMETERS =  cgwErrorRate=0.25 \nCLOSE_GAPS=1 \nNUM_THREADS ="</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Variable gaaf.assembly.Assembling_Controller.t=gaaf.assembly.Assembling_Controller-class.html#t,Variable gaaf.reads_generation.Generator.t=gaaf.reads_generation.Generator-class.html#t,Variable gaaf.unit_tests.assembly.Assembling_Controller.t=gaaf.unit_tests.assembly.Assembling_Controller-class.html#t"><a title="gaaf.assembly.Assembling_Controller.t
+gaaf.reads_generation.Generator.t
+gaaf.unit_tests.assembly.Assembling_Controller.t" class="py-name" href="#" onclick="return doclink('link-13', 't', 'link-13');">t</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">            <tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-string">"\nJF_SIZE = 20000000 \nSOAP_ASSEMBLY=0 \nEND"</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">            <tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">close</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">            <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">"cd assemblers/masurca/bin; ./masurca "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-14', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/masurca/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"/config.txt -o "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-15', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/masurca/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"/assemble.sh | tee -a "</tt> <tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-16', 'out', 'link-5');">out</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">+</tt> <tt class="py-string">".log"</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-name">command</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">system</tt><tt class="py-op">(</tt><tt class="py-string">"cd "</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-17', 'out', 'link-5');">out</a></tt><tt class="py-op">+</tt><tt class="py-string">"assemblies/masurca/"</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sample</tt><tt class="py-op">+</tt><tt class="py-string">"/; ./assemble.sh | tee -a "</tt> <tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="gaaf.statistics.Statistics_Calculator.out" class="py-name" href="#" onclick="return doclink('link-18', 'out', 'link-5');">out</a></tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">exp</tt><tt class="py-op">+</tt> <tt class="py-string">".log"</tt><tt class="py-op">)</tt>            </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IOError</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">            <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-name">IOError</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">            <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="gaaf-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >gaaf</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Jun 10 16:13:53 2019
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
