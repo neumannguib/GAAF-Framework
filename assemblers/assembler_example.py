@@ -10,7 +10,7 @@ import logging
 
 #Name your Assembler, use the same name to the file e.g. Spades() -> spades.py
 #It must be saved at assemblers/ dir
-class Assembler_name:
+class Assembler:
     """ 
     An example assembler class needed in order to insert more assemblers into 
     the Framework

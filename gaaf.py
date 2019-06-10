@@ -44,8 +44,8 @@ while i<total:
             i+=1
     i+=1
 
-manager=management.Management_Core(input['-config_file'],input)
-reads=manager.reads_generation_pirs()
-manager.assembling(reads) 
-manager.evaluation("quast",reads)
+manager=management.Manager(input['-config_file'],input)
+reads=manager.reads_generation("pirs")
+manager.assembling(reads,["all"]) 
+manager.evaluation(("quast",),reads,{})
 manager.stats_from_features(manager.output+"features/quast/")

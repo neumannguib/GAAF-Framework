@@ -7,9 +7,9 @@ Created on Fri Feb 22 12:55:03 2019
 
 import os
 import logging
-from evaluation import Evaluation_Tool
+from evaluation import Feature_Calculator
 
-class Quast(Evaluation_Tool):
+class Quast(Feature_Calculator):
     """Quast tool for Genome Assembly Evaluation 
     
     Attributes
@@ -23,16 +23,15 @@ class Quast(Evaluation_Tool):
             
     Methods
     -------
-    run(sample,t, assembler)
+    calculate(sample,t, assembler)
         Runs quast command
     """
-    
     reads_format="fa"
     reference=''
     assembly=''
    
     
-    def run(self,sample,t, assembler): 
+    def calculate(self,sample,t, assembler): 
         """
         It runs quast, and outputs report.tex.
         

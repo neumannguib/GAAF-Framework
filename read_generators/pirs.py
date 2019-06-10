@@ -8,26 +8,18 @@ import os
 import logging
 import threading as thr
 import time
-from reads_generator import Generator
+from reads_generation import Generator
 
 class Pirs(Generator):
     """Class responsable for calling pIRS and generating its reads
-    
-    Attributes
-    ----------
-    __tool_name : str
-        the algorithm name
     
     Methods
     -------
     command(sample)
         Run the Pirs command to the sample
     """
-    
-    tool_name='pirs'
-
-                    
-    def command(self,sample):
+                 
+    def generate(self,sample):
         """
         Run the pIRS command.
         
@@ -47,11 +39,16 @@ class Pirs(Generator):
         try:
             if not (os.path.exists(self.out+"reads")):
                 os.system("mkdir "+self.out+"reads")
-            exists1 = os.path.isfile(self.out+"reads/phred_base_1.fa")
-            exists2 = os.path.isfile(self.out+"reads/phred_base_2.fa")
+            
             #In pIRS one can not specify a unique phred value. For that reason,
             #here we convert it.
-            if "phred" in sample:
+            if "error_rate" in sample or "Error_rate" in sample:
+                command = "pirs simulate -x " + str(self.parameters['coverage']) + " -l " + str(self.parameters['read_len']) + " -v " +str(self.parameters['var'])+" -m " + str(self.parameters['read_len']*2) + " --no-indels -e "+self.parameters['Error_rate']+" --no-gc-bias -o "+self.out+"reads -t "+str(self.t)+" -s "+sample + " "+self.parameters['ref'] + " | tee -a " +self.out+self.exp+ ".log"
+                os.system(command)
+                
+            elif "phred" in sample or "Phred" in sample:
+                exists1 = os.path.isfile(self.out+"reads/phred_base_1.fa")
+                exists2 = os.path.isfile(self.out+"reads/phred_base_2.fa")
                 if not exists1 or not exists2:
                     command = "pirs simulate -x " + str(self.parameters['coverage']) + " -l " + str(self.parameters['read_len']) + " -v " +str(self.parameters['var'])+" -m " + str(self.parameters['read_len']*2) + " --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o "+self.out+"reads -t "+str(self.t)+" -s phred_base "+self.parameters['ref'] + " | tee -a " +self.out+self.exp+ ".log"
                     os.system(command)
@@ -67,7 +64,7 @@ class Pirs(Generator):
             else:
                 command = "pirs simulate -x " + str(self.parameters['coverage']) + " -l " + str(self.parameters['read_len']) + " -v " +str(self.parameters['var'])+" -m " + str(self.parameters['read_len']*2) + " --no-indels --no-subst-errors --fasta -e 0 --no-gc-bias -o "+self.out+"reads -t "+str(self.t)+" -s "+sample + " "+self.parameters['ref'] + " | tee -a " +self.out+self.exp+ ".log"
                 os.system(command)
-            self.files.append(sample)
+            self.datasets_generated.append(sample)
 
         except IOError:
             logging.error(IOError)

@@ -14,7 +14,7 @@ import kmergenie as kmer
 import threading as thr
 from abc import ABC, abstractmethod
 
-class Assembling_Control():
+class Assembling_Controller():
     """
     This Class represents the Assembly Component of the Framework. It receives
     reads and outputs assemblies.
@@ -98,7 +98,7 @@ class Assembling_Control():
                     exit()
      
         
-    def run(self,software):
+    def run_selected_assemblers(self,software):
         """
         Run all the selected assemblers. 
         
@@ -137,7 +137,7 @@ class Assembling_Control():
                 thread1=thr.Thread(target=self.__fasta2fastq,args=(self.output+"reads/"+sample+"_1."+self.file_format,int(self.phred))) 
                 thread2=thr.Thread(target=self.__fasta2fastq,args=(self.output+"reads/"+sample+"_2."+self.file_format,int(self.phred)))
 
-                if not exists1 or not exists2:
+                if not exists1 or not exists2 and self.file_format!='fq':
                     try:
                         logging.info("  Converting fasta read files to fastq")
                         print("\n ============ Converting fasta read files to fastq")
@@ -155,7 +155,7 @@ class Assembling_Control():
                     else:
                         read_len=self.len
                         
-                    if self.k==None:                
+                    if self.k==None:                #BOTAR KMERGENIE COMO FUNÇÃO E CHAMAR APENAS QUANDO NECESSÁRIO
                         logging.info(" Kmergenie:")
                         print("\n============ Kmergenie:")
                         if not (os.path.exists(self.output+ "assemblies/kmer")):
@@ -182,17 +182,17 @@ class Assembling_Control():
                         my_class = getattr(module, assembler.capitalize() )
                         genome=my_class(self.technology,self.exp,self.output,sample,read_len,self.file_format,best_k,self.t)
                         #Some assemblers such as Masurca and Mira only work with fastq files, in this case we need the conversion to be finished
-                        if genome.require_fastq:
+                        if genome.require_fastq and self.file_format!='fq':
                             genome.file_format="fastq"
                             while(thread1.is_alive() and thread2.is_alive()):
                                 time.sleep(.10)
-                        thread=thr.Thread(target=genome.run,args=())  
+                        thread=thr.Thread(target=genome.run_assembly,args=())  
                         if [assembler,sample] not in done:
                             if genome.python_threads:
                                 thread.daemon=True
                                 thread.start()
                             else:
-                                genome.run()
+                                genome.run_assembly()
                             run_log.write(assembler+","+sample+"\n")    
                     while(thread.is_alive()):
                         time.sleep(.10)
@@ -222,7 +222,7 @@ class Assembler(ABC):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly 
     """
         
@@ -277,7 +277,7 @@ class Assembler(ABC):
             exit()
     
     @abstractmethod    
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly.
         """

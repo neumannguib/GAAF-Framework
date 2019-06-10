@@ -17,16 +17,41 @@ Created on Wed Feb  6 09:51:16 2019
 import os
 import logging
 import multiprocessing
-import reads_generator as gen
+import reads_generation as gen
 import pandas as pd
 import assembly
 import datetime
-import stats
+import statistics
 import evaluation as ev
 import random
 
 
-class Management_Core:
+class Manager:
+    """
+    Manager class is responsable for the communication between all the other
+    classes in GAAF. You may call its methods in order to work with GAAF.
+    
+    Attributes
+    ----------
+    input : dict
+        dictionary containing run parameters, such as number of threads, k size 
+        see gaaf.py to more examples
+    config_file : str
+        a config file path, containing experiment parameters
+        
+    Methods
+    -------
+    reads_generation(alg)
+        Generates reads through alg / calls Read_generation_Controller
+    assembling(reads,software)
+        Calls Assembling_Controller 
+    evaluation(algo,reads,assembly_names)
+        Calls Evaluation_Controller
+    outputs_to_dict(indexes,columns,directory)
+        Reads features and creates dictionaries to each feature type
+    stats_from_features(directory)
+        Calls Statistics_Controller
+    """
     
     input=dict()
     config_file='config.txt'
@@ -48,6 +73,17 @@ class Management_Core:
         return new
     
     def __init__(self,config_file,input):    
+        """
+        Parameters
+        ----------
+        input : dict
+            dictionary containing run parameters, such as number of threads, k size 
+            see gaaf.py to more examples
+        config_file : str
+            a config file path, containing experiment parameters
+        
+        """
+        
         self.now = datetime.datetime.now()
     
         #receive arguments from terminal:
@@ -89,7 +125,10 @@ class Management_Core:
             logging.info(" Beta Version (2019) - Genome Assembly Analysis Framework: ")
             variables = {'Reads len': '(2x)Reads len (bp)', 'Coverage' : 'Coverage', 'Phred':'Phred', 'Mutation':'Mutation ratio', 'Duplication':'Gene Duplication ratio', 'Multiple Genomes':'-ref' } #possible variables to the experiments
             #the chosen variable
-            self.var=variables[self.input['Variable']] 
+            if self.input['Variable'] in variables:
+                self.var=variables[self.input['Variable']] 
+            else:
+                self.var=self.input['Variable']
         
         except IOError:
             logging.basicConfig(filename= str(self.now.date()) + '.log',level=logging.DEBUG)
@@ -99,9 +138,21 @@ class Management_Core:
     
     '''------------------------------------ Reads Generator -----------------------------------------------------------------------'''   
     
-    def reads_generation_pirs(self):
+    def reads_generation(self,alg):
+        """
+        Parameters
+        ----------
+        alg : str
+            Algorithm name to generate reads
+            
+        Returns
+        ----------
+        reads : list
+             list of read datasets
+        """
+        
         #all samples from the variable 
-        reads=gen.Reads_generation_Control(self.input['Experiment name'],self.output)
+        reads=gen.Reads_generation_Controller(self.input['Experiment name'],self.output)
         if self.input['Reads len variation (Y/N)']=='Y':
             variation=int(self.input['If variate, how many bases'])
         else:
@@ -113,8 +164,9 @@ class Management_Core:
         if type(self.input['Phred'])!=list:
             phred=int(self.input['Phred'])
         samples=[]
-        for sample in self.input[self.var]:
-            samples.append(int(sample))
+        if self.var!='-ref':
+            for sample in self.input[self.var]:
+                samples.append(float(sample))
         if self.var=='Coverage':
             coverage=samples
         elif self.var=="(2x)Reads len (bp)":
@@ -122,35 +174,67 @@ class Management_Core:
         elif self.var=='Phred':
             phred=samples
         print(samples)
-        reads=reads.generate("pIRS",{"coverage":coverage ,"read_len":read,"ref":self.input['-ref'],
-                                        "phred":phred,"mutation_rate":0,"var":variation})
+        par={"coverage":coverage ,"read_len":read,"ref":self.input['-ref'],"phred":phred,"mutation_rate":0,"var":variation}
+        for k,parameter in self.input.items():
+            if k not in par.keys() and k not in ('Coverage',"(2x)Reads len (bp)",'Phred','-ref'):
+                par[k]=parameter
+        reads=reads.generate_reads(alg,par)
         logging.info("Reads generated")
     
         return reads
     
     '''--------------------------------------------- ASSEMBLERS ------------------------------------------------------------------'''
-    def assembling(self,reads):
+    def assembling(self,reads,software):
+        """
+        Parameters
+        ----------
+        reads : list
+             list of read datasets
+        software : list
+            List of selected assemblers
+        """
     
-        tools=assembly.Assembling_Control(reads.files, self.output, self.input["Experiment name"], self.input["(2x)Reads len (bp)"])
+        tools=assembly.Assembling_Controller(reads.datasets_generated, self.output, self.input["Experiment name"], self.input["(2x)Reads len (bp)"])
         if("-k" in self.input):
             tools.k=self.input["-k"]
         if self.var=='Phred':
             tools.file_format="fastq"
-        tools.run(["all"])
+        if self.var=='Error_rate':
+            tools.file_format="fq"
+        tools.run_selected_assemblers(software)
     
             
     '''------------------------------------------ Evaluation -------------------------------------------------------------------'''
-    def evaluation(self,algo,reads):
+    def evaluation(self,algo,reads,assembly_names):
+        """
+        Parameters
+        ----------
+        algo : tuple
+            Tuple containing features' or tools' to calculate features names
+        reads : list
+             list of read datasets
+        assembly_names : dict
+            Dictionay with assembly names to assemblers, e.g. "spades":"contigs.fasta"
+            All assemblies must be stored into output dir, into assemblies/
+        """
+             
         assemblies=[]
-        for sample in reads.files:
-            assemblies.append({"spades":"contigs.fasta", "abyss":sample+"-contigs.fa", "velvet":"contigs.fa", "edena" : sample+"_contigs.fasta", "ssake":sample+"_contigs.fa", "masurca":"CA/9-terminator/genome.ctg.fasta", "mira":""+self.input['Experiment name']+"_assembly/"+self.input['Experiment name']+"_d_results/"+self.input['Experiment name']+"_out.unpadded.fasta",
-                     "minia":"minia.contigs.fa"})
+        print(reads.datasets_generated)
+        for sample in reads.datasets_generated:
+            a={"spades":"contigs.fasta", "abyss":sample+"-contigs.fa", "velvet":"contigs.fa", "edena" : sample+"_contigs.fasta", "ssake":sample+"_contigs.fa", "masurca":"CA/9-terminator/genome.ctg.fasta", "mira":""+self.input['Experiment name']+"_assembly/"+self.input['Experiment name']+"_d_results/"+self.input['Experiment name']+"_out.unpadded.fasta",
+                     "minia":"minia.contigs.fa"}
+            a.update(assembly_names)
+            print(a)
+            assemblies.append(a)
             #for further tests, we aim to use scaffolds
             #scaffolds={"masurca":"CA/9-terminator/genome.scf.fasta","spades":"scaffolds.fasta","ssake":sample+"_scaffolds.fa"} 
-        metrics=ev.Evaluation_Control(self.input['-ref'], self.input['Experiment name'],self.output)
+        metrics=ev.Evaluation_Controller(self.input['-ref'], self.input['Experiment name'],self.output)
         if self.var=="Phred":
             metrics.file_format="fastq"
-        metrics.apply_features([algo],assemblies,reads.files)
+        if self.var=="Error_rate":
+            metrics.file_format="fq"
+        metrics.apply_features(algo,assemblies,reads.datasets_generated)
+      
         
                     
                     
@@ -165,9 +249,25 @@ class Management_Core:
                 return i
         return -1
                     
-    def outputs_to_df(self,indexes,columns,directory):
+    def outputs_to_dict(self,indexes,columns,directory):
+        """
+        Parameters
+        ----------
+        indexes : list
+            List of indexes to dataframe
+        columns : list
+            list of columns' names
+        directory : str
+            output dir name where features are stored, e.g. features/quast
+            
+        Returns
+        ----------
+        metrics : dict
+            Dictionary of dictionaries 
+        """
+        
         metrics={"Reference mapped (\\%)":dict(),"Reference coverage $\\geq$ 1x (\\%)":dict(),"Total length":dict(),"N50":dict(),"\\# contigs":dict(), "NA50":dict(), "Complete BUSCO (\\%)" :dict(), "NG50":dict(),"Partial BUSCO (\\%)":dict(), "Largest alignment":dict(),"\\# predicted genes (unique)":dict(), "Avg. coverage depth":dict(),
-                 "\\# mismatches per 100 kbp":dict(),"Mapped (\\%)":dict(), "\# misassemblies":dict(), "L50":dict(), "N75":dict(), "GC (\\%)":dict(), "Largest contig":dict() }
+                 "\\# mismatches per 100 kbp":dict(),"Mapped (\\%)":dict(), "\# misassemblies":dict(), "L50":dict(), "N75":dict(), "GC (\\%)":dict(), "Largest contig":dict(), "Total aligned length":dict() }
         for term in columns: #variables e.g. reads len
             for k,value in metrics.items():
                 lis=[]
@@ -195,6 +295,12 @@ class Management_Core:
         return metrics
     
     def stats_from_features(self,directory):
+        """
+        Parameters
+        ----------
+        directory : str
+            output dir name where features are stored, e.g. features/quast
+        """
         indexes=[]
         columns=[]
         outs=os.listdir(directory)
@@ -216,8 +322,8 @@ class Management_Core:
             samples_int=samples[:]
         else:
             for s in samples:
-                samples_int.append(int(s))
-        dic=self.outputs_to_df(indexes,columns,directory)
+                samples_int.append(float(s))
+        dic=self.outputs_to_dict(indexes,columns,directory)
         colors={assembler:["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)]),random.choice('8*hPov^<>')] for assembler in indexes} #it creates a dict with color and marker type to each assembler, in order to keep the same pattern in all graphs
         for key,dici in dic.items():
             for k,value in dici.items():
@@ -227,7 +333,7 @@ class Management_Core:
                     df.sort_index(axis=1, inplace=True) 
                     df.to_csv(self.output+key+".csv")
                     print(df.T)
-                    ob=stats.Statistics(df.T, self.input["Experiment name"],self.input['Variable'],key,self.output,samples_int)
+                    ob=statistics.Statistics_Controller(df.T, self.input["Experiment name"],self.input['Variable'],key,self.output,samples_int)
                     ob.normality()
                     equal=[]
                     for item in df.values:
@@ -235,11 +341,12 @@ class Management_Core:
                             if each not in equal:
                                 equal.append(each)
                 
-                    if len(equal)>1:        
-                        ob.oneway()
-                        ob.kruskal()
+                    if len(equal)>1:  
+                        ob.test_hypothesis("oneway")
+                        ob.test_hypothesis("kruskal")
+                       
                         try:
-                            ob.correlation_pearson()
+                            ob.test_hypothesis("correlation_pearson")
                         except:
                             continue
                     if self.var!="-ref":

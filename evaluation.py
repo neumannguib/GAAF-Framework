@@ -10,7 +10,7 @@ import importlib
 import multiprocessing
 from abc import ABC, abstractmethod
 
-class Evaluation_Control:
+class Evaluation_Controller:
     """Genome Evaluation Step
     
     Attributes
@@ -53,7 +53,7 @@ class Evaluation_Control:
         self.exp=exp
         self.out=out
         logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
-        logging.info(" Calling Quast tool")
+        logging.info(" Calling Evaluation tools")
         if reference == '':
             logging.error('There`s no reference file attached')
             exit()
@@ -87,7 +87,8 @@ class Evaluation_Control:
         
             module = importlib.import_module('features.'+tool.lower())
             my_class = getattr(module, tool.capitalize() )
-
+            if not (os.path.exists(self.out+"features/"+tool.lower())):
+                os.system("mkdir "+self.out+"features/"+tool.lower())
             t=multiprocessing.cpu_count()-1
             for j,sample in enumerate(reads):
                 logging.info(" Sample:"+sample)
@@ -96,7 +97,7 @@ class Evaluation_Control:
                 
                 for k,v in assemblies[j].items(): 
                     try:
-                        logging.info(" Evaluation(:")
+                        logging.info(" Evaluation:")
                         print("Evaluation:")
                         if type(self.ref)==list:
                             ref=self.ref[j]
@@ -106,15 +107,12 @@ class Evaluation_Control:
                         if exists:
                             software=my_class(self.out+"assemblies/"+k+"/"+sample+"/"+v,ref, self.exp,self.out)
                             software.reads_format=self.file_format
-                            if type(software)=='Evaluation_Tool':
-                                software.run(sample,t,k)
-                            else:
-                                software.calculate(sample,t,k)
+                            software.calculate(sample,t,k)
                     except TypeError:
                         logging.error(TypeError) 
                         exit()
 
-class Feature(ABC):
+class Feature_Calculator(ABC):
     """Feature for Genome Assembly Evaluation 
     
     Attributes
@@ -137,11 +135,11 @@ class Feature(ABC):
     assembly=''
     
     
-    def __init__(self, path, reference, exp,out):
+    def __init__(self, assembly, reference, exp,out):
         """
         Parameters
         ----------
-        path : str
+        assembly : str
             Path to the assembly
         reference : str
             Genome Reference
@@ -152,12 +150,10 @@ class Feature(ABC):
             are stored
         """
         
-        self.path=path
+        self.assembly=assembly
         self.exp=exp
         self.out=out
-        super(Feature,self).__init__()
-        if not (os.path.exists(self.out+"features/")):
-            os.system("mkdir "+self.out+"features/")
+        super(Feature_Calculator,self).__init__()
         logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
         if reference == '':
             logging.error('There`s no reference file attached')
@@ -181,69 +177,3 @@ class Feature(ABC):
         
         pass
     
-class Evaluation_Tool(ABC):
-    """Tool for Genome Assembly Evaluation 
-    
-    Attributes
-    ----------
-    reads_format : str
-            the format of the reads, generally fa or fq 
-    reference : str
-            Genome Reference
-    assembly : str
-            Path to the assembly
-            
-    Methods
-    -------
-    run(sample,t, assembler)
-        Runs tool command
-    """
-    
-    reads_format="fa"
-    reference=''
-    assembly=''
-    
-    
-    def __init__(self, path, reference, exp,out):
-        """
-        Parameters
-        ----------
-        path : str
-            Path to the assembly
-        reference : str
-            Genome Reference
-        exp : str
-            The Experiment Name
-        out : str
-            The output directory to store the results and where the reads 
-            are stored
-        """
-        
-        self.assembly=path
-        self.exp=exp
-        self.out=out
-        super(Evaluation_Tool,self).__init__()
-        if not (os.path.exists(self.out+"features/")):
-            os.system("mkdir "+self.out+"features/")
-        logging.basicConfig(format='%(asctime)s %(message)s',filename= out+ exp + '.log',level=logging.DEBUG)
-        if reference == '':
-            logging.error('There`s no reference file attached')
-            exit()
-        self.ref = reference
-        
-    @abstractmethod
-    def run(self,sample,t, assembler): 
-        """
-        It runs the command, and outputs a report.tex.
-        
-        Parameters
-        ----------
-        sample : str
-            Sample name
-        t : int
-            Number of threads
-        assembler : str
-            Assembler name
-        """
-        
-        pass

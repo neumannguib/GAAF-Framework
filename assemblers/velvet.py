@@ -27,7 +27,7 @@ class Velvet(Assembler):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly    
     """
     
@@ -37,7 +37,7 @@ class Velvet(Assembler):
     
     
             
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly. It firstly runs velveth and then velvetg. By the moment,
         it only works with Illumina.

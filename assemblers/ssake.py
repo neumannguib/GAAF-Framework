@@ -27,7 +27,7 @@ class Ssake(Assembler):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly    
     """
     
@@ -36,7 +36,7 @@ class Ssake(Assembler):
     python_threads=True
     
             
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly. It firstly runs TQSfast and/or 
         makePairedOutput2UNEQUALfiles and then ssake. By the moment, it only 

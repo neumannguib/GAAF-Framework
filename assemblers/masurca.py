@@ -21,7 +21,7 @@ class Masurca(Assembler):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly    
     """
     
@@ -31,7 +31,7 @@ class Masurca(Assembler):
     
     
             
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly. It uses a config file to run the assembly. 
         By the moment, it only works with Illumina.
@@ -47,7 +47,7 @@ class Masurca(Assembler):
             config.write("\nGRID_ENGINE=SGE \nGRID_QUEUE=all.q \nCA_PARAMETERS =  cgwErrorRate=0.25 \nCLOSE_GAPS=1 \nNUM_THREADS ="+str(self.t))
             config.write("\nJF_SIZE = 20000000 \nSOAP_ASSEMBLY=0 \nEND")
             config.close()
-            command = "cd assemblers/masurca/bin/; ./masurca "+self.out+"assemblies/masurca/"+self.sample+"/config.txt -o "+self.out+"assemblies/masurca/"+self.sample+"/assemble.sh | tee -a " +self.out + self.exp+ ".log"
+            command = "cd assemblers/masurca/bin; ./masurca "+self.out+"assemblies/masurca/"+self.sample+"/config.txt -o "+self.out+"assemblies/masurca/"+self.sample+"/assemble.sh | tee -a " +self.out + self.exp+ ".log"
             os.system(command)
             os.system("cd "+self.out+"assemblies/masurca/"+self.sample+"/; ./assemble.sh | tee -a " +self.out + self.exp+ ".log")           
         except IOError:

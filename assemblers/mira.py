@@ -27,7 +27,7 @@ class Mira(Assembler):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly    
     """
     
@@ -36,7 +36,7 @@ class Mira(Assembler):
     python_threads=False
     
 
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly. By the moment,it only works with Illumina.
         """
@@ -44,10 +44,14 @@ class Mira(Assembler):
             os.system("mkdir "+self.out+"assemblies/"+self.__assembler_name)  
         os.system("mkdir "+self.out+"assemblies/"+self.__assembler_name+"/"+self.sample)                
         try:
+            if self.file_format=='fq':
+                os.system("cp "+self.out+"reads/"+self.sample+"_1."+self.file_format+" "+self.out+"reads/"+self.sample+"_1.fastq")
+                os.system("cp "+self.out+"reads/"+self.sample+"_2."+self.file_format+" "+self.out+"reads/"+self.sample+"_2.fastq")
+                self.file_format='fastq'
             manifest=open(self.out+"assemblies/mira/"+self.sample+"/manifest.txt","w")
             manifest.write("project="+self.exp+"\njob = genome,denovo,accurate\n")
             manifest.write("readgroup = DataIlluminaPairedLib \ntechnology = solexa \ndata ="+self.out+"reads/"+self.sample+"_1."+self.file_format+" "+self.out+"reads/"+self.sample+"_2."+self.file_format+"\n")
-            manifest.write("segment_placement = ---> <--- \ntemplate_size = "+str(self.read_len*2)+ " "+str(self.read_len*2)+"autorefine")
+            manifest.write("segment_placement = ---> <--- \ntemplate_size = "+str(int(self.read_len)*2)+ " "+str(int(self.read_len)*2)+" autorefine")
             manifest.close()
             command = "./assemblers/mira/bin/mira "+self.out+"assemblies/mira/"+self.sample+"/manifest.txt -t "+str(self.t)+" -c "+self.out+"assemblies/mira/"+self.sample+" | tee -a " +self.out + self.exp+ ".log"
             os.system(command)           

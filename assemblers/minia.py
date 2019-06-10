@@ -29,7 +29,7 @@ class Minia(Assembler):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly    
     """
     
@@ -38,7 +38,7 @@ class Minia(Assembler):
     python_threads=False
     
     
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly. It firstly runs velveth and then velvetg. By the moment,
         it only works with Illumina.

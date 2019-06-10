@@ -27,7 +27,7 @@ class Edena(Assembler):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly    
     """
     
@@ -35,7 +35,7 @@ class Edena(Assembler):
     require_fastq=False
     python_threads=False
 
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly. It firstly generates an ovl file, then it runs the 
         assembly. By the moment, it only works with Illumina.

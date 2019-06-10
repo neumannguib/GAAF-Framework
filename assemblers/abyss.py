@@ -27,7 +27,7 @@ class Abyss(Assembler):
         
     Methods
     -------
-    run()
+    run_assembly()
         Run the assembly    
     """
     
@@ -36,7 +36,7 @@ class Abyss(Assembler):
     python_threads=False
     
             
-    def run(self):
+    def run_assembly(self):
         """
         Run the assembly. By the moment, it only works with Illumina.
         """
